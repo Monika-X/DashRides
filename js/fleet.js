@@ -51,7 +51,8 @@ function initFleetQuickBook() {
       sessionStorage.setItem('dashrides_selected_model', modelName);
       showToast(`Selected "${modelName}". Redirecting to booking...`, 'success');
       setTimeout(() => {
-        window.location.href = 'dashboard.html#booking';
+        const isInsidePagesDir = window.location.pathname.includes('/pages/') || window.location.pathname.includes('\\pages\\');
+        window.location.href = isInsidePagesDir ? 'dashboard.html#booking' : 'pages/dashboard.html#booking';
       }, 800);
     });
   });

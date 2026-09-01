@@ -26,19 +26,20 @@
 
 ```
 DashRides/
-├── index.html              # Home 1 (Cinematic Showcase)
-├── home-2.html             # Home 2 (Editorial & Hub Map)
-├── about.html              # About Us (Mission, Team & Heritage)
-├── services.html           # Services & Rental Plans (Specs Matrix)
-├── blog.html               # Urban Journal Index
-├── blog-details.html       # Article Deep-Dive
-├── contact.html            # Contact, Lounges & Emergency Dispatch
-├── privacy-policy.html     # Privacy Policy (GDPR & CCPA)
-├── terms.html              # Terms & Conditions (Rental Agreement)
-├── sitemap.html            # Complete HTML Sitemap Directory
-├── 404.html                # Interactive 404 Route Error Page
-├── maintenance.html        # Scheduled Maintenance & Live Countdown
-├── dashboard.html          # Customer Dashboard Portal (9 Modules)
+├── index.html              # Home 1 (Cinematic Showcase - Root Entry)
+├── pages/                  # All secondary pages & customer portal
+│   ├── home-2.html         # Home 2 (Editorial & Hub Map)
+│   ├── about.html          # About Us (Mission, Team & Heritage)
+│   ├── services.html       # Services & Rental Plans (Specs Matrix)
+│   ├── blog.html           # Urban Journal Index
+│   ├── blog-details.html   # Article Deep-Dive
+│   ├── contact.html        # Contact, Lounges & Emergency Dispatch
+│   ├── privacy-policy.html # Privacy Policy (GDPR & CCPA)
+│   ├── terms.html          # Terms & Conditions (Rental Agreement)
+│   ├── sitemap.html        # Complete HTML Sitemap Directory
+│   ├── 404.html            # Interactive 404 Route Error Page
+│   ├── maintenance.html    # Scheduled Maintenance & Live Countdown
+│   └── dashboard.html      # Customer Dashboard Portal (9 Modules)
 ├── css/
 │   ├── variables.css       # Design tokens, theme colors & typography
 │   ├── reset.css           # Base reset, typography defaults & scrollbars
