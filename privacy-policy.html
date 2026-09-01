@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — DashRides Data Protection & Rider Privacy</title>
+  <meta name="description" content="Learn how DashRides protects your telemetry, biometric verification, and payment data under strict GDPR and CCPA standards.">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container navbar">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">⚡</div>
+        <span>DASH</span>RIDES
+      </a>
+
+      <nav class="nav-links" aria-label="Main Navigation">
+        <div class="nav-item">
+          <a href="index.html" class="nav-link">Home ▾</a>
+          <div class="dropdown-menu">
+            <a href="index.html" class="dropdown-item">Home 1 (Cinematic)</a>
+            <a href="home-2.html" class="dropdown-item">Home 2 (Editorial)</a>
+          </div>
+        </div>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="blog.html" class="nav-link">Journal</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="dashboard.html" class="nav-link" style="color: var(--color-electric-lime);">Dashboard ⚡</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="theme-toggle" aria-label="Toggle Theme">☀️</button>
+        <button class="rtl-toggle" aria-label="Toggle Layout Direction">RTL</button>
+        <a href="dashboard.html#booking" class="btn btn-primary btn-sm header-cta">Book Now</a>
+        <button class="menu-toggle" aria-label="Open Mobile Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-overlay"></div>
+  <aside class="mobile-nav" aria-label="Mobile Navigation">
+    <div>
+      <div class="logo" style="margin-bottom: 2rem;">
+        <div class="logo-icon">⚡</div>
+        <span>DASH</span>RIDES
+      </div>
+      <div class="mobile-nav-links">
+        <a href="index.html" class="mobile-nav-link">Home 1 (Cinematic)</a>
+        <a href="home-2.html" class="mobile-nav-link">Home 2 (Editorial)</a>
+        <a href="about.html" class="mobile-nav-link">About Us</a>
+        <a href="services.html" class="mobile-nav-link">Services & Fleet</a>
+        <a href="blog.html" class="mobile-nav-link">Blog & News</a>
+        <a href="contact.html" class="mobile-nav-link">Contact</a>
+        <a href="dashboard.html" class="mobile-nav-link" style="color: var(--color-electric-lime);">Rider Dashboard</a>
+      </div>
+    </div>
+    <div>
+      <a href="dashboard.html#booking" class="btn btn-primary" style="width: 100%; margin-bottom: 1rem;">Unlock a Scooter</a>
+      <span style="font-size: 0.85rem; color: var(--text-muted);">© DashRides Inc.</span>
+    </div>
+  </aside>
+
+  <main id="main-content">
+    <!-- SECTION 1: LEGAL HERO & COMPLIANCE BADGE -->
+    <section class="manifesto-section container">
+      <div style="max-width: 800px; margin: 0 auto; text-align: center;" class="reveal-fade-up">
+        <span class="section-tag">Privacy & Trust</span>
+        <h1 style="font-size: clamp(2.25rem, 4.5vw, 3.75rem); line-height: 1.1; margin-bottom: 1.25rem;">
+          Your Privacy Is <span class="text-gradient-lime">Non-Negotiable</span>
+        </h1>
+        <p style="font-size: 1.15rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 2rem;">
+          Effective Date: October 1, 2026 • Verified compliance with EU GDPR, California CCPA, and ISO/IEC 27001 Information Security standards.
+        </p>
+        <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+          <span class="badge badge-lime">✓ Zero Data Monetization</span>
+          <span class="badge badge-orange">✓ 256-Bit Encrypted Telemetry</span>
+          <span class="badge badge-lime">✓ Automated 30-Day Purge</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: TELEMETRY & LOCATION DATA -->
+    <section class="container" style="padding: 3rem 1.5rem;">
+      <div class="legal-content">
+        <div class="card legal-section-block reveal-fade-up">
+          <span class="badge badge-lime" style="margin-bottom: 0.75rem;">Section 01</span>
+          <h3>1. Vehicle GPS & Telemetry Data Processing</h3>
+          <p>
+            When you operate a DashRides vehicle, our hardware transmits coordinates, velocity, battery voltage, and brake status to calculate trip duration, enforce municipal geofenced speed limits (e.g. 15 km/h in pedestrian plazas), and locate scooters for battery maintenance.
+          </p>
+          <p>
+            <strong>Anonymization Guarantee:</strong> Raw GPS breadcrumbs are detached from your personal user account after 72 hours and converted into aggregated traffic flow heatmaps used solely for fleet rebalancing. We never sell your travel routes to advertising networks or third-party data brokers.
+          </p>
+        </div>
+
+        <!-- SECTION 3: PAYMENT & IDENTITY SECURITY -->
+        <div class="card legal-section-block reveal-fade-up">
+          <span class="badge badge-orange" style="margin-bottom: 0.75rem;">Section 02</span>
+          <h3>2. Payment Tokenization & License Verification</h3>
+          <p>
+            All financial transactions, security deposits, and rental authorizations are processed through PCI-DSS Level 1 certified processors (Stripe & Apple Pay). DashRides never stores raw credit card numbers or CVV codes on our servers.
+          </p>
+          <p>
+            Driver's license images uploaded for moped verification are verified instantaneously via cryptographic biometric matching and encrypted at rest with AES-256 keys.
+          </p>
+        </div>
+
+        <!-- SECTION 4: THIRD-PARTY INTEGRATIONS -->
+        <div class="card legal-section-block reveal-fade-up">
+          <span class="badge badge-lime" style="margin-bottom: 0.75rem;">Section 03</span>
+          <h3>3. Third-Party Integrations & Legal Compliance</h3>
+          <p>
+            We only share minimal necessary data with verified service partners under strict Data Processing Agreements (DPAs):
+          </p>
+          <ul style="list-style: disc; margin-left: 1.5rem; margin-top: 0.5rem; color: var(--text-secondary); line-height: 1.7;">
+            <li><strong>Insurance Underwriters:</strong> Anonymized trip timestamps in the event of a reported collision or liability claim.</li>
+            <li><strong>Municipal Transport Authorities:</strong> General aggregate fleet counts via standardized Mobility Data Specification (MDS) APIs.</li>
+            <li><strong>Emergency Responders:</strong> Precise GPS coordinates in the event of an active SOS trigger or severe impact detection.</li>
+          </ul>
+        </div>
+
+        <!-- SECTION 5: RIDER DATA RIGHTS & CONTROLS -->
+        <div class="card legal-section-block reveal-fade-up">
+          <span class="badge badge-orange" style="margin-bottom: 0.75rem;">Section 04</span>
+          <h3>4. Your Rights: Access, Export & Full Deletion</h3>
+          <p>
+            You retain complete control over your personal data. Under GDPR and CCPA, you have the right to:
+          </p>
+          <ul style="list-style: disc; margin-left: 1.5rem; margin-top: 0.5rem; color: var(--text-secondary); line-height: 1.7;">
+            <li>Request a complete JSON/CSV export of all your rental receipts, ride logs, and invoices.</li>
+            <li>Opt out of marketing communications and promotional emails with one click.</li>
+            <li>Request permanent deletion of your account and identification records within 30 business days.</li>
+          </ul>
+        </div>
+
+        <!-- SECTION 6: DPO CONTACT & REVISION LOG -->
+        <div class="card legal-section-block reveal-fade-up" style="background: var(--bg-secondary); border-color: var(--color-electric-lime);">
+          <span class="badge badge-lime" style="margin-bottom: 0.75rem;">Section 05</span>
+          <h3>5. Contact Our Data Protection Officer (DPO)</h3>
+          <p>
+            If you have questions, regulatory inquiries, or wish to exercise your data privacy rights, please reach out to our legal department:
+          </p>
+          <div style="margin-top: 1.25rem; font-size: 0.95rem; color: var(--text-primary);">
+            <strong>Email:</strong> privacy@dashrides.com<br>
+            <strong>Mailing Address:</strong> DashRides Mobility Inc., Attn: Privacy Officer, 742 Grand Avenue, Suite 100, San Francisco, CA 94107
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <div class="logo-icon">⚡</div>
+            <span>DASH</span>RIDES
+          </a>
+          <p>The definitive luxury electric scooter and moped network. Engineered for speed, safety, and sustainable urban living.</p>
+          <div class="social-links">
+            <a href="#" class="social-btn" aria-label="Twitter">𝕏</a>
+            <a href="#" class="social-btn" aria-label="Instagram">📸</a>
+            <a href="#" class="social-btn" aria-label="LinkedIn">💼</a>
+            <a href="#" class="social-btn" aria-label="YouTube">▶</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Pages</h4>
+          <div class="footer-links">
+            <a href="index.html">Home Cinematic</a>
+            <a href="home-2.html">Home Editorial</a>
+            <a href="about.html">About Brand</a>
+            <a href="services.html">Services & Plans</a>
+            <a href="blog.html">Journal Articles</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Riders</h4>
+          <div class="footer-links">
+            <a href="dashboard.html">Rider Dashboard</a>
+            <a href="dashboard.html#booking">Book a Ride</a>
+            <a href="dashboard.html#history">Rental Receipts</a>
+            <a href="services.html#coverage">Coverage Hubs</a>
+            <a href="services.html#safety">Safety Rules</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Legal & Info</h4>
+          <div class="footer-links">
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+            <a href="sitemap.html">Sitemap Directory</a>
+            <a href="404.html">404 Error Page</a>
+            <a href="maintenance.html">System Status</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">24/7 Dispatch Hotline</h4>
+          <p style="font-size: 0.9rem; margin-bottom: 0.75rem;">Need roadside assistance, battery swaps, or account help?</p>
+          <div style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 700; color: var(--color-electric-lime); margin-bottom: 1rem;">
+            +1 (800) 327-4743
+          </div>
+          <span class="badge badge-available"><span class="status-dot"></span> All 520 Hubs Online</span>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© <span class="current-year"></span> DashRides Mobility Inc. All rights reserved. Urban Luxury Experience.</div>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="privacy-policy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+          <a href="sitemap.html">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="Back to top">↑</button>
+
+  <script src="js/main.js"></script>
+  <script src="js/scroll-reveal.js"></script>
+</body>
+</html>

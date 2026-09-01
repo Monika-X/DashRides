@@ -1,0 +1,104 @@
+/* ==========================================================================
+   DASHRIDES - LUXURY URBAN MOBILITY DESIGN TOKENS & VARIABLES
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Brand Colors */
+  --color-obsidian: #111827;
+  --color-electric-lime: #B7D84B;
+  --color-electric-lime-glow: rgba(183, 216, 75, 0.4);
+  --color-electric-lime-soft: rgba(183, 216, 75, 0.12);
+  --color-burnt-orange: #D97745;
+  --color-burnt-orange-glow: rgba(217, 119, 69, 0.35);
+  --color-burnt-orange-soft: rgba(217, 119, 69, 0.12);
+  --color-bone: #F5F1E8;
+  --color-graphite: #374151;
+  --color-silver: #C8CDD2;
+  
+  /* Status Colors */
+  --color-success: #10B981;
+  --color-success-bg: rgba(16, 185, 129, 0.12);
+  --color-warning: #F59E0B;
+  --color-warning-bg: rgba(245, 158, 11, 0.12);
+  --color-danger: #EF4444;
+  --color-danger-bg: rgba(239, 68, 68, 0.12);
+  --color-info: #3B82F6;
+  --color-info-bg: rgba(59, 130, 246, 0.12);
+
+  /* Typography */
+  --font-heading: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  /* Theme: Dark (Default Urban Luxury) */
+  --bg-primary: #0B0F17;
+  --bg-secondary: #111827;
+  --bg-tertiary: #1B2434;
+  --bg-card: rgba(23, 31, 46, 0.75);
+  --bg-card-hover: rgba(30, 41, 59, 0.85);
+  --bg-glass: rgba(17, 24, 39, 0.65);
+  --bg-input: rgba(15, 23, 42, 0.8);
+  
+  --text-primary: #F9FAFB;
+  --text-secondary: #C8CDD2;
+  --text-muted: #8E9BAE;
+  --text-inverse: #0B0F17;
+
+  --border-color: rgba(200, 205, 210, 0.12);
+  --border-focus: var(--color-electric-lime);
+  --border-hover: rgba(183, 216, 75, 0.4);
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.55);
+  --shadow-glow: 0 0 25px var(--color-electric-lime-glow);
+  --shadow-orange-glow: 0 0 25px var(--color-burnt-orange-glow);
+
+  /* Transitions & Radii */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 30px;
+  --radius-full: 9999px;
+
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-bounce: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  --container-width: 1280px;
+  --header-height: 80px;
+}
+
+/* Light Mode Overrides */
+[data-theme="light"] {
+  --bg-primary: #F8F9FA;
+  --bg-secondary: #F5F1E8;
+  --bg-tertiary: #E8E5DD;
+  --bg-card: rgba(255, 255, 255, 0.85);
+  --bg-card-hover: #FFFFFF;
+  --bg-glass: rgba(245, 241, 232, 0.8);
+  --bg-input: #FFFFFF;
+
+  --text-primary: #111827;
+  --text-secondary: #374151;
+  --text-muted: #6B7280;
+  --text-inverse: #FFFFFF;
+
+  --border-color: rgba(55, 65, 81, 0.15);
+  --border-focus: #111827;
+  --border-hover: rgba(217, 119, 69, 0.5);
+
+  --shadow-sm: 0 2px 8px rgba(17, 24, 39, 0.06);
+  --shadow-md: 0 8px 24px rgba(17, 24, 39, 0.1);
+  --shadow-lg: 0 16px 40px rgba(17, 24, 39, 0.15);
+  --shadow-glow: 0 0 20px rgba(183, 216, 75, 0.3);
+  --shadow-orange-glow: 0 0 20px rgba(217, 119, 69, 0.25);
+}
+
+/* RTL Layout Helpers */
+[dir="rtl"] {
+  --direction: rtl;
+}

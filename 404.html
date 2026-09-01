@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — Route Not Found | DashRides Urban Mobility</title>
+  <meta name="description" content="The page you are looking for has taken an off-grid detour. Re-route back to our primary charging hubs or explore the DashRides fleet.">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container navbar">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">⚡</div>
+        <span>DASH</span>RIDES
+      </a>
+
+      <nav class="nav-links" aria-label="Main Navigation">
+        <div class="nav-item">
+          <a href="index.html" class="nav-link">Home ▾</a>
+          <div class="dropdown-menu">
+            <a href="index.html" class="dropdown-item">Home 1 (Cinematic)</a>
+            <a href="home-2.html" class="dropdown-item">Home 2 (Editorial)</a>
+          </div>
+        </div>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="blog.html" class="nav-link">Journal</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="dashboard.html" class="nav-link" style="color: var(--color-electric-lime);">Dashboard ⚡</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="theme-toggle" aria-label="Toggle Theme">☀️</button>
+        <button class="rtl-toggle" aria-label="Toggle Layout Direction">RTL</button>
+        <a href="dashboard.html#booking" class="btn btn-primary btn-sm header-cta">Book Now</a>
+        <button class="menu-toggle" aria-label="Open Mobile Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-overlay"></div>
+  <aside class="mobile-nav" aria-label="Mobile Navigation">
+    <div>
+      <div class="logo" style="margin-bottom: 2rem;">
+        <div class="logo-icon">⚡</div>
+        <span>DASH</span>RIDES
+      </div>
+      <div class="mobile-nav-links">
+        <a href="index.html" class="mobile-nav-link">Home 1 (Cinematic)</a>
+        <a href="home-2.html" class="mobile-nav-link">Home 2 (Editorial)</a>
+        <a href="about.html" class="mobile-nav-link">About Us</a>
+        <a href="services.html" class="mobile-nav-link">Services & Fleet</a>
+        <a href="blog.html" class="mobile-nav-link">Blog & News</a>
+        <a href="contact.html" class="mobile-nav-link">Contact</a>
+        <a href="dashboard.html" class="mobile-nav-link" style="color: var(--color-electric-lime);">Rider Dashboard</a>
+      </div>
+    </div>
+    <div>
+      <a href="dashboard.html#booking" class="btn btn-primary" style="width: 100%; margin-bottom: 1rem;">Unlock a Scooter</a>
+      <span style="font-size: 0.85rem; color: var(--text-muted);">© DashRides Inc.</span>
+    </div>
+  </aside>
+
+  <main id="main-content">
+    <!-- SECTION 1: ANIMATED GLITCH 404 HERO -->
+    <section class="error-page-wrapper container">
+      <div class="reveal-scale" style="max-width: 720px; margin: 0 auto;">
+        <div class="glitch-code">404</div>
+        <span class="badge badge-orange" style="margin-bottom: 1rem;">Off-Grid Route Error</span>
+        <h1 style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1rem;">You've Gone Beyond The Geofenced Perimeter</h1>
+        <p style="font-size: 1.15rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 2.5rem;">
+          The route you are navigating doesn't exist on our city grid. Don't worry, your GPS telemetry is safe—let's re-route you back to the main avenue.
+        </p>
+
+        <!-- SECTION 2: INTERACTIVE ROUTE SEARCH BAR -->
+        <div style="max-width: 500px; margin: 0 auto 3rem;">
+          <form onsubmit="event.preventDefault(); window.location.href='services.html';">
+            <div style="display: flex; gap: 0.5rem;">
+              <input type="text" class="form-control" placeholder="Search models, hubs, or articles..." required>
+              <button type="submit" class="btn btn-primary">Search</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: QUICK RE-ROUTE DESTINATIONS -->
+    <section class="container" style="padding-bottom: 4rem;">
+      <div class="section-header text-center reveal-fade-up">
+        <span class="section-tag">Direct Corridors</span>
+        <h2 class="section-title">Popular Re-Route Destinations</h2>
+      </div>
+
+      <div class="sitemap-tree-grid">
+        <div class="card reveal-fade-up delay-100" style="text-align: center;">
+          <div style="font-size: 2.5rem; margin-bottom: 1rem;">🏠</div>
+          <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Home Showcase</h3>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.25rem;">Return to the main cinematic fleet presentation.</p>
+          <a href="index.html" class="btn btn-outline btn-sm" style="width: 100%;">Go Home</a>
+        </div>
+
+        <div class="card reveal-fade-up delay-200" style="text-align: center;">
+          <div style="font-size: 2.5rem; margin-bottom: 1rem;">⚡</div>
+          <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Rider Dashboard</h3>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.25rem;">Manage active bookings, extensions, and receipts.</p>
+          <a href="dashboard.html" class="btn btn-primary btn-sm" style="width: 100%;">Open Portal</a>
+        </div>
+
+        <div class="card reveal-fade-up delay-300" style="text-align: center;">
+          <div style="font-size: 2.5rem; margin-bottom: 1rem;">🛵</div>
+          <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Fleet Catalog</h3>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.25rem;">Browse all dual-motor scooters and touring mopeds.</p>
+          <a href="services.html" class="btn btn-outline btn-sm" style="width: 100%;">View Fleet</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: IN-DEMAND FLEET SHORTCUTS -->
+    <section class="container" style="padding-bottom: 4rem;">
+      <div class="card reveal-fade-up" style="background: var(--bg-secondary); padding: 2.5rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+          <div>
+            <h3 style="font-size: 1.35rem; margin-bottom: 0.25rem;">Top Vehicles Available Right Now</h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">Instant reservation with zero paperwork.</p>
+          </div>
+          <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+            <a href="dashboard.html#booking" class="filter-btn">Dash Phantom Pro ($12/hr)</a>
+            <a href="dashboard.html#booking" class="filter-btn">CyberScoot X ($15/hr)</a>
+            <a href="dashboard.html#booking" class="filter-btn">Moped Classic 50 ($18/hr)</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: VIP RE-ROUTE VOUCHER -->
+    <section class="container" style="padding-bottom: 4rem;">
+      <div class="card reveal-scale" style="background: linear-gradient(135deg, var(--bg-card) 0%, rgba(183, 216, 75, 0.08) 100%); border-color: var(--color-electric-lime); text-align: center; padding: 3rem 2rem;">
+        <span class="badge badge-lime" style="margin-bottom: 1rem;">Lost Route Bonus</span>
+        <h2 style="font-size: 1.85rem; margin-bottom: 0.5rem;">Here's $15 Off Your Next Ride</h2>
+        <p style="color: var(--text-secondary); max-width: 500px; margin: 0 auto 1.5rem; font-size: 0.95rem;">
+          Use promo code <strong style="color: var(--color-electric-lime);">REROUTE15</strong> at checkout to redeem $15 in automatic ride credits.
+        </p>
+        <a href="dashboard.html#booking" class="btn btn-primary btn-sm">Apply Code & Book</a>
+      </div>
+    </section>
+
+    <!-- SECTION 6: FOOTER DISPATCH BAR -->
+    <section class="container" style="padding-bottom: 7rem;">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; border-top: 1px solid var(--border-color); padding-top: 2rem;" class="reveal-fade-up">
+        <span style="color: var(--text-muted); font-size: 0.9rem;">Need live dispatch assistance to navigate back?</span>
+        <a href="contact.html" class="btn btn-outline btn-sm">Call Dispatch Hotline ➔</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <div class="logo-icon">⚡</div>
+            <span>DASH</span>RIDES
+          </a>
+          <p>The definitive luxury electric scooter and moped network. Engineered for speed, safety, and sustainable urban living.</p>
+          <div class="social-links">
+            <a href="#" class="social-btn" aria-label="Twitter">𝕏</a>
+            <a href="#" class="social-btn" aria-label="Instagram">📸</a>
+            <a href="#" class="social-btn" aria-label="LinkedIn">💼</a>
+            <a href="#" class="social-btn" aria-label="YouTube">▶</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Pages</h4>
+          <div class="footer-links">
+            <a href="index.html">Home Cinematic</a>
+            <a href="home-2.html">Home Editorial</a>
+            <a href="about.html">About Brand</a>
+            <a href="services.html">Services & Plans</a>
+            <a href="blog.html">Journal Articles</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Riders</h4>
+          <div class="footer-links">
+            <a href="dashboard.html">Rider Dashboard</a>
+            <a href="dashboard.html#booking">Book a Ride</a>
+            <a href="dashboard.html#history">Rental Receipts</a>
+            <a href="services.html#coverage">Coverage Hubs</a>
+            <a href="services.html#safety">Safety Rules</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Legal & Info</h4>
+          <div class="footer-links">
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+            <a href="sitemap.html">Sitemap Directory</a>
+            <a href="404.html">404 Error Page</a>
+            <a href="maintenance.html">System Status</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">24/7 Dispatch Hotline</h4>
+          <p style="font-size: 0.9rem; margin-bottom: 0.75rem;">Need roadside assistance, battery swaps, or account help?</p>
+          <div style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 700; color: var(--color-electric-lime); margin-bottom: 1rem;">
+            +1 (800) 327-4743
+          </div>
+          <span class="badge badge-available"><span class="status-dot"></span> All 520 Hubs Online</span>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© <span class="current-year"></span> DashRides Mobility Inc. All rights reserved. Urban Luxury Experience.</div>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="privacy-policy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+          <a href="sitemap.html">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="Back to top">↑</button>
+
+  <script src="js/main.js"></script>
+  <script src="js/scroll-reveal.js"></script>
+</body>
+</html>

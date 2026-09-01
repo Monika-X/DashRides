@@ -1,0 +1,189 @@
+/* ==========================================================================
+   DASHRIDES - RESPONSIVE STYLES & MEDIA QUERIES
+   ========================================================================== */
+
+/* Large Laptops & Desktops (max 1200px) */
+@media (max-width: 1200px) {
+  .fleet-grid, .blog-grid, .pricing-plans-grid, .sitemap-tree-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .dash-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-grid {
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+  }
+}
+
+/* Tablets (max 992px) */
+@media (max-width: 992px) {
+  .nav-links, .header-cta {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .features-bar-grid {
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 2rem;
+  }
+
+  .features-bar-section {
+    margin-top: 0;
+  }
+
+  .split-grid, .calculator-card, .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .calculator-summary {
+    border-left: none;
+    border-top: 1px solid var(--border-color);
+  }
+
+  [dir="rtl"] .calculator-summary {
+    border-right: none;
+  }
+
+  .bento-grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+  }
+
+  .bento-item.col-span-2, .bento-item.row-span-2 {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+
+  .steps-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-counter-strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .active-rental-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .dash-sidebar {
+    position: static;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .dash-nav-menu {
+    flex-direction: row;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+  }
+
+  .dash-nav-btn {
+    white-space: nowrap;
+  }
+
+  .dash-content-area {
+    padding: 2rem 1.5rem;
+  }
+
+  .download-docs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+}
+
+/* Mobile Phones (max 640px) */
+@media (max-width: 640px) {
+  :root {
+    --header-height: 70px;
+  }
+
+  .fleet-grid, .blog-grid, .pricing-plans-grid, .features-bar-grid, .stats-counter-strip, .team-grid, .sitemap-tree-grid, .dash-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-slider-section {
+    min-height: 580px;
+  }
+
+  .hero-title {
+    font-size: 2.25rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .slider-controls {
+    bottom: 1.5rem;
+    right: 1.5rem;
+  }
+
+  [dir="rtl"] .slider-controls {
+    left: 1.5rem;
+  }
+
+  .calculator-form, .calculator-summary {
+    padding: 2rem 1.5rem;
+  }
+
+  .countdown-unit {
+    min-width: 75px;
+    padding: 1rem;
+  }
+
+  .countdown-val {
+    font-size: 2rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .floating-speed-card {
+    position: static;
+    margin-top: 1rem;
+  }
+
+  .toast-container {
+    left: 1rem;
+    right: 1rem;
+  }
+
+  .toast {
+    min-width: 100%;
+  }
+}

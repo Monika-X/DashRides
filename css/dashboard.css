@@ -1,0 +1,294 @@
+/* ==========================================================================
+   DASHRIDES - CUSTOMER DASHBOARD STYLES
+   ========================================================================== */
+
+.dashboard-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  min-height: calc(100vh - var(--header-height));
+  margin-top: var(--header-height);
+  background: var(--bg-primary);
+}
+
+/* Dashboard Sidebar */
+.dash-sidebar {
+  background: var(--bg-secondary);
+  border-right: 1px solid var(--border-color);
+  padding: 2rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: sticky;
+  top: var(--header-height);
+  height: calc(100vh - var(--header-height));
+  overflow-y: auto;
+}
+
+[dir="rtl"] .dash-sidebar {
+  border-right: none;
+  border-left: 1px solid var(--border-color);
+}
+
+.user-quick-profile {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.user-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-full);
+  border: 2px solid var(--color-electric-lime);
+  object-fit: cover;
+}
+
+.user-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.user-badge {
+  font-size: 0.75rem;
+  color: var(--color-electric-lime);
+}
+
+.dash-nav-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.dash-nav-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  font-weight: 600;
+  font-size: 0.9rem;
+  width: 100%;
+  text-align: left;
+  transition: all var(--transition-fast);
+}
+
+[dir="rtl"] .dash-nav-btn {
+  text-align: right;
+}
+
+.dash-nav-btn:hover, .dash-nav-btn.active {
+  background: var(--color-electric-lime-soft);
+  color: var(--color-electric-lime);
+}
+
+.dash-nav-btn.active {
+  box-shadow: inset 3px 0 0 var(--color-electric-lime);
+}
+
+[dir="rtl"] .dash-nav-btn.active {
+  box-shadow: inset -3px 0 0 var(--color-electric-lime);
+}
+
+.dash-nav-btn svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+/* Dashboard Main Content Area */
+.dash-content-area {
+  padding: 2.5rem 3rem;
+  overflow-y: auto;
+}
+
+.dash-tab-pane {
+  display: none;
+  animation: fadeInPane 0.3s ease;
+}
+
+.dash-tab-pane.active {
+  display: block;
+}
+
+@keyframes fadeInPane {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.dash-header-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.dash-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.dash-stat-box {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.dash-stat-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  background: var(--bg-tertiary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-electric-lime);
+  font-size: 1.5rem;
+}
+
+.dash-stat-num {
+  font-family: var(--font-heading);
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.1;
+}
+
+.dash-stat-desc {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 0.2rem;
+}
+
+/* Active Rental Banner Card */
+.active-rental-card {
+  background: linear-gradient(135deg, var(--bg-card) 0%, rgba(183, 216, 75, 0.05) 100%);
+  border: 1.5px solid var(--color-electric-lime);
+  border-radius: var(--radius-xl);
+  padding: 2.5rem;
+  margin-bottom: 2.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.active-rental-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.active-scooter-preview img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+}
+
+.rental-deadline-box {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.deadline-countdown {
+  font-family: var(--font-heading);
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--color-burnt-orange);
+  margin: 0.5rem 0;
+}
+
+/* Data Table */
+.data-table-wrapper {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  overflow-x: auto;
+}
+
+.dash-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+[dir="rtl"] .dash-table {
+  text-align: right;
+}
+
+.dash-table th {
+  background: var(--bg-tertiary);
+  padding: 1rem 1.5rem;
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.dash-table td {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.dash-table tr:last-child td {
+  border-bottom: none;
+}
+
+.dash-table tr:hover td {
+  background: var(--color-electric-lime-soft);
+}
+
+/* Download Cards Grid */
+.download-docs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.doc-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.doc-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.doc-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  background: var(--color-burnt-orange-soft);
+  color: var(--color-burnt-orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
