@@ -638,14 +638,17 @@
 .text-gradient-lime {
   background: linear-gradient(135deg, #FFFFFF, var(--color-electric-lime));
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .text-gradient-orange {
   background: linear-gradient(135deg, #FFFFFF, var(--color-burnt-orange));
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
 
 
 /* --------------------------------------------------------------------------

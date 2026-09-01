@@ -135,10 +135,15 @@
   to { transform: translateX(-100%); }
 }
 
-[dir="rtl"] @keyframes marquee {
+@keyframes marquee-rtl {
   from { transform: translateX(0); }
   to { transform: translateX(100%); }
 }
+
+[dir="rtl"] .marquee-content {
+  animation: marquee-rtl 25s linear infinite;
+}
+
 
 
 /* --------------------------------------------------------------------------
