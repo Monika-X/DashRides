@@ -17,7 +17,7 @@
   }
 
   .footer-grid {
-    grid-template-columns: 2fr 1fr 1fr 1fr;
+    grid-template-columns: 2fr 1fr 1fr 1.6fr;
   }
 }
 
@@ -29,6 +29,37 @@
 
   .menu-toggle {
     display: flex;
+  }
+
+  .hero-slider-section {
+    min-height: 560px;
+    height: auto;
+  }
+
+  .hero-container {
+    padding: calc(var(--header-height) + 1.25rem) 1.5rem 5.5rem;
+  }
+
+  .hero-title {
+    font-size: clamp(2.05rem, 5vw, 3.2rem);
+    line-height: 1.02;
+  }
+
+  .hero-desc {
+    font-size: 1.02rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .slider-controls {
+    bottom: 1.75rem;
+    right: 1.25rem;
+    left: auto;
+    transform: none;
+  }
+
+  [dir="rtl"] .slider-controls {
+    right: auto;
+    left: 1.25rem;
   }
 
   .features-bar-grid {
@@ -124,30 +155,118 @@
     grid-template-columns: 1fr;
   }
 
+  /* --- HERO: fully responsive on mobile --- */
   .hero-slider-section {
-    min-height: 580px;
+    height: auto;
+    min-height: 100svh;
+    min-height: 100dvh;
+    min-height: 560px;
+    align-items: flex-end;
+    padding-top: var(--header-height);
+  }
+
+  .hero-slider-wrapper,
+  .hero-slide,
+  .hero-slide-bg,
+  .hero-slide-overlay {
+    position: absolute;
+    inset: 0;
+  }
+
+  .hero-container {
+    padding: 1.5rem 1.15rem 5.25rem;
+    align-items: flex-end;
+    min-height: 0;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .hero-content .badge {
+    align-self: flex-start;
+    font-size: 0.68rem;
+    padding: 0.28rem 0.65rem;
+    margin-bottom: 0.75rem !important;
   }
 
   .hero-title {
-    font-size: 2.25rem;
+    font-size: clamp(1.85rem, 8.2vw, 2.35rem);
+    line-height: 0.98;
+    letter-spacing: -0.032em;
+    margin-bottom: 0.75rem;
+    max-width: 14ch;
+  }
+
+  .hero-desc {
+    font-size: 0.96rem;
+    line-height: 1.58;
+    margin-bottom: 1.35rem;
+    max-width: 32ch;
+    color: rgba(200,205,210,0.92);
   }
 
   .hero-actions {
     flex-direction: column;
     align-items: stretch;
-  }
-
-  .hero-actions .btn {
+    gap: 0.7rem;
     width: 100%;
   }
 
+  .hero-actions .btn,
+  .hero-actions .btn-lg {
+    width: 100%;
+    justify-content: center;
+    padding: 0.95rem 1.25rem;
+    font-size: 0.88rem;
+    letter-spacing: 0.02em;
+  }
+
   .slider-controls {
-    bottom: 1.5rem;
-    right: 1.5rem;
+    bottom: 1rem;
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    max-width: calc(100% - 1.5rem);
+    justify-content: center;
+    gap: 0.65rem;
+    background: rgba(11,15,23,0.52);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.09);
+    padding: 0.38rem 0.55rem;
+    border-radius: 9999px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.35);
   }
 
   [dir="rtl"] .slider-controls {
-    left: 1.5rem;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+  }
+
+  .slider-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 0.85rem;
+  }
+
+  .slider-dots {
+    gap: 0.38rem;
+  }
+
+  .slider-dot {
+    width: 7px;
+    height: 7px;
+  }
+
+  .slider-dot.active {
+    width: 20px;
   }
 
   .calculator-form, .calculator-summary {
@@ -165,12 +284,19 @@
 
   .footer-grid {
     grid-template-columns: 1fr;
+    gap: 2.25rem;
   }
 
   .footer-bottom {
     flex-direction: column;
-    text-align: center;
-    gap: 1rem;
+    text-align: left;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+
+  .footer-legal-links {
+    flex-wrap: wrap;
+    gap: 1rem 1.5rem;
   }
 
   .floating-speed-card {
@@ -185,5 +311,74 @@
 
   .toast {
     min-width: 100%;
+  }
+}
+
+/* Ultra-small phones (max 380px) */
+@media (max-width: 380px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .hero-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 5rem;
+  }
+
+  .hero-title {
+    font-size: clamp(1.65rem, 9vw, 2rem);
+    line-height: 1.05;
+  }
+
+  .hero-desc {
+    font-size: 0.9rem;
+    line-height: 1.55;
+    margin-bottom: 1.15rem;
+  }
+
+  .hero-actions .btn,
+  .hero-actions .btn-lg {
+    padding: 0.88rem 1rem;
+    font-size: 0.84rem;
+  }
+
+  .slider-controls {
+    bottom: 0.85rem;
+    padding: 0.32rem 0.5rem;
+    gap: 0.5rem;
+  }
+
+  .slider-btn {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+/* Landscape small height fallback */
+@media (max-height: 520px) and (max-width: 992px) {
+  .hero-slider-section {
+    min-height: 520px;
+    height: auto;
+  }
+
+  .hero-container {
+    padding-top: calc(var(--header-height) + 0.75rem);
+    padding-bottom: 4.5rem;
+  }
+
+  .hero-title {
+    font-size: clamp(1.6rem, 5.5vw, 2.1rem);
+    margin-bottom: 0.6rem;
+  }
+
+  .hero-desc {
+    font-size: 0.88rem;
+    margin-bottom: 1rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 }

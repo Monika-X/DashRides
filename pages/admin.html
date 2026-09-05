@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard — DashRides Fleet & Operations Control</title>
+  <meta name="description" content="DashRides Admin Control Center — manage fleet inventory, real-time availability, bookings, active rentals, return deadlines, pricing tiers, coverage zones, deposits and receipts.">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/pages.css">
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <link rel="stylesheet" href="../css/admin.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+  <!-- Header -->
+    <header class="header" id="header">
+    <div class="container navbar">
+      <a href="../index.html" class="logo">
+        <div class="logo-icon"><svg viewBox="0 0 32 32" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M17.8 2.8L8.2 14.6H13.1L10.2 26.2L22.6 13.6H17.4L20.1 2.8Z" fill="white" stroke="white" stroke-width="0.45" stroke-linejoin="round"/><g stroke="white" stroke-linecap="round" opacity="0.92"><path d="M4.6 10.2H8.1" stroke-width="1.55"/><path d="M3 16H7.8" stroke-width="1.65"/><path d="M4.9 21.8H8.4" stroke-width="1.5" opacity="0.78"/></g></svg></div>
+        <div class="logo-text">
+          <span class="logo-brand"><span>DASH</span>RIDES</span>
+          <span class="logo-tagline">ELECTRIC MOBILITY</span>
+        </div>
+      </a>
+      <div class="header-actions">
+        <button class="theme-toggle" aria-label="Toggle Theme"><i class="fa-solid fa-sun"></i></button>
+        <button class="rtl-toggle" aria-label="Toggle Layout Direction">RTL</button>
+      </div>
+    </div>
+  </header>
+
+  
+
+  <main id="main-content">
+    <div class="admin-layout">
+      <!-- SIDEBAR -->
+      <aside class="admin-sidebar" aria-label="Admin Navigation">
+        <div>
+          <div class="admin-brand">
+            <div class="admin-brand-icon"><svg viewBox="0 0 32 32" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M17.8 2.8L8.2 14.6H13.1L10.2 26.2L22.6 13.6H17.4L20.1 2.8Z" fill="white" stroke="white" stroke-width="0.45" stroke-linejoin="round"/><g stroke="white" stroke-linecap="round" opacity="0.92"><path d="M4.6 10.2H8.1" stroke-width="1.55"/><path d="M3 16H7.8" stroke-width="1.65"/><path d="M4.9 21.8H8.4" stroke-width="1.5" opacity="0.78"/></g></svg></div>
+            <div class="admin-brand-text">
+              <div class="admin-brand-title"><span>DASH</span> ADMIN</div>
+              <div class="admin-brand-sub">Operations Control v2.4</div>
+            </div>
+          </div>
+
+          <div style="background: var(--bg-tertiary); border:1px solid var(--border-color); border-radius: var(--radius-md); padding:0.9rem 1rem; display:flex; align-items:center; gap:0.85rem; margin-bottom:1.2rem;">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80" alt="Admin" style="width:42px; height:42px; border-radius:50%; object-fit:cover; border:2px solid var(--color-burnt-orange);">
+            <div>
+              <div style="font-weight:800; font-size:0.92rem;">Alex Mercer</div>
+              <div style="font-size:0.72rem; color: var(--color-burnt-orange); font-weight:700;">Super Admin • Fleet Ops</div>
+            </div>
+            <span class="badge badge-available" style="margin-left:auto; font-size:0.65rem;"><span class="status-dot"></span> Online</span>
+          </div>
+
+          <nav class="admin-nav">
+            <div class="admin-nav-label">Operations</div>
+            <button class="admin-nav-btn active" data-tab="overview"><i class="fa-solid fa-chart-pie"></i> Overview <span class="admin-badge-count" style="background: var(--color-electric-lime); color:#111;">Live</span></button>
+            <button class="admin-nav-btn" data-tab="fleet"><i class="fa-solid fa-motorcycle"></i> Fleet Inventory <span class="admin-badge-count" id="sb-fleet-count">6</span></button>
+            <button class="admin-nav-btn" data-tab="availability"><i class="fa-solid fa-location-dot"></i> Live Availability <span class="admin-badge-count" id="sb-available">31</span></button>
+            <button class="admin-nav-btn" data-tab="bookings"><i class="fa-solid fa-calendar-check"></i> Bookings Manager <span class="admin-badge-count" id="sb-bookings">24</span></button>
+            <button class="admin-nav-btn" data-tab="active"><i class="fa-solid fa-bolt"></i> Active Rentals <span class="admin-badge-count" style="background: var(--color-warning);">7</span></button>
+            <button class="admin-nav-btn" data-tab="returns"><i class="fa-solid fa-stopwatch"></i> Returns & Deadlines</button>
+
+            <div class="admin-nav-label">Revenue & Policy</div>
+            <button class="admin-nav-btn" data-tab="pricing"><i class="fa-solid fa-tags"></i> Pricing Tiers</button>
+            <button class="admin-nav-btn" data-tab="coverage"><i class="fa-solid fa-map"></i> Coverage Zones</button>
+            <button class="admin-nav-btn" data-tab="deposits"><i class="fa-solid fa-shield-halved"></i> Deposits & Rules</button>
+            <button class="admin-nav-btn" data-tab="receipts"><i class="fa-solid fa-file-lines"></i> Receipts & Agreements</button>
+
+            <div class="admin-nav-label">System</div>
+            <button class="admin-nav-btn" data-tab="users"><i class="fa-solid fa-users"></i> Customers <span class="admin-badge-count" id="sb-users">1,248</span></button>
+            <button class="admin-nav-btn" data-tab="analytics"><i class="fa-solid fa-chart-line"></i> Analytics</button>
+            <button class="admin-nav-btn" data-tab="settings"><i class="fa-solid fa-gear"></i> Settings</button>
+          </nav>
+        </div>
+
+        <div style="margin-top:1.5rem; padding-top:1.2rem; border-top:1px solid var(--border-color);">
+          <div style="background: linear-gradient(135deg, rgba(217,119,69,0.16), rgba(183,216,75,0.10)); border:1px solid rgba(217,119,69,0.25); border-radius: var(--radius-md); padding:1rem;">
+            <div style="font-size:0.78rem; color:var(--text-muted); font-weight:700; text-transform:uppercase; letter-spacing:0.08em;">Today's Revenue</div>
+            <div style="font-family:var(--font-heading); font-size:1.55rem; font-weight:800; color:var(--color-burnt-orange); margin-top:0.3rem;" id="sidebar-revenue">$8,420</div>
+            <div style="font-size:0.75rem; color:var(--color-success); margin-top:0.25rem;"><i class="fa-solid fa-arrow-trend-up"></i> +12.4% vs yesterday</div>
+          </div>
+          <button class="btn btn-secondary btn-sm" style="width:100%; margin-top:0.85rem;" onclick="showToast('Admin session locked. Redirecting to login...','info')"><i class="fa-solid fa-right-from-bracket"></i> Lock Session</button>
+        </div>
+      </aside>
+
+      <!-- CONTENT -->
+      <div class="admin-content">
+        <!-- OVERVIEW -->
+        <section class="admin-tab-pane active" id="overview">
+          <div class="dash-header-bar">
+            <div>
+              <h1 style="font-size:2rem;">Operations Overview</h1>
+              <p style="color:var(--text-secondary); font-size:0.92rem;">Real-time fleet health, bookings velocity and revenue pulse — 40+ urban hubs.</p>
+            </div>
+            <div style="display:flex; gap:0.6rem; flex-wrap:wrap;">
+              <button class="btn btn-outline btn-sm" onclick="document.querySelector('[data-tab=fleet]').click()"><i class="fa-solid fa-motorcycle"></i> Manage Fleet</button>
+              <button class="btn btn-primary btn-sm" style="background: var(--color-burnt-orange); border-color: var(--color-burnt-orange);" onclick="document.querySelector('[data-tab=bookings]').click()"><i class="fa-solid fa-plus"></i> New Booking</button>
+            </div>
+          </div>
+
+          <div class="admin-kpi-grid">
+            <div class="admin-kpi-card">
+              <div class="admin-kpi-top">
+                <div class="admin-kpi-icon" style="background: var(--color-electric-lime-soft); color: var(--color-electric-lime);"><i class="fa-solid fa-motorcycle"></i></div>
+                <span class="admin-kpi-trend" style="background: var(--color-success-bg); color: var(--color-success);"><i class="fa-solid fa-arrow-trend-up"></i> +2</span>
+              </div>
+              <div class="admin-kpi-value" id="kpi-total-fleet">48</div>
+              <div class="admin-kpi-label">Total Fleet Units</div>
+              <div class="admin-kpi-sub">6 models • 4 hubs active</div>
+              <div class="mini-bars" style="margin-top:0.9rem;">
+                <div class="mini-bar lime" style="height: 85%;"></div>
+                <div class="mini-bar lime" style="height: 65%;"></div>
+                <div class="mini-bar orange" style="height: 45%;"></div>
+                <div class="mini-bar muted" style="height: 30%;"></div>
+                <div class="mini-bar lime" style="height: 92%;"></div>
+                <div class="mini-bar lime" style="height: 78%;"></div>
+              </div>
+            </div>
+
+            <div class="admin-kpi-card">
+              <div class="admin-kpi-top">
+                <div class="admin-kpi-icon" style="background: rgba(16,185,129,0.12); color: var(--color-success);"><i class="fa-solid fa-circle-check"></i></div>
+                <span class="admin-kpi-trend" style="background: var(--color-success-bg); color: var(--color-success);">● Available</span>
+              </div>
+              <div class="admin-kpi-value" id="kpi-available">31</div>
+              <div class="admin-kpi-label">Ready to Rent</div>
+              <div class="admin-kpi-sub">64.5% availability • 17 in use</div>
+              <div class="availability-grid" style="margin-top:0.9rem; grid-template-columns: repeat(8,1fr);">
+                <div class="avail-dot available">A</div><div class="avail-dot available">A</div><div class="avail-dot rented">R</div><div class="avail-dot available">A</div><div class="avail-dot maintenance">M</div><div class="avail-dot available">A</div><div class="avail-dot rented">R</div><div class="avail-dot available">A</div>
+              </div>
+            </div>
+
+            <div class="admin-kpi-card">
+              <div class="admin-kpi-top">
+                <div class="admin-kpi-icon" style="background: rgba(217,119,69,0.12); color: var(--color-burnt-orange);"><i class="fa-solid fa-bolt"></i></div>
+                <span class="admin-kpi-trend" style="background: rgba(245,158,11,0.14); color: var(--color-warning);"><i class="fa-solid fa-fire"></i> 7 live</span>
+              </div>
+              <div class="admin-kpi-value" id="kpi-active">7</div>
+              <div class="admin-kpi-label">Active Rentals</div>
+              <div class="admin-kpi-sub">2 due under 1h • 1 overdue</div>
+              <div style="margin-top:0.9rem; display:flex; gap:0.5rem;">
+                <span class="badge badge-available"><span class="status-dot"></span> 5 on time</span>
+                <span class="badge badge-orange"><span class="status-dot"></span> 2 urgent</span>
+              </div>
+            </div>
+
+            <div class="admin-kpi-card" style="border-color: rgba(217,119,69,0.35);">
+              <div class="admin-kpi-top">
+                <div class="admin-kpi-icon" style="background: rgba(217,119,69,0.14); color: var(--color-burnt-orange);"><i class="fa-solid fa-sack-dollar"></i></div>
+                <span class="admin-kpi-trend" style="background: var(--color-success-bg); color: var(--color-success);">+12.4%</span>
+              </div>
+              <div class="admin-kpi-value" id="kpi-revenue">$8,420</div>
+              <div class="admin-kpi-label">Revenue (Today)</div>
+              <div class="admin-kpi-sub">Deposits held: $4,850 • Refunded: $6,200</div>
+            </div>
+          </div>
+
+          <div style="display:grid; grid-template-columns: 1.6fr 1fr; gap:1.5rem; margin-bottom:1.5rem;">
+            <div class="card">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.2rem;">
+                <h3 style="font-size:1.2rem;">Bookings Velocity (7 days)</h3>
+                <span class="badge badge-lime"><i class="fa-solid fa-arrow-trend-up"></i> +18% WoW</span>
+              </div>
+              <div style="display:flex; align-items:end; gap:0.6rem; height:140px; padding:1rem; background: var(--bg-tertiary); border-radius: var(--radius-md);">
+                <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:0.4rem;"><div style="width:100%; background: var(--color-electric-lime); border-radius:6px 6px 0 0; height: 55%;"></div><span style="font-size:0.68rem; color:var(--text-muted);">Mon</span></div>
+                <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:0.4rem;"><div style="width:100%; background: var(--color-electric-lime); border-radius:6px 6px 0 0; height: 82%;"></div><span style="font-size:0.68rem; color:var(--text-muted);">Tue</span></div>
+                <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:0.4rem;"><div style="width:100%; background: var(--color-burnt-orange); border-radius:6px 6px 0 0; height: 92%;"></div><span style="font-size:0.68rem; color:var(--text-muted);">Wed</span></div>
+                <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:0.4rem;"><div style="width:100%; background: var(--color-electric-lime); border-radius:6px 6px 0 0; height: 68%;"></div><span style="font-size:0.68rem; color:var(--text-muted);">Thu</span></div>
+                <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:0.4rem;"><div style="width:100%; background: var(--color-electric-lime); border-radius:6px 6px 0 0; height: 78%;"></div><span style="font-size:0.68rem; color:var(--text-muted);">Fri</span></div>
+                <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:0.4rem;"><div style="width:100%; background: var(--color-burnt-orange); border-radius:6px 6px 0 0; height: 88%;"></div><span style="font-size:0.68rem; color:var(--text-muted);">Sat</span></div>
+                <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:0.4rem;"><div style="width:100%; background: var(--color-success); border-radius:6px 6px 0 0; height: 95%;"></div><span style="font-size:0.68rem; color:var(--text-muted);">Today</span></div>
+              </div>
+              <div style="display:grid; grid-template-columns: repeat(3,1fr); gap:1rem; margin-top:1rem; text-align:center;">
+                <div><div style="font-weight:800; color:var(--text-primary);">24</div><div style="font-size:0.7rem; color:var(--text-muted);">Bookings Today</div></div>
+                <div><div style="font-weight:800; color:var(--text-primary);">71%</div><div style="font-size:0.7rem; color:var(--text-muted);">Utilization</div></div>
+                <div><div style="font-weight:800; color:var(--color-burnt-orange);">$351</div><div style="font-size:0.7rem; color:var(--text-muted);">Avg Order</div></div>
+              </div>
+            </div>
+
+            <div class="card">
+              <h3 style="font-size:1.2rem; margin-bottom:1rem;">Urgent Attention</h3>
+              <div style="display:flex; flex-direction:column; gap:0.85rem;">
+                <div style="display:flex; gap:0.9rem; padding:0.9rem; background: var(--color-danger-bg); border:1px solid rgba(239,68,68,0.25); border-radius: var(--radius-md);">
+                  <div style="width:38px; height:38px; border-radius:50%; background: var(--color-danger); color:#fff; display:flex; align-items:center; justify-content:center; flex-shrink:0;"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                  <div style="flex:1;">
+                    <div style="font-weight:700; font-size:0.9rem;">1 Overdue Return — #DR-9018</div>
+                    <div style="font-size:0.78rem; color:var(--text-muted);">Marcus T. • Phantom Pro • Due 47 min ago</div>
+                    <div style="margin-top:0.5rem; display:flex; gap:0.4rem;"><button class="btn btn-secondary btn-sm" style="padding:0.35rem 0.7rem; font-size:0.72rem;" onclick="showToast('Reminder SMS sent to Marcus','warning')"><i class="fa-solid fa-message"></i> Nudge</button><button class="btn btn-outline btn-sm" style="padding:0.35rem 0.7rem; font-size:0.72rem;" onclick="document.querySelector('[data-tab=returns]').click()">View</button></div>
+                  </div>
+                </div>
+                <div style="display:flex; gap:0.9rem; padding:0.9rem; background: var(--color-warning-bg); border:1px solid rgba(245,158,11,0.25); border-radius: var(--radius-md);">
+                  <div style="width:38px; height:38px; border-radius:50%; background: var(--color-warning); color:#fff; display:flex; align-items:center; justify-content:center; flex-shrink:0;"><i class="fa-solid fa-battery-quarter"></i></div>
+                  <div style="flex:1;">
+                    <div style="font-weight:700; font-size:0.9rem;">Low Battery Fleet — 3 Units</div>
+                    <div style="font-size:0.78rem; color:var(--text-muted);">Swap recommended • Hub: Grand Ave</div>
+                    <div style="margin-top:0.5rem;"><button class="btn btn-outline btn-sm" style="padding:0.35rem 0.7rem; font-size:0.72rem;" onclick="document.querySelector('[data-tab=availability]').click()">Check Units</button></div>
+                  </div>
+                </div>
+                <div style="display:flex; gap:0.9rem; padding:0.9rem; background: var(--color-success-bg); border:1px solid rgba(16,185,129,0.25); border-radius: var(--radius-md);">
+                  <div style="width:38px; height:38px; border-radius:50%; background: var(--color-success); color:#fff; display:flex; align-items:center; justify-content:center; flex-shrink:0;"><i class="fa-solid fa-shield-halved"></i></div>
+                  <div style="flex:1;">
+                    <div style="font-weight:700; font-size:0.9rem;">Deposits Ready to Release — 4</div>
+                    <div style="font-size:0.78rem; color:var(--text-muted);">Auto-refund batch in 22 min</div>
+                    <div style="margin-top:0.5rem;"><button class="btn btn-outline btn-sm" style="padding:0.35rem 0.7rem; font-size:0.72rem;" onclick="document.querySelector('[data-tab=deposits]').click()">Review</button></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem; flex-wrap:wrap; gap:0.8rem;">
+              <h3 style="font-size:1.2rem;">Recent Bookings Feed</h3>
+              <div style="display:flex; gap:0.5rem;"><button class="btn btn-outline btn-sm" onclick="showToast('Exporting bookings CSV...','info')"><i class="fa-solid fa-download"></i> Export CSV</button><button class="btn btn-primary btn-sm" style="background: var(--color-burnt-orange);" onclick="document.querySelector('[data-tab=bookings]').click()">View All</button></div>
+            </div>
+            <div class="data-table-wrapper">
+              <table class="dash-table" id="overview-bookings-table">
+                <thead><tr><th>Booking</th><th>Customer</th><th>Vehicle</th><th>Pickup</th><th>Duration</th><th>Total</th><th>Status</th></tr></thead>
+                <tbody id="overview-bookings-body"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- FLEET INVENTORY -->
+        <section class="admin-tab-pane" id="fleet">
+          <div class="dash-header-bar">
+            <div>
+              <h1 style="font-size:1.9rem;">Fleet Inventory</h1>
+              <p style="color:var(--text-secondary); font-size:0.9rem;">Browse scooter models with photos, specs, hourly & daily rates — edit globally.</p>
+            </div>
+            <button class="btn btn-primary btn-sm" style="background: var(--color-burnt-orange);" onclick="toggleFleetForm()"><i class="fa-solid fa-plus"></i> Add New Model</button>
+          </div>
+
+          <!-- Add/Edit Form -->
+          <div class="admin-inline-form" id="fleet-form">
+            <h3 style="font-size:1.15rem; margin-bottom:1rem;"><i class="fa-solid fa-pen-to-square" style="color:var(--color-burnt-orange);"></i> <span id="fleet-form-title">Add New Scooter Model</span></h3>
+            <form id="fleet-add-form">
+              <div class="admin-form-grid">
+                <div class="form-group"><label class="form-label">Model Name *</label><input type="text" class="form-control" id="fleet-name" placeholder="e.g. Stealth Apex 100" required></div>
+                <div class="form-group"><label class="form-label">Category</label><select class="form-control" id="fleet-category"><option value="scooter">Electric Scooter</option><option value="moped">Premium Moped</option><option value="long-range">Long Range</option></select></div>
+                <div class="form-group"><label class="form-label">Hourly Rate ($)</label><input type="number" class="form-control" id="fleet-hourly" placeholder="12" min="1" required></div>
+                <div class="form-group"><label class="form-label">Daily Rate ($)</label><input type="number" class="form-control" id="fleet-daily" placeholder="45" min="1" required></div>
+                <div class="form-group"><label class="form-label">Top Speed</label><input type="text" class="form-control" id="fleet-speed" placeholder="65 km/h"></div>
+                <div class="form-group"><label class="form-label">Range</label><input type="text" class="form-control" id="fleet-range" placeholder="80 km"></div>
+                <div class="form-group" style="grid-column: span 2;"><label class="form-label">Image URL</label><input type="url" class="form-control" id="fleet-img" placeholder="https://images.unsplash.com/..."></div>
+              </div>
+              <div style="display:flex; gap:0.6rem; margin-top:1rem;">
+                <button type="submit" class="btn btn-primary btn-sm" style="background: var(--color-burnt-orange);"><i class="fa-solid fa-floppy-disk"></i> Save Model</button>
+                <button type="button" class="btn btn-outline btn-sm" onclick="toggleFleetForm(false)">Cancel</button>
+              </div>
+              <input type="hidden" id="fleet-edit-id">
+            </form>
+          </div>
+
+          <div class="admin-toolbar">
+            <div class="admin-search"><i class="fa-solid fa-magnifying-glass"></i><input type="text" id="fleet-search" placeholder="Search models, specs, categories..." oninput="filterFleet()"></div>
+            <div class="admin-filters">
+              <select class="admin-filter-select" id="fleet-filter" onchange="filterFleet()"><option value="all">All Models</option><option value="scooter">Scooters</option><option value="moped">Mopeds</option><option value="long-range">Long Range 50km+</option></select>
+              <select class="admin-filter-select" id="fleet-sort" onchange="filterFleet()"><option value="default">Sort: Default</option><option value="price-low">Price Low → High</option><option value="price-high">Price High → Low</option><option value="availability">Availability</option></select>
+            </div>
+          </div>
+
+          <div class="admin-fleet-grid" id="admin-fleet-grid"></div>
+        </section>
+
+        <!-- LIVE AVAILABILITY -->
+        <section class="admin-tab-pane" id="availability">
+          <div class="dash-header-bar">
+            <div>
+              <h1 style="font-size:1.9rem;">Live Availability Monitor</h1>
+              <p style="color:var(--text-secondary); font-size:0.9rem;">Real-time per-unit status — 31 available across 4 hubs. Click any dot to cycle status.</p>
+            </div>
+            <button class="btn btn-outline btn-sm" onclick="refreshAvailability()"><i class="fa-solid fa-arrows-rotate"></i> Refresh Telemetry</button>
+          </div>
+
+          <div style="display:grid; grid-template-columns: repeat(4,1fr); gap:1rem; margin-bottom:1.5rem;">
+            <div class="card" style="text-align:center; padding:1.25rem;"><div style="font-size:1.6rem; font-weight:800; color:var(--color-success);">31</div><div style="font-size:0.75rem; color:var(--text-muted);">Available</div></div>
+            <div class="card" style="text-align:center; padding:1.25rem;"><div style="font-size:1.6rem; font-weight:800; color:var(--color-warning);">7</div><div style="font-size:0.75rem; color:var(--text-muted);">Rented</div></div>
+            <div class="card" style="text-align:center; padding:1.25rem;"><div style="font-size:1.6rem; font-weight:800; color:var(--color-danger);">2</div><div style="font-size:0.75rem; color:var(--text-muted);">Maintenance</div></div>
+            <div class="card" style="text-align:center; padding:1.25rem;"><div style="font-size:1.6rem; font-weight:800; color:var(--color-info);">3</div><div style="font-size:0.75rem; color:var(--text-muted);">Reserved</div></div>
+          </div>
+
+          <div style="display:grid; grid-template-columns: 1.5fr 1fr; gap:1.5rem;">
+            <div class="card">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
+                <h3 style="font-size:1.1rem;">Per-Model Unit Matrix</h3>
+                <span style="font-size:0.75rem; color:var(--text-muted);"><i class="fa-solid fa-circle" style="color:var(--color-success); font-size:0.5em;"></i> Click to toggle → Rented → Maintenance → Reserved</span>
+              </div>
+              <div id="availability-matrix" style="display:flex; flex-direction:column; gap:1.2rem;"></div>
+            </div>
+            <div class="card">
+              <h3 style="font-size:1.1rem; margin-bottom:1rem;">Hub Distribution</h3>
+              <div style="display:flex; flex-direction:column; gap:0.9rem;" id="hub-list"></div>
+              <div style="margin-top:1.2rem; padding-top:1rem; border-top:1px dashed var(--border-color);">
+                <div style="font-size:0.85rem; font-weight:700; margin-bottom:0.6rem;">Battery Health</div>
+                <div style="display:flex; flex-direction:column; gap:0.5rem; font-size:0.8rem;">
+                  <div style="display:flex; justify-content:space-between;"><span>98-100% (Excellent)</span><span style="color:var(--color-success);">18 units</span></div>
+                  <div style="display:flex; justify-content:space-between;"><span>70-97% (Good)</span><span style="color:var(--color-warning);">21 units</span></div>
+                  <div style="display:flex; justify-content:space-between;"><span>&lt;70% (Needs Swap)</span><span style="color:var(--color-danger);">3 units</span></div>
+                </div>
+                <button class="btn btn-outline btn-sm" style="width:100%; margin-top:1rem;" onclick="showToast('Battery swap dispatch queued for 3 units','info')"><i class="fa-solid fa-battery-quarter"></i> Queue Swap Run</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- BOOKINGS MANAGER -->
+        <section class="admin-tab-pane" id="bookings">
+          <div class="dash-header-bar">
+            <div>
+              <h1 style="font-size:1.9rem;">Bookings Manager</h1>
+              <p style="color:var(--text-secondary); font-size:0.9rem;">Book a rental by selecting pickup date, duration & preferred model — admin override.</p>
+            </div>
+            <button class="btn btn-primary btn-sm" style="background: var(--color-burnt-orange);" onclick="toggleBookingForm()"><i class="fa-solid fa-plus"></i> Create Booking</button>
+          </div>
+
+          <div class="admin-inline-form" id="booking-form-wrap">
+            <h3 style="font-size:1.1rem; margin-bottom:1rem;"><i class="fa-solid fa-calendar-plus" style="color:var(--color-burnt-orange);"></i> New Admin Booking</h3>
+            <form id="admin-booking-form">
+              <div class="admin-form-grid">
+                <div class="form-group"><label class="form-label">Customer Name *</label><input type="text" class="form-control" id="bk-customer" placeholder="Alex Morgan" required></div>
+                <div class="form-group"><label class="form-label">Customer Email</label><input type="email" class="form-control" id="bk-email" placeholder="alex@domain.com"></div>
+                <div class="form-group"><label class="form-label">Scooter / Moped Model *</label><select class="form-control" id="bk-model" required></select></div>
+                <div class="form-group"><label class="form-label">Pickup Hub *</label><select class="form-control" id="bk-hub" required><option>Downtown Flagship Lounge (742 Grand Ave)</option><option>Coastal Esplanade Pier 14</option><option>University Science Park Dock</option><option>Arts District Warehouse Row</option></select></div>
+                <div class="form-group"><label class="form-label">Pickup Date & Time *</label><input type="datetime-local" class="form-control" id="bk-pickup" required></div>
+                <div class="form-group"><label class="form-label">Duration *</label><select class="form-control" id="bk-duration" required><option value="2">2 Hours ($24)</option><option value="4">4 Hours ($48)</option><option value="24">24 Hours Day Pass ($45)</option><option value="72">3 Days Explorer ($120)</option><option value="168">Weekly Pass ($240)</option></select></div>
+              </div>
+              <div style="background: var(--bg-tertiary); padding:1rem; border-radius: var(--radius-md); margin-top:1rem; display:flex; justify-content:space-between; align-items:center;">
+                <span style="font-size:0.85rem; color:var(--text-muted);">Estimated Fare: <strong id="bk-estimate" style="color:var(--color-electric-lime);">$24.00</strong> + $100 deposit</span>
+                <span style="font-size:0.75rem; color:var(--text-muted);">ID auto-generated • Confirmation email sent</span>
+              </div>
+              <div style="display:flex; gap:0.6rem; margin-top:1rem;"><button type="submit" class="btn btn-primary btn-sm" style="background: var(--color-burnt-orange);"><i class="fa-solid fa-check"></i> Confirm Booking</button><button type="button" class="btn btn-outline btn-sm" onclick="toggleBookingForm(false)">Cancel</button></div>
+            </form>
+          </div>
+
+          <div class="admin-toolbar">
+            <div class="admin-search"><i class="fa-solid fa-magnifying-glass"></i><input type="text" id="bookings-search" placeholder="Search booking ID, customer, vehicle..." oninput="filterBookings()"></div>
+            <div class="admin-filters">
+              <select class="admin-filter-select" id="bookings-status" onchange="filterBookings()"><option value="all">All Statuses</option><option value="In Progress">In Progress</option><option value="Confirmed">Confirmed</option><option value="Completed">Completed</option><option value="Overdue">Overdue</option></select>
+              <button class="btn btn-outline btn-sm" onclick="exportBookings()"><i class="fa-solid fa-download"></i> Export</button>
+            </div>
+          </div>
+
+          <div class="data-table-wrapper">
+            <table class="dash-table">
+              <thead><tr><th>Booking ID</th><th>Customer</th><th>Vehicle</th><th>Pickup Date</th><th>Duration</th><th>Fare</th><th>Return Deadline</th><th>Status</th><th>Actions</th></tr></thead>
+              <tbody id="bookings-tbody"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- ACTIVE RENTALS -->
+        <section class="admin-tab-pane" id="active">
+          <div class="dash-header-bar">
+            <div>
+              <h1 style="font-size:1.9rem;">Active Rentals — Live Telemetry</h1>
+              <p style="color:var(--text-secondary); font-size:0.9rem;">View active rental details with real-time GPS, battery & remote controls.</p>
+            </div>
+            <span class="badge badge-available" style="font-size:0.8rem;"><span class="status-dot"></span> 7 Active • Auto-refresh 5s</span>
+          </div>
+
+          <div style="display:grid; grid-template-columns: repeat(2,1fr); gap:1.25rem;" id="active-rentals-grid"></div>
+
+          <div class="data-table-wrapper" style="margin-top:1.5rem;">
+            <table class="dash-table">
+              <thead><tr><th>Booking</th><th>Customer</th><th>Vehicle Unit</th><th>Battery</th><th>GPS Location</th><th>Time Left</th><th>Extend</th><th>Control</th></tr></thead>
+              <tbody id="active-tbody"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- RETURNS & DEADLINES -->
+        <section class="admin-tab-pane" id="returns">
+          <div class="dash-header-bar">
+            <div>
+              <h1 style="font-size:1.9rem;">Return Deadlines & Extensions</h1>
+              <p style="color:var(--text-secondary); font-size:0.9rem;">View return deadline for every active rental — extend with one-click.</p>
+            </div>
+            <div style="display:flex; gap:0.6rem;"><button class="btn btn-outline btn-sm" onclick="showToast('Bulk 2h extension applied to 2 urgent rentals','success')"><i class="fa-solid fa-clock"></i> Bulk +2h Urgent</button><button class="btn btn-primary btn-sm" style="background: var(--color-burnt-orange);" onclick="showToast('Reminder SMS sent to all 7 active renters','info')"><i class="fa-solid fa-message"></i> Nudge All</button></div>
+          </div>
+
+          <div style="display:grid; grid-template-columns: repeat(3,1fr); gap:1.25rem;" id="returns-grid"></div>
+
+          <div class="card" style="margin-top:1.5rem;">
+            <h3 style="font-size:1.1rem; margin-bottom:1rem;">Extension Log</h3>
+            <div style="font-size:0.85rem; color:var(--text-muted); display:flex; flex-direction:column; gap:0.6rem;" id="extension-log">
+              <div><i class="fa-solid fa-check" style="color:var(--color-success);"></i> #DR-9021 — Elena Vance extended +2h at 14:32 — $24 added</div>
+              <div><i class="fa-solid fa-check" style="color:var(--color-success);"></i> #DR-8933 — Priya Nair extended +1h at 13:10 — $12 added</div>
+              <div style="color:var(--text-muted); font-style:italic;">No further extensions in last 24h.</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- PRICING TIERS -->
+        <section class="admin-tab-pane" id="pricing">
+          <div class="dash-header-bar">
+            <div>
+              <h1 style="font-size:1.9rem;">Pricing Tiers & Duration Plans</h1>
+              <p style="color:var(--text-secondary); font-size:0.9rem;">Edit hourly, daily, weekly rates that propagate to Home & Fleet instantly.</p>
+            </div>
+            <button class="btn btn-primary btn-sm" style="background: var(--color-burnt-orange);" onclick="savePricing()"><i class="fa-solid fa-floppy-disk"></i> Save All Pricing</button>
+          </div>
+
+          <div style="display:grid; grid-template-columns: repeat(3,1fr); gap:1.5rem;" id="pricing-cards"></div>
+
+          <div class="data-table-wrapper" style="margin-top:1.5rem;">
+            <table class="dash-table" id="pricing-table">
+              <thead><tr><th>Model</th><th>Hourly</th><th>Daily</th><th>Weekly</th><th>Deposit Hold</th><th>Protection Add-on</th><th>Actions</th></tr></thead>
+              <tbody id="pricing-tbody"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- COVERAGE -->
+        <section class="admin-tab-pane" id="coverage">
+          <div class="dash-header-bar">
+            <div>
+              <h1 style="font-size:1.9rem;">Coverage Area & Hubs</h1>
+              <p style="color:var(--text-secondary); font-size:0.9rem;">Manage 12-city grid, drop zones & PowerSwap kiosks — 520+ hubs.</p>
+            </div>
+            <button class="btn btn-primary btn-sm" style="background: var(--color-burnt-orange);" onclick="toggleHubForm()"><i class="fa-solid fa-plus"></i> Add Hub</button>
+          </div>
+
+          <div class="admin-inline-form" id="hub-form">
+            <div class="admin-form-grid">
+              <div class="form-group"><label class="form-label">Hub Name</label><input type="text" class="form-control" id="hub-name" placeholder="Downtown Flagship Lounge"></div>
+              <div class="form-group"><label class="form-label">Address / Zone</label><input type="text" class="form-control" id="hub-address" placeholder="742 Grand Ave, Suite 100"></div>
+              <div class="form-group"><label class="form-label">Scooters</label><input type="number" class="form-control" id="hub-scooters" placeholder="40"></div>
+              <div class="form-group"><label class="form-label">Mopeds</label><input type="number" class="form-control" id="hub-mopeds" placeholder="15"></div>
+            </div>
+            <div style="display:flex; gap:0.6rem; margin-top:1rem;"><button class="btn btn-primary btn-sm" style="background: var(--color-burnt-orange);" onclick="addHub()"><i class="fa-solid fa-check"></i> Save Hub</button><button class="btn btn-outline btn-sm" onclick="toggleHubForm(false)">Cancel</button></div>
+          </div>
+
+          <div style="display:grid; grid-template-columns: repeat(3,1fr); gap:1.25rem;" id="coverage-grid"></div>
+
+          <div class="card" style="margin-top:1.5rem; background: var(--bg-secondary);">
+            <h3 style="font-size:1.1rem; margin-bottom:0.8rem;"><i class="fa-solid fa-battery-full" style="color:var(--color-electric-lime);"></i> PowerSwap Network Status</h3>
+            <div style="display:flex; gap:2rem; flex-wrap:wrap;">
+              <div><div style="font-size:1.5rem; font-weight:800; color:var(--color-electric-lime);">520+</div><div style="font-size:0.75rem; color:var(--text-muted);">Kiosks Citywide</div></div>
+              <div><div style="font-size:1.5rem; font-weight:800;">15 Sec</div><div style="font-size:0.75rem; color:var(--text-muted);">Avg Swap Time</div></div>
+              <div><div style="font-size:1.5rem; font-weight:800; color:var(--color-success);">98.4%</div><div style="font-size:0.75rem; color:var(--text-muted);">Uptime</div></div>
+              <div><div style="font-size:1.5rem; font-weight:800;">$0.00</div><div style="font-size:0.75rem; color:var(--text-muted);">Cost to Renters</div></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- DEPOSITS -->
+        <section class="admin-tab-pane" id="deposits">
+          <div class="dash-header-bar">
+            <div>
+              <h1 style="font-size:1.9rem;">Safety Deposits & Rules</h1>
+              <p style="color:var(--text-secondary); font-size:0.9rem;">Holds, refunds, $1M insurance enforcement & damage waivers.</p>
+            </div>
+            <button class="btn btn-outline btn-sm" onclick="showToast('Refund batch: 4 deposits released ($480)','success')"><i class="fa-solid fa-money-bill-transfer"></i> Release Batch (4)</button>
+          </div>
+
+          <div style="display:grid; grid-template-columns: repeat(4,1fr); gap:1rem; margin-bottom:1.5rem;">
+            <div class="card" style="text-align:center;"><div style="font-size:1.4rem; font-weight:800; color:var(--color-warning);">$4,850</div><div style="font-size:0.72rem; color:var(--text-muted);">Held (Active Rentals)</div></div>
+            <div class="card" style="text-align:center;"><div style="font-size:1.4rem; font-weight:800; color:var(--color-success);">$22,340</div><div style="font-size:0.72rem; color:var(--text-muted);">Refunded (30 days)</div></div>
+            <div class="card" style="text-align:center;"><div style="font-size:1.4rem; font-weight:800; color:var(--color-danger);">$1,200</div><div style="font-size:0.72rem; color:var(--text-muted);">Forfeited / Damage</div></div>
+            <div class="card" style="text-align:center; background: linear-gradient(135deg, var(--color-burnt-orange-soft), transparent); border-color: rgba(217,119,69,0.3);"><div style="font-size:1.4rem; font-weight:800; color:var(--color-burnt-orange);">$1M</div><div style="font-size:0.72rem; color:var(--text-muted);">Liability Coverage</div></div>
+          </div>
+
+          <div class="data-table-wrapper" style="margin-bottom:1.5rem;">
+            <table class="dash-table">
+              <thead><tr><th>Booking</th><th>Customer</th><th>Vehicle</th><th>Hold Amount</th><th>Method</th><th>Status</th><th>Countdown</th><th>Action</th></tr></thead>
+              <tbody id="deposits-tbody"></tbody>
+            </table>
+          </div>
+
+          <div class="card">
+            <h3 style="font-size:1.1rem; margin-bottom:1rem;"><i class="fa-solid fa-scale-balanced" style="color:var(--color-burnt-orange);"></i> Current Safety Rules (Editable)</h3>
+            <div style="display:flex; flex-direction:column; gap:0.9rem; font-size:0.9rem;">
+              <div style="display:flex; justify-content:space-between; align-items:center; padding:0.8rem; background: var(--bg-tertiary); border-radius: var(--radius-md);"><span><strong>Scooter Deposit:</strong> $80–$100</span><button class="btn btn-outline btn-sm" onclick="editRule('Scooter Deposit')"><i class="fa-solid fa-pen"></i> Edit</button></div>
+              <div style="display:flex; justify-content:space-between; align-items:center; padding:0.8rem; background: var(--bg-tertiary); border-radius: var(--radius-md);"><span><strong>Moped Deposit:</strong> $120–$150</span><button class="btn btn-outline btn-sm" onclick="editRule('Moped Deposit')"><i class="fa-solid fa-pen"></i> Edit</button></div>
+              <div style="display:flex; justify-content:space-between; align-items:center; padding:0.8rem; background: var(--bg-tertiary); border-radius: var(--radius-md);"><span><strong>Auto-Release:</strong> 15–30 min after green-zone return + photo</span><button class="btn btn-outline btn-sm" onclick="editRule('Auto-Release')"><i class="fa-solid fa-pen"></i> Edit</button></div>
+              <div style="display:flex; justify-content:space-between; align-items:center; padding:0.8rem; background: var(--bg-tertiary); border-radius: var(--radius-md);"><span><strong>Damage Waiver:</strong> $2/hr or $8/day — $0 deductible</span><button class="btn btn-outline btn-sm" onclick="editRule('Damage Waiver')"><i class="fa-solid fa-pen"></i> Edit</button></div>
+              <div style="display:flex; justify-content:space-between; align-items:center; padding:0.8rem; background: var(--bg-tertiary); border-radius: var(--radius-md);"><span><strong>Age / License:</strong> 18+ • Scooter: photo ID • Moped: auto/moto license</span><button class="btn btn-outline btn-sm" onclick="editRule('License Rules')"><i class="fa-solid fa-pen"></i> Edit</button></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- RECEIPTS & AGREEMENTS -->
+        <section class="admin-tab-pane" id="receipts">
+          <div class="dash-header-bar">
+            <div>
+              <h1 style="font-size:1.9rem;">Receipts & Signed Agreements</h1>
+              <p style="color:var(--text-secondary); font-size:0.9rem;">Download past rental receipts (PDF) & signed rental agreements for any customer.</p>
+            </div>
+            <div style="display:flex; gap:0.6rem;"><button class="btn btn-outline btn-sm" onclick="showToast('Bulk receipt ZIP generated (24 files)','info')"><i class="fa-solid fa-file-zipper"></i> Bulk ZIP</button><button class="btn btn-primary btn-sm" style="background: var(--color-burnt-orange);" onclick="showToast('Agreement template updated','success')"><i class="fa-solid fa-file-signature"></i> Template v2.4</button></div>
+          </div>
+
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap:1.5rem;">
+            <div>
+              <h3 style="font-size:1.05rem; margin-bottom:1rem;"><i class="fa-solid fa-file-invoice-dollar" style="color:var(--color-electric-lime);"></i> Past Rental Receipts</h3>
+              <div style="display:flex; flex-direction:column; gap:0.8rem;" id="receipts-list"></div>
+            </div>
+            <div>
+              <h3 style="font-size:1.05rem; margin-bottom:1rem;"><i class="fa-solid fa-file-signature" style="color:var(--color-burnt-orange);"></i> Signed Rental Agreements</h3>
+              <div style="display:flex; flex-direction:column; gap:0.8rem;" id="agreements-list"></div>
+            </div>
+          </div>
+
+          <div class="card" style="margin-top:1.5rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
+            <div>
+              <div style="font-weight:800;">Need to regenerate a document?</div>
+              <div style="font-size:0.8rem; color:var(--text-muted);">Search by Booking ID or customer email.</div>
+            </div>
+            <div style="display:flex; gap:0.6rem;">
+              <input type="text" class="form-control" placeholder="e.g. #DR-8940 or elena@..." style="min-width:260px;">
+              <button class="btn btn-primary btn-sm" style="background: var(--color-burnt-orange);" onclick="showToast('Document found — downloading...','success')"><i class="fa-solid fa-magnifying-glass"></i> Fetch</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- USERS -->
+        <section class="admin-tab-pane" id="users">
+          <div class="dash-header-bar">
+            <div>
+              <h1 style="font-size:1.9rem;">Customers & Riders</h1>
+              <p style="color:var(--text-secondary); font-size:0.9rem;">1,248 verified riders • 99.8% safety rating • VIP tiers and license status.</p>
+            </div>
+            <button class="btn btn-outline btn-sm" onclick="showToast('Invite link copied','info')"><i class="fa-solid fa-user-plus"></i> Invite Rider</button>
+          </div>
+
+          <div class="admin-toolbar">
+            <div class="admin-search"><i class="fa-solid fa-magnifying-glass"></i><input type="text" id="users-search" placeholder="Search name, email, license..." oninput="filterUsers()"></div>
+            <select class="admin-filter-select" id="users-tier" onchange="filterUsers()"><option value="all">All Tiers</option><option value="VIP">VIP Level 4</option><option value="Pro">Pro Rider</option><option value="New">New Rider</option></select>
+          </div>
+
+          <div class="data-table-wrapper">
+            <table class="dash-table">
+              <thead><tr><th>Rider</th><th>Email</th><th>License</th><th>Tier</th><th>Rides</th><th>Safety Score</th><th>Deposit Due</th><th>Actions</th></tr></thead>
+              <tbody id="users-tbody"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- ANALYTICS -->
+        <section class="admin-tab-pane" id="analytics">
+          <div class="dash-header-bar">
+            <div>
+              <h1 style="font-size:1.9rem;">Fleet Analytics & Revenue</h1>
+              <p style="color:var(--text-secondary); font-size:0.9rem;">Utilization, CO₂ offset and hub performance.</p>
+            </div>
+            <select class="admin-filter-select"><option>Last 7 Days</option><option>Last 30 Days</option><option>This Quarter</option></select>
+          </div>
+
+          <div style="display:grid; grid-template-columns: repeat(3,1fr); gap:1.25rem; margin-bottom:1.5rem;">
+            <div class="card" style="text-align:center;"><div style="font-size:2rem; font-weight:800; color:var(--color-electric-lime);">4.2M mi</div><div style="font-size:0.8rem; color:var(--text-muted);">Zero-Emission Miles</div><div style="font-size:0.72rem; color:var(--color-success); margin-top:0.3rem;">↑ 14% MoM</div></div>
+            <div class="card" style="text-align:center;"><div style="font-size:2rem; font-weight:800; color:var(--color-burnt-orange);">71%</div><div style="font-size:0.8rem; color:var(--text-muted);">Fleet Utilization</div><div style="font-size:0.72rem; color:var(--text-muted); margin-top:0.3rem;">Target 75%</div></div>
+            <div class="card" style="text-align:center;"><div style="font-size:2rem; font-weight:800;">$182k</div><div style="font-size:0.8rem; color:var(--text-muted);">MRR (All Hubs)</div><div style="font-size:0.72rem; color:var(--color-success); margin-top:0.3rem;">↑ 8.2%</div></div>
+          </div>
+
+          <div style="display:grid; grid-template-columns: 1.6fr 1fr; gap:1.5rem;">
+            <div class="card">
+              <h3 style="font-size:1.05rem; margin-bottom:1rem;">Revenue by Model (This Month)</h3>
+              <div style="display:flex; flex-direction:column; gap:0.9rem;">
+                <div><div style="display:flex; justify-content:space-between; font-size:0.85rem; margin-bottom:0.3rem;"><span>Dash Phantom Pro</span><span style="font-weight:700;">$42,300</span></div><div style="height:8px; background: var(--bg-tertiary); border-radius:99px; overflow:hidden;"><div style="width:72%; height:100%; background: var(--color-electric-lime);"></div></div></div>
+                <div><div style="display:flex; justify-content:space-between; font-size:0.85rem; margin-bottom:0.3rem;"><span>Cruiser GT EV</span><span style="font-weight:700;">$38,100</span></div><div style="height:8px; background: var(--bg-tertiary); border-radius:99px; overflow:hidden;"><div style="width:65%; height:100%; background: var(--color-burnt-orange);"></div></div></div>
+                <div><div style="display:flex; justify-content:space-between; font-size:0.85rem; margin-bottom:0.3rem;"><span>CyberScoot X</span><span style="font-weight:700;">$29,400</span></div><div style="height:8px; background: var(--bg-tertiary); border-radius:99px; overflow:hidden;"><div style="width:50%; height:100%; background: var(--color-electric-lime);"></div></div></div>
+                <div><div style="display:flex; justify-content:space-between; font-size:0.85rem; margin-bottom:0.3rem;"><span>Moped Classic 50</span><span style="font-weight:700;">$22,800</span></div><div style="height:8px; background: var(--bg-tertiary); border-radius:99px; overflow:hidden;"><div style="width:39%; height:100%; background: var(--text-muted);"></div></div></div>
+              </div>
+            </div>
+            <div class="card">
+              <h3 style="font-size:1.05rem; margin-bottom:1rem;">Hub Leaderboard</h3>
+              <div style="display:flex; flex-direction:column; gap:0.8rem; font-size:0.88rem;">
+                <div style="display:flex; justify-content:space-between; padding:0.7rem; background: var(--bg-tertiary); border-radius: var(--radius-md);"><span><i class="fa-solid fa-trophy" style="color:#F59E0B;"></i> Downtown Flagship</span><strong>742 rides</strong></div>
+                <div style="display:flex; justify-content:space-between; padding:0.7rem; background: var(--bg-tertiary); border-radius: var(--radius-md);"><span>2. University Park</span><strong>581 rides</strong></div>
+                <div style="display:flex; justify-content:space-between; padding:0.7rem; background: var(--bg-tertiary); border-radius: var(--radius-md);"><span>3. Coastal Pier 14</span><strong>447 rides</strong></div>
+                <div style="display:flex; justify-content:space-between; padding:0.7rem; background: var(--bg-tertiary); border-radius: var(--radius-md);"><span>4. Arts District</span><strong>312 rides</strong></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- SETTINGS -->
+        <section class="admin-tab-pane" id="settings">
+          <div class="dash-header-bar">
+            <div>
+              <h1 style="font-size:1.9rem;">Admin & Platform Settings</h1>
+              <p style="color:var(--text-secondary); font-size:0.9rem;">Speed governor defaults, receipt auto-generation and deposit automation.</p>
+            </div>
+          </div>
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap:1.5rem;">
+            <div class="card">
+              <h3 style="font-size:1.05rem; margin-bottom:1.2rem;"><i class="fa-solid fa-gear" style="color:var(--color-burnt-orange);"></i> Operational Controls</h3>
+              <div style="display:flex; flex-direction:column; gap:1.1rem;">
+                <div style="display:flex; justify-content:space-between; align-items:center; padding-bottom:0.9rem; border-bottom:1px solid var(--border-color);"><div><div style="font-weight:700; font-size:0.92rem;">Auto-Refund Deposits</div><div style="font-size:0.78rem; color:var(--text-muted);">Release 30 min after green-zone return</div></div><input type="checkbox" checked style="width:20px; height:20px;"></div>
+                <div style="display:flex; justify-content:space-between; align-items:center; padding-bottom:0.9rem; border-bottom:1px solid var(--border-color);"><div><div style="font-weight:700; font-size:0.92rem;">Default Speed Governor</div><div style="font-size:0.78rem; color:var(--text-muted);">New rentals start in Eco 25 km/h</div></div><select class="form-control" style="width:150px;"><option>Eco (25 km/h)</option><option>Sport (45 km/h)</option><option>Beginner (15 km/h)</option></select></div>
+                <div style="display:flex; justify-content:space-between; align-items:center;"><div><div style="font-weight:700; font-size:0.92rem;">Auto Receipt PDF</div><div style="font-size:0.78rem; color:var(--text-muted);">Email invoice on return</div></div><input type="checkbox" checked style="width:20px; height:20px;"></div>
+              </div>
+            </div>
+            <div class="card">
+              <h3 style="font-size:1.05rem; margin-bottom:1.2rem;"><i class="fa-solid fa-user-gear" style="color:var(--color-burnt-orange);"></i> Admin Profile</h3>
+              <div style="display:flex; align-items:center; gap:1rem; margin-bottom:1.2rem;">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80" style="width:64px; height:64px; border-radius:50%; border:2px solid var(--color-burnt-orange);">
+                <div><div style="font-weight:800;">Alex Mercer</div><div style="font-size:0.8rem; color:var(--text-muted);">alex.mercer@dashrides.com • Super Admin</div><span class="badge badge-available" style="margin-top:0.4rem;"><span class="status-dot"></span> Verified Staff</span></div>
+              </div>
+              <div style="display:flex; flex-direction:column; gap:0.7rem;">
+                <button class="btn btn-outline btn-sm" onclick="showToast('Password reset email sent','info')"><i class="fa-solid fa-key"></i> Reset Password</button>
+                <button class="btn btn-outline btn-sm" onclick="showToast('2FA enabled successfully','success')"><i class="fa-solid fa-shield-halved"></i> Enable 2FA</button>
+                <button class="btn btn-secondary btn-sm" style="background: var(--color-danger); border-color: var(--color-danger);" onclick="showToast('Audit log exported','info')"><i class="fa-solid fa-file-shield"></i> Export Audit Log</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/admin.js"></script>
+</body>
+</html>

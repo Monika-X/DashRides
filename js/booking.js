@@ -45,12 +45,12 @@ function initBookingForms() {
       const submitBtn = bookingForm.querySelector('button[type="submit"]');
       const originalText = submitBtn.innerHTML;
       submitBtn.disabled = true;
-      submitBtn.innerHTML = 'Securing Reservation... ⏳';
+      submitBtn.innerHTML = 'Securing Reservation... <i class="fa-solid fa-hourglass-half"></i>';
 
       setTimeout(() => {
         submitBtn.disabled = false;
         submitBtn.innerHTML = originalText;
-        showToast('🎉 Reservation Confirmed! Check your email for QR unlock code.', 'success');
+        showToast('<i class="fa-solid fa-champagne-glasses"></i> Reservation Confirmed! Check your email for QR unlock code.', 'success');
         bookingForm.reset();
       }, 1500);
     } else {

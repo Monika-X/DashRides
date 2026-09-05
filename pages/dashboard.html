@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rider Dashboard & Vehicle Management — DashRides</title>
   <meta name="description" content="Manage your active scooter rentals, view real-time vehicle availability, extend rental deadlines with one click, download signed agreements and receipts.">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="shortcut icon" href="../favicon.svg">
   <link rel="stylesheet" href="../css/variables.css">
   <link rel="stylesheet" href="../css/reset.css">
   <link rel="stylesheet" href="../css/components.css">
@@ -12,68 +14,30 @@
   <link rel="stylesheet" href="../css/pages.css">
   <link rel="stylesheet" href="../css/dashboard.css">
   <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
   <a href="#main-content" class="skip-to-content">Skip to main content</a>
 
   <!-- Header -->
-  <header class="header" id="header">
+    <header class="header" id="header">
     <div class="container navbar">
       <a href="../index.html" class="logo">
-        <div class="logo-icon">⚡</div>
-        <span>DASH</span>RIDES
-      </a>
-
-      <nav class="nav-links" aria-label="Main Navigation">
-        <div class="nav-item">
-          <a href="../index.html" class="nav-link">Home ▾</a>
-          <div class="dropdown-menu">
-            <a href="../index.html" class="dropdown-item">Home 1 (Cinematic)</a>
-            <a href="home-2.html" class="dropdown-item">Home 2 (Editorial)</a>
-          </div>
+        <div class="logo-icon"><svg viewBox="0 0 32 32" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M17.8 2.8L8.2 14.6H13.1L10.2 26.2L22.6 13.6H17.4L20.1 2.8Z" fill="white" stroke="white" stroke-width="0.45" stroke-linejoin="round"/><g stroke="white" stroke-linecap="round" opacity="0.92"><path d="M4.6 10.2H8.1" stroke-width="1.55"/><path d="M3 16H7.8" stroke-width="1.65"/><path d="M4.9 21.8H8.4" stroke-width="1.5" opacity="0.78"/></g></svg></div>
+        <div class="logo-text">
+          <span class="logo-brand"><span>DASH</span>RIDES</span>
+          <span class="logo-tagline">ELECTRIC MOBILITY</span>
         </div>
-        <a href="about.html" class="nav-link">About</a>
-        <a href="services.html" class="nav-link">Services</a>
-        <a href="blog.html" class="nav-link">Journal</a>
-        <a href="contact.html" class="nav-link">Contact</a>
-        <a href="dashboard.html" class="nav-link active" style="color: var(--color-electric-lime);">Dashboard ⚡</a>
-      </nav>
-
+      </a>
       <div class="header-actions">
-        <button class="theme-toggle" aria-label="Toggle Theme">☀️</button>
+        <button class="theme-toggle" aria-label="Toggle Theme"><i class="fa-solid fa-sun"></i></button>
         <button class="rtl-toggle" aria-label="Toggle Layout Direction">RTL</button>
-        <a href="../index.html" class="btn btn-outline btn-sm header-cta">Exit Portal</a>
-        <button class="menu-toggle" aria-label="Open Mobile Menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
       </div>
     </div>
   </header>
 
   <!-- Mobile Drawer -->
-  <div class="mobile-overlay"></div>
-  <aside class="mobile-nav" aria-label="Mobile Navigation">
-    <div>
-      <div class="logo" style="margin-bottom: 2rem;">
-        <div class="logo-icon">⚡</div>
-        <span>DASH</span>RIDES
-      </div>
-      <div class="mobile-nav-links">
-        <a href="../index.html" class="mobile-nav-link">Home 1 (Cinematic)</a>
-        <a href="home-2.html" class="mobile-nav-link">Home 2 (Editorial)</a>
-        <a href="about.html" class="mobile-nav-link">About Us</a>
-        <a href="services.html" class="mobile-nav-link">Services & Fleet</a>
-        <a href="blog.html" class="mobile-nav-link">Blog & News</a>
-        <a href="contact.html" class="mobile-nav-link">Contact</a>
-        <a href="dashboard.html" class="mobile-nav-link active" style="color: var(--color-electric-lime);">Rider Dashboard</a>
-      </div>
-    </div>
-    <div>
-      <span style="font-size: 0.85rem; color: var(--text-muted);">© DashRides Inc.</span>
-    </div>
-  </aside>
+  
 
   <main id="main-content">
     <div class="dashboard-layout">
@@ -85,7 +49,7 @@
             <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80" alt="Elena Vance" class="user-avatar">
             <div>
               <div class="user-name">Elena Vance</div>
-              <span class="user-badge">VIP Member • Level 4</span>
+              <span class="user-badge">VIP Member <i class="fa-solid fa-circle" style="font-size:0.4em; margin:0 0.3rem; vertical-align:middle;"></i> Level 4</span>
             </div>
           </div>
 
@@ -97,7 +61,7 @@
             </button>
             <button class="dash-nav-btn" data-tab="active-rental">
               <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-              Active Rental ⚡
+              Active Rental <i class="fa-solid fa-bolt"></i>
             </button>
             <button class="dash-nav-btn" data-tab="available-scooters">
               <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
@@ -151,7 +115,7 @@
           <!-- Quick Stats Grid -->
           <div class="dash-stats-grid">
             <div class="dash-stat-box">
-              <div class="dash-stat-icon">🛵</div>
+              <div class="dash-stat-icon"><i class="fa-solid fa-motorcycle"></i></div>
               <div>
                 <div class="dash-stat-num">1</div>
                 <div class="dash-stat-desc">Active Rental</div>
@@ -159,7 +123,7 @@
             </div>
 
             <div class="dash-stat-box">
-              <div class="dash-stat-icon">🏁</div>
+              <div class="dash-stat-icon"><i class="fa-solid fa-flag-checkered"></i></div>
               <div>
                 <div class="dash-stat-num">28</div>
                 <div class="dash-stat-desc">Total Rides Completed</div>
@@ -167,7 +131,7 @@
             </div>
 
             <div class="dash-stat-box">
-              <div class="dash-stat-icon">🌱</div>
+              <div class="dash-stat-icon"><i class="fa-solid fa-leaf"></i></div>
               <div>
                 <div class="dash-stat-num">142 kg</div>
                 <div class="dash-stat-desc">CO₂ Offset Saved</div>
@@ -175,7 +139,7 @@
             </div>
 
             <div class="dash-stat-box">
-              <div class="dash-stat-icon">⭐</div>
+              <div class="dash-stat-icon"><i class="fa-solid fa-star"></i></div>
               <div>
                 <div class="dash-stat-num">4.98</div>
                 <div class="dash-stat-desc">Rider Safety Score</div>
@@ -226,7 +190,7 @@
               <h2 style="font-size: 2rem; margin-bottom: 0.25rem;">Active Vehicle Control Room</h2>
               <p style="font-size: 0.95rem; color: var(--text-secondary);">Real-time telemetry, remote horn trigger, electronic locking, and return deadlines.</p>
             </div>
-            <button class="btn btn-secondary btn-sm" onclick="showToast('Vehicle locked securely in pause mode.', 'warning')">🔒 Remote Pause Lock</button>
+            <button class="btn btn-secondary btn-sm" onclick="showToast('Vehicle locked securely in pause mode.', 'warning')"><i class="fa-solid fa-lock"></i> Remote Pause Lock</button>
           </div>
 
           <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 2rem;">
@@ -248,9 +212,9 @@
               </div>
 
               <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                <button class="btn btn-outline btn-sm" onclick="showToast('Beep Beep! Headlight flasher and horn triggered.', 'info')">📢 Sound Horn & Flash Lights</button>
-                <button class="btn btn-outline btn-sm" onclick="showToast('Safety lock disengaged. Ready to cruise!', 'success')">⚡ Unlock Vehicle</button>
-                <button class="btn btn-secondary btn-sm" onclick="showToast('Trip completed! Safety deposit refund initiated.', 'success')">🏁 End Ride & Return Deposit</button>
+                <button class="btn btn-outline btn-sm" onclick="showToast('Beep Beep! Headlight flasher and horn triggered.', 'info')"><i class="fa-solid fa-bullhorn"></i> Sound Horn & Flash Lights</button>
+                <button class="btn btn-outline btn-sm" onclick="showToast('Safety lock disengaged. Ready to cruise!', 'success')"><i class="fa-solid fa-bolt"></i> Unlock Vehicle</button>
+                <button class="btn btn-secondary btn-sm" onclick="showToast('Trip completed! Safety deposit refund initiated.', 'success')"><i class="fa-solid fa-flag-checkered"></i> End Ride & Return Deposit</button>
               </div>
             </div>
 
@@ -274,7 +238,7 @@
               <h2 style="font-size: 2rem; margin-bottom: 0.25rem;">Real-Time Fleet Availability</h2>
               <p style="font-size: 0.95rem; color: var(--text-secondary);">Showing 14 vehicles ready for instant NFC unlock in your immediate vicinity.</p>
             </div>
-            <button class="btn btn-outline btn-sm" onclick="showToast('Refreshing live radar feed...', 'info')">🔄 Refresh Map</button>
+            <button class="btn btn-outline btn-sm" onclick="showToast('Refreshing live radar feed...', 'info')"><i class="fa-solid fa-arrows-rotate"></i> Refresh Map</button>
           </div>
 
           <div class="fleet-grid">
@@ -372,7 +336,7 @@
                 </p>
               </div>
 
-              <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">Confirm & Unlock Vehicle ➔</button>
+              <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">Confirm & Unlock Vehicle <i class="fa-solid fa-arrow-right" style="margin-left:0.35rem;"></i></button>
             </form>
           </div>
         </section>
@@ -454,7 +418,7 @@
             <div class="doc-card">
               <div>
                 <div class="doc-meta">
-                  <div class="doc-icon">📄</div>
+                  <div class="doc-icon"><i class="fa-solid fa-file-lines"></i></div>
                   <div>
                     <h3 style="font-size: 1.1rem;">Invoice #DR-8940</h3>
                     <span style="font-size: 0.8rem; color: var(--text-muted);">Oct 10, 2026 • $85.00</span>
@@ -462,13 +426,13 @@
                 </div>
                 <p style="font-size: 0.85rem; color: var(--text-secondary);">24h Cruiser GT EV Coastal Tour with zero deductible protection.</p>
               </div>
-              <button class="btn btn-outline btn-sm btn-download-doc" data-doc-name="Invoice_DR-8940.pdf" style="margin-top: 1.25rem;">Download PDF ➔</button>
+              <button class="btn btn-outline btn-sm btn-download-doc" data-doc-name="Invoice_DR-8940.pdf" style="margin-top: 1.25rem;">Download PDF <i class="fa-solid fa-arrow-right" style="margin-left:0.35rem;"></i></button>
             </div>
 
             <div class="doc-card">
               <div>
                 <div class="doc-meta">
-                  <div class="doc-icon">📄</div>
+                  <div class="doc-icon"><i class="fa-solid fa-file-lines"></i></div>
                   <div>
                     <h3 style="font-size: 1.1rem;">Invoice #DR-8812</h3>
                     <span style="font-size: 0.8rem; color: var(--text-muted);">Oct 04, 2026 • $45.00</span>
@@ -476,13 +440,13 @@
                 </div>
                 <p style="font-size: 0.85rem; color: var(--text-secondary);">3h CyberScoot X Downtown Commute.</p>
               </div>
-              <button class="btn btn-outline btn-sm btn-download-doc" data-doc-name="Invoice_DR-8812.pdf" style="margin-top: 1.25rem;">Download PDF ➔</button>
+              <button class="btn btn-outline btn-sm btn-download-doc" data-doc-name="Invoice_DR-8812.pdf" style="margin-top: 1.25rem;">Download PDF <i class="fa-solid fa-arrow-right" style="margin-left:0.35rem;"></i></button>
             </div>
 
             <div class="doc-card">
               <div>
                 <div class="doc-meta">
-                  <div class="doc-icon">📄</div>
+                  <div class="doc-icon"><i class="fa-solid fa-file-lines"></i></div>
                   <div>
                     <h3 style="font-size: 1.1rem;">Invoice #DR-8701</h3>
                     <span style="font-size: 0.8rem; color: var(--text-muted);">Sep 28, 2026 • $18.00</span>
@@ -490,7 +454,7 @@
                 </div>
                 <p style="font-size: 0.85rem; color: var(--text-secondary);">1.5h Urban Glide Lite Evening Trip.</p>
               </div>
-              <button class="btn btn-outline btn-sm btn-download-doc" data-doc-name="Invoice_DR-8701.pdf" style="margin-top: 1.25rem;">Download PDF ➔</button>
+              <button class="btn btn-outline btn-sm btn-download-doc" data-doc-name="Invoice_DR-8701.pdf" style="margin-top: 1.25rem;">Download PDF <i class="fa-solid fa-arrow-right" style="margin-left:0.35rem;"></i></button>
             </div>
           </div>
         </section>
@@ -508,7 +472,7 @@
             <div class="doc-card">
               <div>
                 <div class="doc-meta">
-                  <div class="doc-icon" style="background: var(--color-electric-lime-soft); color: var(--color-electric-lime);">✍️</div>
+                  <div class="doc-icon" style="background: var(--color-electric-lime-soft); color: var(--color-electric-lime);"><i class="fa-solid fa-file-signature"></i></div>
                   <div>
                     <h3 style="font-size: 1.1rem;">Master Liability Waiver</h3>
                     <span style="font-size: 0.8rem; color: var(--text-muted);">Signed Oct 01, 2026 • Verified</span>
@@ -516,13 +480,13 @@
                 </div>
                 <p style="font-size: 0.85rem; color: var(--text-secondary);">$1,000,000 Third-Party Liability & Damage Policy Agreement.</p>
               </div>
-              <button class="btn btn-outline btn-sm btn-download-doc" data-doc-name="Signed_Waiver_ElenaVance.pdf" style="margin-top: 1.25rem;">Download PDF ➔</button>
+              <button class="btn btn-outline btn-sm btn-download-doc" data-doc-name="Signed_Waiver_ElenaVance.pdf" style="margin-top: 1.25rem;">Download PDF <i class="fa-solid fa-arrow-right" style="margin-left:0.35rem;"></i></button>
             </div>
 
             <div class="doc-card">
               <div>
                 <div class="doc-meta">
-                  <div class="doc-icon" style="background: var(--color-electric-lime-soft); color: var(--color-electric-lime);">✍️</div>
+                  <div class="doc-icon" style="background: var(--color-electric-lime-soft); color: var(--color-electric-lime);"><i class="fa-solid fa-file-signature"></i></div>
                   <div>
                     <h3 style="font-size: 1.1rem;">Moped Operator Terms</h3>
                     <span style="font-size: 0.8rem; color: var(--text-muted);">Driver's License #CA-9021481</span>
@@ -530,7 +494,7 @@
                 </div>
                 <p style="font-size: 0.85rem; color: var(--text-secondary);">50cc+ Category Electric Vehicle Operating Authorization.</p>
               </div>
-              <button class="btn btn-outline btn-sm btn-download-doc" data-doc-name="Moped_Agreement_ElenaVance.pdf" style="margin-top: 1.25rem;">Download PDF ➔</button>
+              <button class="btn btn-outline btn-sm btn-download-doc" data-doc-name="Moped_Agreement_ElenaVance.pdf" style="margin-top: 1.25rem;">Download PDF <i class="fa-solid fa-arrow-right" style="margin-left:0.35rem;"></i></button>
             </div>
           </div>
         </section>
@@ -566,7 +530,7 @@
                   <label class="form-label">Driver's License Status</label>
                   <div style="padding: 0.85rem 1.25rem; background: var(--bg-tertiary); border-radius: var(--radius-md); display: flex; justify-content: space-between; align-items: center;">
                     <span style="font-weight: 700; font-size: 0.9rem;">CA-9021481</span>
-                    <span class="badge badge-available">Verified ✓</span>
+                    <span class="badge badge-available">Verified <i class="fa-solid fa-check" style="margin-left:0.25rem;"></i></span>
                   </div>
                 </div>
               </div>

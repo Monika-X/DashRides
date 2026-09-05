@@ -5,12 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us & Experience Lounges — DashRides 24/7 Support</title>
   <meta name="description" content="Get in touch with DashRides 24/7 Dispatch, visit our city flagship experience lounges, or request enterprise fleet partnership information.">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="shortcut icon" href="../favicon.svg">
   <link rel="stylesheet" href="../css/variables.css">
   <link rel="stylesheet" href="../css/reset.css">
   <link rel="stylesheet" href="../css/components.css">
   <link rel="stylesheet" href="../css/animations.css">
   <link rel="stylesheet" href="../css/pages.css">
   <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
   <a href="#main-content" class="skip-to-content">Skip to main content</a>
@@ -19,27 +22,49 @@
   <header class="header" id="header">
     <div class="container navbar">
       <a href="../index.html" class="logo">
-        <div class="logo-icon">⚡</div>
-        <span>DASH</span>RIDES
+        <div class="logo-icon"><svg viewBox="0 0 32 32" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M17.8 2.8L8.2 14.6H13.1L10.2 26.2L22.6 13.6H17.4L20.1 2.8Z" fill="white" stroke="white" stroke-width="0.45" stroke-linejoin="round"/><g stroke="white" stroke-linecap="round" opacity="0.92"><path d="M4.6 10.2H8.1" stroke-width="1.55"/><path d="M3 16H7.8" stroke-width="1.65"/><path d="M4.9 21.8H8.4" stroke-width="1.5" opacity="0.78"/></g></svg></div>
+        <div class="logo-text">
+          <span class="logo-brand"><span>DASH</span>RIDES</span>
+          <span class="logo-tagline">ELECTRIC MOBILITY</span>
+        </div>
       </a>
 
-      <nav class="nav-links" aria-label="Main Navigation">
-        <div class="nav-item">
-          <a href="../index.html" class="nav-link">Home ▾</a>
-          <div class="dropdown-menu">
-            <a href="../index.html" class="dropdown-item">Home 1 (Cinematic)</a>
-            <a href="home-2.html" class="dropdown-item">Home 2 (Editorial)</a>
-          </div>
-        </div>
+            <nav class="nav-links" aria-label="Main Navigation">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="home-2.html" class="nav-link">Home 2</a>
         <a href="about.html" class="nav-link">About</a>
         <a href="services.html" class="nav-link">Services</a>
-        <a href="blog.html" class="nav-link">Journal</a>
-        <a href="contact.html" class="nav-link active">Contact</a>
-        <a href="dashboard.html" class="nav-link" style="color: var(--color-electric-lime);">Dashboard ⚡</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="contact.html" class="nav-link">Contact</a>
       </nav>
 
       <div class="header-actions">
-        <button class="theme-toggle" aria-label="Toggle Theme">☀️</button>
+              <div class="user-menu">
+        <button class="user-profile-btn" aria-label="User menu" aria-expanded="false" aria-haspopup="true">
+          <i class="fa-solid fa-user"></i>
+        </button>
+        <div class="user-dropdown" role="menu">
+          <div class="user-dropdown-header">
+            <div class="user-dropdown-name">Welcome Rider</div>
+            <div class="user-dropdown-email">guest@dashrides.com</div>
+          </div>
+          <a href="dashboard.html" class="user-dropdown-item" role="menuitem">
+            <i class="fa-solid fa-gauge-high"></i> User Dashboard
+          </a>
+          <a href="admin.html" class="user-dropdown-item admin-item" role="menuitem">
+            <i class="fa-solid fa-user-gear"></i> Admin Dashboard
+          </a>
+          <div class="user-dropdown-divider"></div>
+          <a href="login.html" class="user-dropdown-item" role="menuitem">
+            <i class="fa-solid fa-right-to-bracket"></i> Login
+          </a>
+          <a href="signup.html" class="user-dropdown-item" role="menuitem">
+            <i class="fa-solid fa-user-plus"></i> Sign Up
+          </a>
+          <div class="user-dropdown-footer">40+ cities • Instant unlock</div>
+        </div>
+      </div>
+      <button class="theme-toggle" aria-label="Toggle Theme"><i class="fa-solid fa-sun"></i></button>
         <button class="rtl-toggle" aria-label="Toggle Layout Direction">RTL</button>
         <a href="dashboard.html#booking" class="btn btn-primary btn-sm header-cta">Book Now</a>
         <button class="menu-toggle" aria-label="Open Mobile Menu">
@@ -56,17 +81,19 @@
   <aside class="mobile-nav" aria-label="Mobile Navigation">
     <div>
       <div class="logo" style="margin-bottom: 2rem;">
-        <div class="logo-icon">⚡</div>
-        <span>DASH</span>RIDES
+        <div class="logo-icon"><svg viewBox="0 0 32 32" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M17.8 2.8L8.2 14.6H13.1L10.2 26.2L22.6 13.6H17.4L20.1 2.8Z" fill="white" stroke="white" stroke-width="0.45" stroke-linejoin="round"/><g stroke="white" stroke-linecap="round" opacity="0.92"><path d="M4.6 10.2H8.1" stroke-width="1.55"/><path d="M3 16H7.8" stroke-width="1.65"/><path d="M4.9 21.8H8.4" stroke-width="1.5" opacity="0.78"/></g></svg></div>
+        <div class="logo-text">
+          <span class="logo-brand"><span>DASH</span>RIDES</span>
+          <span class="logo-tagline">ELECTRIC MOBILITY</span>
+        </div>
       </div>
-      <div class="mobile-nav-links">
-        <a href="../index.html" class="mobile-nav-link">Home 1 (Cinematic)</a>
-        <a href="home-2.html" class="mobile-nav-link">Home 2 (Editorial)</a>
-        <a href="about.html" class="mobile-nav-link">About Us</a>
-        <a href="services.html" class="mobile-nav-link">Services & Fleet</a>
-        <a href="blog.html" class="mobile-nav-link">Blog & News</a>
-        <a href="contact.html" class="mobile-nav-link active">Contact</a>
-        <a href="dashboard.html" class="mobile-nav-link" style="color: var(--color-electric-lime);">Rider Dashboard</a>
+                  <div class="mobile-nav-links">
+        <a href="../index.html" class="mobile-nav-link">Home</a>
+        <a href="home-2.html" class="mobile-nav-link">Home 2</a>
+        <a href="about.html" class="mobile-nav-link">About</a>
+        <a href="services.html" class="mobile-nav-link">Services</a>
+        <a href="blog.html" class="mobile-nav-link">Blog</a>
+        <a href="contact.html" class="mobile-nav-link">Contact</a>
       </div>
     </div>
     <div>
@@ -90,24 +117,24 @@
 
       <div class="bento-grid" style="grid-template-columns: repeat(3, 1fr); grid-auto-rows: auto;" class="reveal-fade-up">
         <div class="card">
-          <div style="font-size: 2rem; margin-bottom: 0.75rem;">🚨</div>
+          <div style="font-size: 2rem; margin-bottom: 0.75rem; color: var(--color-danger);"><i class="fa-solid fa-triangle-exclamation"></i></div>
           <h3 style="font-size: 1.2rem; margin-bottom: 0.25rem;">24/7 Emergency Dispatch</h3>
           <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">Roadside assistance, accidents & battery swaps.</p>
-          <div style="font-weight: 700; color: var(--color-electric-lime); font-size: 1.15rem;">+1 (800) 327-4743</div>
+          <a href="tel:+18003274743" style="font-weight: 700; color: var(--color-electric-lime); font-size: 1.15rem; display:inline-block;">+1 (800) 327-4743</a>
         </div>
 
         <div class="card">
-          <div style="font-size: 2rem; margin-bottom: 0.75rem;">💬</div>
+          <div style="font-size: 2rem; margin-bottom: 0.75rem; color: var(--color-electric-lime);"><i class="fa-solid fa-comments"></i></div>
           <h3 style="font-size: 1.2rem; margin-bottom: 0.25rem;">Rider Concierge</h3>
           <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">Account questions, refunds & billing inquiries.</p>
-          <div style="font-weight: 700; color: var(--color-electric-lime); font-size: 1.15rem;">concierge@dashrides.com</div>
+          <a href="mailto:concierge@dashrides.com" style="font-weight: 700; color: var(--color-electric-lime); font-size: 1.15rem; display:inline-block;">concierge@dashrides.com</a>
         </div>
 
         <div class="card">
-          <div style="font-size: 2rem; margin-bottom: 0.75rem;">🤝</div>
+          <div style="font-size: 2rem; margin-bottom: 0.75rem; color: var(--color-burnt-orange);"><i class="fa-solid fa-handshake"></i></div>
           <h3 style="font-size: 1.2rem; margin-bottom: 0.25rem;">Enterprise & Municipal</h3>
           <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">Corporate campuses and city transport councils.</p>
-          <div style="font-weight: 700; color: var(--color-electric-lime); font-size: 1.15rem;">partnerships@dashrides.com</div>
+          <a href="mailto:partnerships@dashrides.com" style="font-weight: 700; color: var(--color-electric-lime); font-size: 1.15rem; display:inline-block;">partnerships@dashrides.com</a>
         </div>
       </div>
     </section>
@@ -157,7 +184,7 @@
               <span class="form-error">Please write a message</span>
             </div>
 
-            <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">Dispatch Message ➔</button>
+            <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">Dispatch Message <i class="fa-solid fa-arrow-right" style="margin-left:0.35rem;"></i></button>
           </form>
         </div>
 
@@ -170,7 +197,7 @@
               <span class="badge badge-lime" style="margin-bottom: 0.5rem;">Downtown Flagship Lounge</span>
               <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">742 Grand Avenue, Suite 100</h3>
               <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.75rem;">Open Daily: 06:00 AM – Midnight • Walk-in Test Drives & Espresso Bar</p>
-              <div style="font-size: 0.85rem; color: var(--color-electric-lime); font-weight: 600;">⚡ 40 Scooters & 15 Mopeds In Stock</div>
+              <div style="font-size: 0.85rem; color: var(--color-electric-lime); font-weight: 600;"><i class="fa-solid fa-bolt" style="margin-right:0.35rem;"></i>40 Scooters & 15 Mopeds In Stock</div>
             </div>
           </div>
 
@@ -181,7 +208,7 @@
               <span class="badge badge-orange" style="margin-bottom: 0.5rem;">Coastal Esplanade Hub</span>
               <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">12 Ocean Boulevard Pier</h3>
               <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.75rem;">Open Daily: 07:00 AM – 10:00 PM • Fast Swap Station</p>
-              <div style="font-size: 0.85rem; color: var(--color-burnt-orange); font-weight: 600;">⚡ 28 Touring Mopeds Available</div>
+              <div style="font-size: 0.85rem; color: var(--color-burnt-orange); font-weight: 600;"><i class="fa-solid fa-bolt" style="margin-right:0.35rem;"></i>28 Touring Mopeds Available</div>
             </div>
           </div>
         </div>
@@ -204,7 +231,7 @@
           <!-- Mock Radar Center -->
           <div style="position: relative; z-index: 2; text-align: center;">
             <div style="width: 80px; height: 80px; border-radius: 50%; background: var(--color-electric-lime-soft); border: 2px solid var(--color-electric-lime); margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center; font-size: 2rem;" class="pulse-lime">
-              📍
+              <i class="fa-solid fa-location-dot"></i>
             </div>
             <h3 style="font-size: 1.35rem; margin-bottom: 0.5rem;">Downtown Core Radar Active</h3>
             <p style="font-size: 0.9rem; color: var(--color-electric-lime); font-weight: 700;">14 Available Vehicles Within 200m</p>
@@ -229,7 +256,7 @@
         <div class="faq-item active">
           <div class="faq-header">
             <span>What happens if my battery runs low during a rental?</span>
-            <div class="faq-icon">▾</div>
+            <div class="faq-icon"><i class="fa-solid fa-chevron-down" style="font-size:0.75rem;"></i></div>
           </div>
           <div class="faq-content">
             <p>You can either visit any of our 520+ PowerSwap kiosks for a free 15-second battery exchange or tap "Request Mobile Swap" in your dashboard to have our support van meet you.</p>
@@ -239,7 +266,7 @@
         <div class="faq-item">
           <div class="faq-header">
             <span>How do I report a flat tire or mechanical issue?</span>
-            <div class="faq-icon">▾</div>
+            <div class="faq-icon"><i class="fa-solid fa-chevron-down" style="font-size:0.75rem;"></i></div>
           </div>
           <div class="faq-content">
             <p>Tap "Report Issue" in your dashboard or call our 24/7 hotline. We will instantly unlock an adjacent scooter for you with zero transfer fees.</p>
@@ -249,7 +276,7 @@
         <div class="faq-item">
           <div class="faq-header">
             <span>Are there group bookings for corporate events or bachelor parties?</span>
-            <div class="faq-icon">▾</div>
+            <div class="faq-icon"><i class="fa-solid fa-chevron-down" style="font-size:0.75rem;"></i></div>
           </div>
           <div class="faq-content">
             <p>Yes! We offer group rentals up to 30 scooters with dedicated tour guides and support escort vans. Email partnerships@dashrides.com for group discounts.</p>
@@ -266,7 +293,7 @@
         <p style="max-width: 580px; margin: 0 auto 2rem; color: var(--text-secondary);">
           Our rapid-response mobile support units are stationed across all 12 metro districts with an average arrival time under 12 minutes.
         </p>
-        <a href="tel:18003274743" class="btn btn-secondary btn-lg">Call Emergency Hotline: (800) 327-4743</a>
+        <a href="tel:+18003274743" class="btn btn-secondary btn-lg">Call Emergency Hotline: (800) 327-4743</a>
       </div>
     </section>
   </main>
@@ -276,74 +303,71 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="../index.html" class="logo">
-            <div class="logo-icon">⚡</div>
-            <span>DASH</span>RIDES
+          <a href="../index.html" class="footer-brand-logo">
+            <div class="logo-icon"><svg viewBox="0 0 32 32" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M17.8 2.8L8.2 14.6H13.1L10.2 26.2L22.6 13.6H17.4L20.1 2.8Z" fill="white" stroke="white" stroke-width="0.45" stroke-linejoin="round"/><g stroke="white" stroke-linecap="round" opacity="0.92"><path d="M4.6 10.2H8.1" stroke-width="1.55"/><path d="M3 16H7.8" stroke-width="1.65"/><path d="M4.9 21.8H8.4" stroke-width="1.5" opacity="0.78"/></g></svg></div>
+            <div class="footer-brand-text">
+              <span class="footer-brand-name"><span>DASH</span>RIDES</span>
+              <span class="footer-brand-tagline">ELECTRIC MOBILITY</span>
+            </div>
           </a>
-          <p>The definitive luxury electric scooter and moped network. Engineered for speed, safety, and sustainable urban living.</p>
+          <p>India's premier electric mobility network, serving 40+ urban centers with smart-connected EV mopeds, rapid battery swaps, and exceptional ride performance.</p>
           <div class="social-links">
-            <a href="#" class="social-btn" aria-label="Twitter">𝕏</a>
-            <a href="#" class="social-btn" aria-label="Instagram">📸</a>
-            <a href="#" class="social-btn" aria-label="LinkedIn">💼</a>
-            <a href="#" class="social-btn" aria-label="YouTube">▶</a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
           </div>
         </div>
 
         <div>
-          <h4 class="footer-heading">Pages</h4>
+          <h4 class="footer-heading">SERVICES</h4>
           <div class="footer-links">
-            <a href="../index.html">Home Cinematic</a>
-            <a href="home-2.html">Home Editorial</a>
-            <a href="about.html">About Brand</a>
-            <a href="services.html">Services & Plans</a>
-            <a href="blog.html">Journal Articles</a>
-          </div>
-        </div>
-
-        <div>
-          <h4 class="footer-heading">Riders</h4>
-          <div class="footer-links">
+            <a href="services.html">Daily Commute Pass</a>
+            <a href="services.html#plans">Weekly Subscriptions</a>
+            <a href="services.html#corporate">Corporate Fleet</a>
+            <a href="services.html#coverage">Battery Swap Network</a>
+            <a href="services.html#delivery">Delivery Partner Rides</a>
             <a href="dashboard.html">Rider Dashboard</a>
-            <a href="dashboard.html#booking">Book a Ride</a>
-            <a href="dashboard.html#history">Rental Receipts</a>
-            <a href="services.html#coverage">Coverage Hubs</a>
-            <a href="services.html#safety">Safety Rules</a>
           </div>
         </div>
 
         <div>
-          <h4 class="footer-heading">Legal & Info</h4>
+          <h4 class="footer-heading">COMPANY</h4>
           <div class="footer-links">
-            <a href="privacy-policy.html">Privacy Policy</a>
-            <a href="terms.html">Terms of Service</a>
-            <a href="sitemap.html">Sitemap Directory</a>
-            <a href="404.html">404 Error Page</a>
-            <a href="maintenance.html">System Status</a>
+            <a href="../index.html">Home</a>
+            <a href="home-2.html">Home 2</a>
+            <a href="about.html">About Us</a>
+            <a href="services.html">Services</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Contact</a>
           </div>
         </div>
 
-        <div>
-          <h4 class="footer-heading">24/7 Dispatch Hotline</h4>
-          <p style="font-size: 0.9rem; margin-bottom: 0.75rem;">Need roadside assistance, battery swaps, or account help?</p>
-          <div style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 700; color: var(--color-electric-lime); margin-bottom: 1rem;">
-            +1 (800) 327-4743
-          </div>
-          <span class="badge badge-available"><span class="status-dot"></span> All 520 Hubs Online</span>
+        <div class="footer-newsletter-col">
+          <h4 class="footer-heading">STAY CONNECTED</h4>
+          <p class="footer-newsletter-text">Receive seasonal fleet updates, smart urban mobility guides, and executive subscriber perks before anyone else.</p>
+          <form class="footer-newsletter-form">
+            <div class="footer-newsletter-group">
+              <input type="email" placeholder="Your work email..." class="footer-newsletter-input" required aria-label="Your work email">
+              <button type="submit" class="footer-newsletter-btn">JOIN</button>
+            </div>
+          </form>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <div>© <span class="current-year"></span> DashRides Mobility Inc. All rights reserved. Urban Luxury Experience.</div>
-        <div style="display: flex; gap: 1.5rem;">
-          <a href="privacy-policy.html">Privacy</a>
-          <a href="terms.html">Terms</a>
+        <div class="footer-copyright">© <span class="current-year"></span> DashRides Pvt. Ltd. All rights reserved. Established across 40+ urban centers.</div>
+        <div class="footer-legal-links">
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="terms.html">Terms &amp; Conditions</a>
           <a href="sitemap.html">Sitemap</a>
         </div>
       </div>
     </div>
   </footer>
 
-  <button class="back-to-top" aria-label="Back to top">↑</button>
+  <button class="back-to-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
 
   <script src="../js/main.js"></script>
   <script src="../js/scroll-reveal.js"></script>

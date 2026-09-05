@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="DashRides favicon">
+  <defs>
+    <linearGradient id="drBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B0F17"/>
+      <stop offset="100%" stop-color="#161E2E"/>
+    </linearGradient>
+    <linearGradient id="drGrad" x1="14%" y1="12%" x2="86%" y2="88%">
+      <stop offset="0%" stop-color="#B7D84B"/>
+      <stop offset="58%" stop-color="#C9E65A"/>
+      <stop offset="100%" stop-color="#D97745"/>
+    </linearGradient>
+    <linearGradient id="drStroke" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#B7D84B" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#D97745" stop-opacity="0.5"/>
+    </linearGradient>
+    <filter id="drGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="12" stdDeviation="18" flood-color="#B7D84B" flood-opacity="0.28"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="1" flood-color="white" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <!-- Outer squircle -->
+  <rect x="24" y="24" width="464" height="464" rx="138" fill="url(#drBg)" stroke="url(#drStroke)" stroke-width="3.5" filter="url(#drGlow)"/>
+
+  <!-- Inner subtle rim -->
+  <rect x="24" y="24" width="464" height="464" rx="138" fill="none" stroke="white" stroke-opacity="0.06" stroke-width="1.5"/>
+
+  <!-- Speed dash accents (left side) -->
+  <g stroke-linecap="round" opacity="0.95">
+    <path d="M108 188 H168" stroke="#B7D84B" stroke-width="15" />
+    <path d="M78 256 H176" stroke="#B7D84B" stroke-width="17" />
+    <path d="M102 326 H168" stroke="#D97745" stroke-width="14" opacity="0.95"/>
+  </g>
+
+  <!-- Central bolt emblem -->
+  <g filter="url(#drGlow)">
+    <!-- Bolt shape with chamfered edges for premium feel -->
+    <path d="M304.5 78.5 L178.5 266.5 L257.5 266.5 L214.2 435.5 L373.2 217.5 L278.5 217.5 Z"
+          fill="url(#drGrad)"
+          stroke="#0B0F17" stroke-width="6.5" stroke-linejoin="round" stroke-linecap="round"/>
+    <!-- Highlight slash -->
+    <path d="M263 98 L190 236 H240 L215 356 L330 224 H262 Z"
+          fill="none" stroke="white" stroke-opacity="0.22" stroke-width="3" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Micro dot for precision -->
+  <circle cx="256" cy="406" r="3.5" fill="white" opacity="0.22"/>
+</svg>

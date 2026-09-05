@@ -84,7 +84,7 @@ function initOneClickExtension() {
       setTimeout(() => {
         btn.innerHTML = originalText;
         btn.disabled = false;
-        showToast('⚡ Rental extended by +2 Hours! Updated return deadline.', 'success');
+        showToast('<i class="fa-solid fa-bolt"></i> Rental extended by +2 Hours! Updated return deadline.', 'success');
       }, 1000);
     });
   });

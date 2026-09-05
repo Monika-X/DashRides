@@ -6,12 +6,15 @@
   <title>DashRides — Luxury Urban Scooter & Moped Rental Service</title>
   <meta name="description" content="Experience high-performance electric scooters and mopeds on demand. Instant unlock, smart GPS, premium build, and flexible hourly or daily rates.">
   <meta name="keywords" content="electric scooter rental, moped rental, urban mobility, smart e-scooter, micro mobility">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="shortcut icon" href="favicon.svg">
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/animations.css">
   <link rel="stylesheet" href="css/pages.css">
   <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
   <a href="#main-content" class="skip-to-content">Skip to main content</a>
@@ -20,27 +23,49 @@
   <header class="header" id="header">
     <div class="container navbar">
       <a href="index.html" class="logo">
-        <div class="logo-icon">⚡</div>
-        <span>DASH</span>RIDES
+        <div class="logo-icon"><svg viewBox="0 0 32 32" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M17.8 2.8L8.2 14.6H13.1L10.2 26.2L22.6 13.6H17.4L20.1 2.8Z" fill="white" stroke="white" stroke-width="0.45" stroke-linejoin="round"/><g stroke="white" stroke-linecap="round" opacity="0.92"><path d="M4.6 10.2H8.1" stroke-width="1.55"/><path d="M3 16H7.8" stroke-width="1.65"/><path d="M4.9 21.8H8.4" stroke-width="1.5" opacity="0.78"/></g></svg></div>
+        <div class="logo-text">
+          <span class="logo-brand"><span>DASH</span>RIDES</span>
+          <span class="logo-tagline">ELECTRIC MOBILITY</span>
+        </div>
       </a>
 
-      <nav class="nav-links" aria-label="Main Navigation">
-        <div class="nav-item">
-          <a href="index.html" class="nav-link active">Home ▾</a>
-          <div class="dropdown-menu">
-            <a href="index.html" class="dropdown-item">Home 1 (Cinematic)</a>
-            <a href="pages/home-2.html" class="dropdown-item">Home 2 (Editorial)</a>
-          </div>
-        </div>
+            <nav class="nav-links" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="pages/home-2.html" class="nav-link">Home 2</a>
         <a href="pages/about.html" class="nav-link">About</a>
         <a href="pages/services.html" class="nav-link">Services</a>
-        <a href="pages/blog.html" class="nav-link">Journal</a>
+        <a href="pages/blog.html" class="nav-link">Blog</a>
         <a href="pages/contact.html" class="nav-link">Contact</a>
-        <a href="pages/dashboard.html" class="nav-link" style="color: var(--color-electric-lime);">Dashboard ⚡</a>
       </nav>
 
       <div class="header-actions">
-        <button class="theme-toggle" aria-label="Toggle Theme">☀️</button>
+              <div class="user-menu">
+        <button class="user-profile-btn" aria-label="User menu" aria-expanded="false" aria-haspopup="true">
+          <i class="fa-solid fa-user"></i>
+        </button>
+        <div class="user-dropdown" role="menu">
+          <div class="user-dropdown-header">
+            <div class="user-dropdown-name">Welcome Rider</div>
+            <div class="user-dropdown-email">guest@dashrides.com</div>
+          </div>
+          <a href="pages/dashboard.html" class="user-dropdown-item" role="menuitem">
+            <i class="fa-solid fa-gauge-high"></i> User Dashboard
+          </a>
+          <a href="pages/admin.html" class="user-dropdown-item admin-item" role="menuitem">
+            <i class="fa-solid fa-user-gear"></i> Admin Dashboard
+          </a>
+          <div class="user-dropdown-divider"></div>
+          <a href="pages/login.html" class="user-dropdown-item" role="menuitem">
+            <i class="fa-solid fa-right-to-bracket"></i> Login
+          </a>
+          <a href="pages/signup.html" class="user-dropdown-item" role="menuitem">
+            <i class="fa-solid fa-user-plus"></i> Sign Up
+          </a>
+          <div class="user-dropdown-footer">40+ cities • Instant unlock</div>
+        </div>
+      </div>
+      <button class="theme-toggle" aria-label="Toggle Theme"><i class="fa-solid fa-sun"></i></button>
         <button class="rtl-toggle" aria-label="Toggle Layout Direction">RTL</button>
         <a href="pages/dashboard.html#booking" class="btn btn-primary btn-sm header-cta">Book Now</a>
         <button class="menu-toggle" aria-label="Open Mobile Menu">
@@ -57,17 +82,19 @@
   <aside class="mobile-nav" aria-label="Mobile Navigation">
     <div>
       <div class="logo" style="margin-bottom: 2rem;">
-        <div class="logo-icon">⚡</div>
-        <span>DASH</span>RIDES
+        <div class="logo-icon"><svg viewBox="0 0 32 32" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M17.8 2.8L8.2 14.6H13.1L10.2 26.2L22.6 13.6H17.4L20.1 2.8Z" fill="white" stroke="white" stroke-width="0.45" stroke-linejoin="round"/><g stroke="white" stroke-linecap="round" opacity="0.92"><path d="M4.6 10.2H8.1" stroke-width="1.55"/><path d="M3 16H7.8" stroke-width="1.65"/><path d="M4.9 21.8H8.4" stroke-width="1.5" opacity="0.78"/></g></svg></div>
+        <div class="logo-text">
+          <span class="logo-brand"><span>DASH</span>RIDES</span>
+          <span class="logo-tagline">ELECTRIC MOBILITY</span>
+        </div>
       </div>
-      <div class="mobile-nav-links">
-        <a href="index.html" class="mobile-nav-link">Home 1 (Cinematic)</a>
-        <a href="pages/home-2.html" class="mobile-nav-link">Home 2 (Editorial)</a>
-        <a href="pages/about.html" class="mobile-nav-link">About Us</a>
-        <a href="pages/services.html" class="mobile-nav-link">Services & Fleet</a>
-        <a href="pages/blog.html" class="mobile-nav-link">Blog & News</a>
+                  <div class="mobile-nav-links">
+        <a href="index.html" class="mobile-nav-link">Home</a>
+        <a href="pages/home-2.html" class="mobile-nav-link">Home 2</a>
+        <a href="pages/about.html" class="mobile-nav-link">About</a>
+        <a href="pages/services.html" class="mobile-nav-link">Services</a>
+        <a href="pages/blog.html" class="mobile-nav-link">Blog</a>
         <a href="pages/contact.html" class="mobile-nav-link">Contact</a>
-        <a href="pages/dashboard.html" class="mobile-nav-link" style="color: var(--color-electric-lime);">Rider Dashboard</a>
       </div>
     </div>
     <div>
@@ -93,7 +120,7 @@
               <p class="hero-desc">Experience hyper-responsive dual motors, aerospace-grade carbon alloy frames, and instant app-based NFC unlocks across 500+ city charging hubs.</p>
               <div class="hero-actions">
                 <a href="#fleet" class="btn btn-primary btn-lg">Explore Fleet</a>
-                <a href="#calculator" class="btn btn-glass btn-lg">Estimate Fare ➔</a>
+                <a href="#calculator" class="btn btn-glass btn-lg">Estimate Fare <i class="fa-solid fa-arrow-right" style="margin-left:0.35rem;"></i></a>
               </div>
             </div>
           </div>
@@ -136,9 +163,9 @@
 
       <!-- Controls -->
       <div class="slider-controls">
-        <button class="slider-btn slider-prev" aria-label="Previous Slide">‹</button>
+        <button class="slider-btn slider-prev" aria-label="Previous Slide"><i class="fa-solid fa-chevron-left"></i></button>
         <div class="slider-dots"></div>
-        <button class="slider-btn slider-next" aria-label="Next Slide">›</button>
+        <button class="slider-btn slider-next" aria-label="Next Slide"><i class="fa-solid fa-chevron-right"></i></button>
       </div>
     </section>
 
@@ -146,7 +173,7 @@
     <section class="features-bar-section container">
       <div class="features-bar-grid reveal-fade-up">
         <div class="feature-box">
-          <div class="feature-icon-wrapper">⚡</div>
+          <div class="feature-icon-wrapper"><i class="fa-solid fa-bolt"></i></div>
           <div class="feature-info">
             <h4>Instant 5s Unlock</h4>
             <p>Tap your smartphone or NFC card to unlock in under 5 seconds. Zero paperwork.</p>
@@ -154,7 +181,7 @@
         </div>
 
         <div class="feature-box">
-          <div class="feature-icon-wrapper">🛡️</div>
+          <div class="feature-icon-wrapper"><i class="fa-solid fa-shield-halved"></i></div>
           <div class="feature-info">
             <h4>All-Inclusive Insurance</h4>
             <p>$1M third-party liability coverage and $0 deductible damage protection built-in.</p>
@@ -162,7 +189,7 @@
         </div>
 
         <div class="feature-box">
-          <div class="feature-icon-wrapper">📍</div>
+          <div class="feature-icon-wrapper"><i class="fa-solid fa-location-dot"></i></div>
           <div class="feature-info">
             <h4>500+ Smart Drop Zones</h4>
             <p>Park at designated city hubs or partnered charging stations with one tap.</p>
@@ -170,7 +197,7 @@
         </div>
 
         <div class="feature-box">
-          <div class="feature-icon-wrapper">🔋</div>
+          <div class="feature-icon-wrapper"><i class="fa-solid fa-battery-full"></i></div>
           <div class="feature-info">
             <h4>Fast Swappable Power</h4>
             <p>Never run empty. Free instant battery swap stations located every 2 miles.</p>
@@ -528,7 +555,7 @@
               </p>
             </div>
 
-            <a href="pages/dashboard.html#booking" class="btn btn-primary btn-lg" style="width: 100%; margin-top: 2rem;">Proceed to Booking ➔</a>
+            <a href="pages/dashboard.html#booking" class="btn btn-primary btn-lg" style="width: 100%; margin-top: 2rem;">Proceed to Booking <i class="fa-solid fa-arrow-right" style="margin-left:0.35rem;"></i></a>
           </div>
         </div>
       </div>
@@ -552,7 +579,7 @@
               <span style="font-size: 0.8rem; color: var(--text-muted);">Senior UX Director, Spotify</span>
             </div>
           </div>
-          <div style="color: #F59E0B; margin-bottom: 1rem; font-size: 1.1rem;">★★★★★</div>
+          <div style="color: #F59E0B; margin-bottom: 1rem; font-size: 1.1rem;"><i class="fa-solid fa-star" style="color:#F59E0B;"></i><i class="fa-solid fa-star" style="color:#F59E0B;"></i><i class="fa-solid fa-star" style="color:#F59E0B;"></i><i class="fa-solid fa-star" style="color:#F59E0B;"></i><i class="fa-solid fa-star" style="color:#F59E0B;"></i></div>
           <p style="font-size: 0.95rem; line-height: 1.6;">
             "DashRides is the Tesla of two-wheelers. The Phantom Pro accelerates like a dream, the NFC phone unlock is instantaneous, and I bypass 45 minutes of bumper-to-bumper downtown traffic every single morning."
           </p>
@@ -567,7 +594,7 @@
               <span style="font-size: 0.8rem; color: var(--text-muted);">Architect & Urbanist</span>
             </div>
           </div>
-          <div style="color: #F59E0B; margin-bottom: 1rem; font-size: 1.1rem;">★★★★★</div>
+          <div style="color: #F59E0B; margin-bottom: 1rem; font-size: 1.1rem;"><i class="fa-solid fa-star" style="color:#F59E0B;"></i><i class="fa-solid fa-star" style="color:#F59E0B;"></i><i class="fa-solid fa-star" style="color:#F59E0B;"></i><i class="fa-solid fa-star" style="color:#F59E0B;"></i><i class="fa-solid fa-star" style="color:#F59E0B;"></i></div>
           <p style="font-size: 0.95rem; line-height: 1.6;">
             "We rented the Classic 50 Mopeds for an entire weekend coastal road trip. 75km range on a single battery, plush dual seating, and the 1-click extension feature in the dashboard saved us from any return hassle."
           </p>
@@ -582,7 +609,7 @@
               <span style="font-size: 0.8rem; color: var(--text-muted);">Cinematographer</span>
             </div>
           </div>
-          <div style="color: #F59E0B; margin-bottom: 1rem; font-size: 1.1rem;">★★★★★</div>
+          <div style="color: #F59E0B; margin-bottom: 1rem; font-size: 1.1rem;"><i class="fa-solid fa-star" style="color:#F59E0B;"></i><i class="fa-solid fa-star" style="color:#F59E0B;"></i><i class="fa-solid fa-star" style="color:#F59E0B;"></i><i class="fa-solid fa-star" style="color:#F59E0B;"></i><i class="fa-solid fa-star" style="color:#F59E0B;"></i></div>
           <p style="font-size: 0.95rem; line-height: 1.6;">
             "The suspension on the CyberScoot X handles cobblestones and railway tracks like butter. Plus, their instant PDF agreement and billing system made expensing the rides to our production budget effortless."
           </p>
@@ -613,74 +640,71 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="index.html" class="logo">
-            <div class="logo-icon">⚡</div>
-            <span>DASH</span>RIDES
+          <a href="index.html" class="footer-brand-logo">
+            <div class="logo-icon"><svg viewBox="0 0 32 32" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M17.8 2.8L8.2 14.6H13.1L10.2 26.2L22.6 13.6H17.4L20.1 2.8Z" fill="white" stroke="white" stroke-width="0.45" stroke-linejoin="round"/><g stroke="white" stroke-linecap="round" opacity="0.92"><path d="M4.6 10.2H8.1" stroke-width="1.55"/><path d="M3 16H7.8" stroke-width="1.65"/><path d="M4.9 21.8H8.4" stroke-width="1.5" opacity="0.78"/></g></svg></div>
+            <div class="footer-brand-text">
+              <span class="footer-brand-name"><span>DASH</span>RIDES</span>
+              <span class="footer-brand-tagline">ELECTRIC MOBILITY</span>
+            </div>
           </a>
-          <p>The definitive luxury electric scooter and moped network. Engineered for speed, safety, and sustainable urban living.</p>
+          <p>India's premier electric mobility network, serving 40+ urban centers with smart-connected EV mopeds, rapid battery swaps, and exceptional ride performance.</p>
           <div class="social-links">
-            <a href="#" class="social-btn" aria-label="Twitter">𝕏</a>
-            <a href="#" class="social-btn" aria-label="Instagram">📸</a>
-            <a href="#" class="social-btn" aria-label="LinkedIn">💼</a>
-            <a href="#" class="social-btn" aria-label="YouTube">▶</a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
           </div>
         </div>
 
         <div>
-          <h4 class="footer-heading">Pages</h4>
+          <h4 class="footer-heading">SERVICES</h4>
           <div class="footer-links">
-            <a href="index.html">Home Cinematic</a>
-            <a href="pages/home-2.html">Home Editorial</a>
-            <a href="pages/about.html">About Brand</a>
-            <a href="pages/services.html">Services & Plans</a>
-            <a href="pages/blog.html">Journal Articles</a>
-          </div>
-        </div>
-
-        <div>
-          <h4 class="footer-heading">Riders</h4>
-          <div class="footer-links">
+            <a href="pages/services.html">Daily Commute Pass</a>
+            <a href="pages/services.html#plans">Weekly Subscriptions</a>
+            <a href="pages/services.html#corporate">Corporate Fleet</a>
+            <a href="pages/services.html#coverage">Battery Swap Network</a>
+            <a href="pages/services.html#delivery">Delivery Partner Rides</a>
             <a href="pages/dashboard.html">Rider Dashboard</a>
-            <a href="pages/dashboard.html#booking">Book a Ride</a>
-            <a href="pages/dashboard.html#history">Rental Receipts</a>
-            <a href="pages/services.html#coverage">Coverage Hubs</a>
-            <a href="pages/services.html#safety">Safety Rules</a>
           </div>
         </div>
 
         <div>
-          <h4 class="footer-heading">Legal & Info</h4>
+          <h4 class="footer-heading">COMPANY</h4>
           <div class="footer-links">
-            <a href="pages/privacy-policy.html">Privacy Policy</a>
-            <a href="pages/terms.html">Terms of Service</a>
-            <a href="pages/sitemap.html">Sitemap Directory</a>
-            <a href="pages/404.html">404 Error Page</a>
-            <a href="pages/maintenance.html">System Status</a>
+            <a href="index.html">Home</a>
+            <a href="pages/home-2.html">Home 2</a>
+            <a href="pages/about.html">About Us</a>
+            <a href="pages/services.html">Services</a>
+            <a href="pages/blog.html">Blog</a>
+            <a href="pages/contact.html">Contact</a>
           </div>
         </div>
 
-        <div>
-          <h4 class="footer-heading">24/7 Dispatch Hotline</h4>
-          <p style="font-size: 0.9rem; margin-bottom: 0.75rem;">Need roadside assistance, battery swaps, or account help?</p>
-          <div style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 700; color: var(--color-electric-lime); margin-bottom: 1rem;">
-            +1 (800) 327-4743
-          </div>
-          <span class="badge badge-available"><span class="status-dot"></span> All 520 Hubs Online</span>
+        <div class="footer-newsletter-col">
+          <h4 class="footer-heading">STAY CONNECTED</h4>
+          <p class="footer-newsletter-text">Receive seasonal fleet updates, smart urban mobility guides, and executive subscriber perks before anyone else.</p>
+          <form class="footer-newsletter-form">
+            <div class="footer-newsletter-group">
+              <input type="email" placeholder="Your work email..." class="footer-newsletter-input" required aria-label="Your work email">
+              <button type="submit" class="footer-newsletter-btn">JOIN</button>
+            </div>
+          </form>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <div>© <span class="current-year"></span> DashRides Mobility Inc. All rights reserved. Urban Luxury Experience.</div>
-        <div style="display: flex; gap: 1.5rem;">
-          <a href="pages/privacy-policy.html">Privacy</a>
-          <a href="pages/terms.html">Terms</a>
+        <div class="footer-copyright">© <span class="current-year"></span> DashRides Pvt. Ltd. All rights reserved. Established across 40+ urban centers.</div>
+        <div class="footer-legal-links">
+          <a href="pages/privacy-policy.html">Privacy Policy</a>
+          <a href="pages/terms.html">Terms &amp; Conditions</a>
           <a href="pages/sitemap.html">Sitemap</a>
         </div>
       </div>
     </div>
   </footer>
 
-  <button class="back-to-top" aria-label="Back to top">↑</button>
+  <button class="back-to-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
 
   <!-- Scripts -->
   <script src="js/main.js"></script>
