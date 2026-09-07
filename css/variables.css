@@ -72,30 +72,48 @@
   --header-height: 80px;
 }
 
-/* Light Mode Overrides */
+/* Light Mode Overrides - High Contrast Fix */
 [data-theme="light"] {
-  --bg-primary: #F8F9FA;
-  --bg-secondary: #F5F1E8;
-  --bg-tertiary: #E8E5DD;
-  --bg-card: rgba(255, 255, 255, 0.85);
-  --bg-card-hover: #FFFFFF;
-  --bg-glass: rgba(245, 241, 232, 0.8);
+  --bg-primary: #F8FAFC;
+  --bg-secondary: #FFFFFF;
+  --bg-tertiary: #F1F5F9;
+  --bg-card: #FFFFFF;
+  --bg-card-hover: #F8FAFC;
+  --bg-glass: rgba(255, 255, 255, 0.94);
   --bg-input: #FFFFFF;
 
-  --text-primary: #111827;
-  --text-secondary: #374151;
-  --text-muted: #6B7280;
+  --text-primary: #0F172A;
+  --text-secondary: #334155;
+  --text-muted: #64748B;
   --text-inverse: #FFFFFF;
 
-  --border-color: rgba(55, 65, 81, 0.15);
-  --border-focus: #111827;
-  --border-hover: rgba(217, 119, 69, 0.5);
+  /* Darker brand colors for AAA contrast on light surfaces (tags fix) */
+  --color-electric-lime: #36540A;
+  --color-electric-lime-glow: rgba(54, 84, 10, 0.22);
+  --color-electric-lime-soft: rgba(54, 84, 10, 0.14);
+  --color-burnt-orange: #7C2D12;
+  --color-burnt-orange-glow: rgba(124, 45, 18, 0.22);
+  --color-burnt-orange-soft: rgba(124, 45, 18, 0.14);
 
-  --shadow-sm: 0 2px 8px rgba(17, 24, 39, 0.06);
-  --shadow-md: 0 8px 24px rgba(17, 24, 39, 0.1);
-  --shadow-lg: 0 16px 40px rgba(17, 24, 39, 0.15);
-  --shadow-glow: 0 0 20px rgba(183, 216, 75, 0.3);
-  --shadow-orange-glow: 0 0 20px rgba(217, 119, 69, 0.25);
+  /* Status colors - darker for contrast */
+  --color-success: #065F46;
+  --color-success-bg: rgba(6, 95, 70, 0.10);
+  --color-warning: #92400E;
+  --color-warning-bg: rgba(146, 64, 14, 0.10);
+  --color-danger: #B91C1C;
+  --color-danger-bg: rgba(185, 28, 28, 0.10);
+  --color-info: #1D4ED8;
+  --color-info-bg: rgba(29, 78, 216, 0.10);
+
+  --border-color: #E2E8F0;
+  --border-focus: #36540A;
+  --border-hover: #94A3B8;
+
+  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.08), 0 1px 2px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 4px 6px rgba(15, 23, 42, 0.07), 0 10px 15px rgba(15, 23, 42, 0.06);
+  --shadow-lg: 0 10px 25px rgba(15, 23, 42, 0.08), 0 20px 40px rgba(15, 23, 42, 0.06);
+  --shadow-glow: 0 0 18px rgba(54, 84, 10, 0.18);
+  --shadow-orange-glow: 0 0 18px rgba(124, 45, 18, 0.16);
 }
 
 /* RTL Layout Helpers */

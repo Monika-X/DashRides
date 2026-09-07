@@ -8,14 +8,16 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function initFleetFilters() {
-  const filterBtns = document.querySelectorAll('.filter-btn');
+  // Scope to fleet section only to avoid clashing with blog-filter
+  const fleetFilterBar = document.querySelector('#fleet .fleet-filter-bar, .fleet-section .fleet-filter-bar, .fleet-filter-bar:not(.blog-filter-bar)');
+  const filterBtns = fleetFilterBar ? fleetFilterBar.querySelectorAll('.filter-btn') : document.querySelectorAll('.fleet-card ~ .filter-btn');
   const fleetCards = document.querySelectorAll('.fleet-card[data-category]');
 
   if (!filterBtns.length || !fleetCards.length) return;
 
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      // Toggle active button
+      // Toggle active button within fleet bar only
       filterBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
 

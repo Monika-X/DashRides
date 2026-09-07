@@ -103,25 +103,28 @@
   </aside>
 
   <main id="main-content">
-    <!-- SECTION 1: EDITORIAL MAGAZINE HERO HEADER -->
-    <section class="manifesto-section container">
-      <div style="max-width: 800px; margin: 0 auto; text-align: center;" class="reveal-fade-up">
-        <span class="section-tag">Urban Dispatch</span>
-        <h1 style="font-size: clamp(2.5rem, 5vw, 4.25rem); line-height: 1.1; margin-bottom: 1.25rem;">
-          The DashRides <span class="text-gradient-lime">Blog</span>
-        </h1>
-        <p style="font-size: 1.2rem; color: var(--text-secondary); line-height: 1.7;">
-          Engineering deep-dives, nocturnal city guides, sustainable urban planning, and the future of micro-electric transit.
-        </p>
+    <!-- SECTION 1: EDITORIAL MAGAZINE HERO HEADER - Background Image -->
+    <section class="manifesto-section" style="position: relative; background-image: url('https://i.pinimg.com/1200x/44/09/80/440980d5d3be6c7302819d4304d3e8a1.jpg'); background-size: cover; background-position: center; overflow: hidden; min-height: 560px; display: flex; align-items: center; padding: 9rem 1.5rem 6rem;">
+      <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(15,23,42,0.58) 0%, rgba(15,23,42,0.88) 100%); z-index: 1;"></div>
+      <div class="container" style="position: relative; z-index: 2; max-width: 800px; margin: 0 auto; text-align: center;">
+        <div class="reveal-fade-up">
+          <span class="section-tag" style="color: #B7D84B;">Urban Dispatch</span>
+          <h1 style="font-size: clamp(2.5rem, 5vw, 4.25rem); line-height: 1.1; margin-bottom: 1.25rem; color: #FFFFFF;">
+            The DashRides <span style="background: linear-gradient(135deg, #FFFFFF, #B7D84B); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Blog</span>
+          </h1>
+          <p style="font-size: 1.2rem; color: rgba(255,255,255,0.88); line-height: 1.7;">
+            Engineering deep-dives, nocturnal city guides, sustainable urban planning, and the future of micro-electric transit.
+          </p>
+        </div>
       </div>
     </section>
 
     <!-- SECTION 2: FEATURED COVER STORY (SPLIT) -->
-    <section class="container" style="padding-bottom: 4rem;">
+    <section class="container" style="padding: 3.5rem 1.5rem 4rem;">
       <article class="card reveal-scale" style="padding: 0; overflow: hidden; border-color: rgba(183, 216, 75, 0.3);">
         <div style="display: grid; grid-template-columns: 1.2fr 0.8fr;">
           <div style="height: 420px; overflow: hidden;">
-            <img src="https://images.unsplash.com/photo-1519752594763-2633e8d40c95?auto=format&fit=crop&w=1000&q=80" alt="Featured Article Scooter" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+            <img src="https://i.pinimg.com/1200x/1f/95/0c/1f950c0e15cc5fcb25b1e9dee7096c91.jpg" alt="Why Dual-Motor Torque Is Revolutionizing Urban Rush Hours - Featured Deep Dive" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
           </div>
           <div style="padding: 3.5rem; display: flex; flex-direction: column; justify-content: space-between; background: var(--bg-card);">
             <div>
@@ -146,15 +149,25 @@
     </section>
 
     <!-- SECTION 3: LATEST ARTICLES GRID (6 UNIQUE POSTS) -->
-    <section class="container" style="padding: 4rem 1.5rem;">
+    <section class="container" style="padding: 4rem 1.5rem;" id="latest-dispatches">
       <div class="section-header text-center reveal-fade-up">
         <span class="section-tag tag-orange">Latest Dispatches</span>
         <h2 class="section-title">Fresh Perspectives & Guides</h2>
       </div>
 
+      <div class="fleet-filter-bar blog-filter-bar reveal-fade-up" style="margin-bottom: 2.5rem;">
+        <button class="filter-btn active" data-filter="all">All Topics</button>
+        <button class="filter-btn" data-filter="city-guides">City Guides</button>
+        <button class="filter-btn" data-filter="battery-tech">Battery Tech</button>
+        <button class="filter-btn" data-filter="safety-protocol">Safety</button>
+        <button class="filter-btn" data-filter="touring">Touring</button>
+        <button class="filter-btn" data-filter="sustainability">Sustainability</button>
+        <button class="filter-btn" data-filter="engineering">Engineering</button>
+      </div>
+
       <div class="blog-grid">
         <!-- Article 1 -->
-        <article class="blog-card reveal-fade-up delay-100">
+        <article class="blog-card reveal-fade-up delay-100" data-category="city-guides">
           <div class="blog-img-wrapper">
             <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=800&q=80" alt="City Sunset Scooter" class="blog-img" loading="lazy">
           </div>
@@ -177,7 +190,7 @@
         </article>
 
         <!-- Article 2 -->
-        <article class="blog-card reveal-fade-up delay-200">
+        <article class="blog-card reveal-fade-up delay-200" data-category="battery-tech">
           <div class="blog-img-wrapper">
             <img src="https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?auto=format&fit=crop&w=800&q=80" alt="Coastal Road Ride" class="blog-img" loading="lazy">
           </div>
@@ -200,7 +213,7 @@
         </article>
 
         <!-- Article 3 -->
-        <article class="blog-card reveal-fade-up delay-300">
+        <article class="blog-card reveal-fade-up delay-300" data-category="safety-protocol">
           <div class="blog-img-wrapper">
             <img src="https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&w=800&q=80" alt="Electric bike engineering" class="blog-img" loading="lazy">
           </div>
@@ -223,7 +236,7 @@
         </article>
 
         <!-- Article 4 -->
-        <article class="blog-card reveal-fade-up delay-100">
+        <article class="blog-card reveal-fade-up delay-100" data-category="touring">
           <div class="blog-img-wrapper">
             <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Mountain Road Journey" class="blog-img" loading="lazy">
           </div>
@@ -246,7 +259,7 @@
         </article>
 
         <!-- Article 5 -->
-        <article class="blog-card reveal-fade-up delay-200">
+        <article class="blog-card reveal-fade-up delay-200" data-category="sustainability">
           <div class="blog-img-wrapper">
             <img src="https://images.unsplash.com/photo-1477959858617-67f30bc75b82?auto=format&fit=crop&w=800&q=80" alt="Futuristic City Skyline" class="blog-img" loading="lazy">
           </div>
@@ -269,7 +282,7 @@
         </article>
 
         <!-- Article 6 -->
-        <article class="blog-card reveal-fade-up delay-300">
+        <article class="blog-card reveal-fade-up delay-300" data-category="engineering">
           <div class="blog-img-wrapper">
             <img src="https://images.unsplash.com/photo-1558981285-6f0c94958bb6?auto=format&fit=crop&w=800&q=80" alt="Carbon Alloy Chassis" class="blog-img" loading="lazy">
           </div>
@@ -329,17 +342,17 @@
       </div>
     </section>
 
-    <!-- SECTION 6: DISPATCH NEWSLETTER CAPTURE -->
+    <!-- SECTION 6: DISPATCH NEWSLETTER CAPTURE - Restyled -->
     <section class="container" style="padding-bottom: 7rem;">
-      <div class="card reveal-scale" style="background: linear-gradient(135deg, var(--bg-card) 0%, rgba(183, 216, 75, 0.08) 100%); border-color: var(--color-electric-lime); text-align: center; padding: 4.5rem 2rem;">
-        <span class="badge badge-lime" style="margin-bottom: 1.25rem;">Weekly Digest</span>
-        <h2 style="font-size: clamp(2rem, 3.5vw, 3rem); margin-bottom: 1rem;">Join 48,000+ Urban Mobility Insiders</h2>
-        <p style="max-width: 580px; margin: 0 auto 2.5rem; color: var(--text-secondary);">
+      <div class="card reveal-scale" style="background: radial-gradient(600px 280px at 50% 0%, rgba(183,216,75,0.18) 0%, transparent 62%), linear-gradient(135deg, #0F172A 0%, #172417 100%); border: 1.5px solid #B7D84B; text-align: center; padding: 4.5rem 2rem; box-shadow: 0 0 36px rgba(183,216,75,0.16), 0 12px 32px rgba(0,0,0,0.18); position: relative; overflow: hidden;">
+        <span class="badge badge-lime" style="margin-bottom: 1.25rem; background: rgba(183,216,75,0.14); color: #B7D84B; border-color: rgba(183,216,75,0.28);">Weekly Digest</span>
+        <h2 style="font-size: clamp(2rem, 3.5vw, 3rem); margin-bottom: 1rem; color: #FFFFFF;">Join 48,000+ Urban Mobility Insiders</h2>
+        <p style="max-width: 580px; margin: 0 auto 2.5rem; color: rgba(255,255,255,0.84);">
           Curated dispatches on micro-electric transit innovations, municipal policy breakthroughs, and early access to new model releases.
         </p>
 
         <form style="max-width: 500px; margin: 0 auto; display: flex; gap: 0.75rem; flex-wrap: wrap;" onsubmit="event.preventDefault(); showToast('Subscribed! Welcome to the Urban Dispatch.', 'success'); this.reset();">
-          <input type="email" class="form-control" placeholder="Enter your work or personal email..." required style="flex: 1; min-width: 240px;">
+          <input type="email" class="form-control" placeholder="Enter your work or personal email..." required style="flex: 1; min-width: 240px; background: rgba(255,255,255,0.94); border-color: rgba(255,255,255,0.22); color: #0F172A;">
           <button type="submit" class="btn btn-primary">Subscribe</button>
         </form>
       </div>
@@ -419,5 +432,6 @@
 
   <script src="../js/main.js"></script>
   <script src="../js/scroll-reveal.js"></script>
+  <script src="../js/blog-filter.js"></script>
 </body>
 </html>

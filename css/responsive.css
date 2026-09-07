@@ -106,6 +106,25 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .split-hero-img-box {
+    overflow: visible;
+  }
+
+  .floating-speed-card {
+    left: 1rem;
+    right: auto;
+    bottom: 1rem;
+    max-width: calc(100% - 2rem);
+    width: fit-content;
+    padding: 0.85rem 1.15rem;
+    gap: 0.75rem;
+  }
+
+  [dir="rtl"] .floating-speed-card {
+    left: auto;
+    right: 1rem;
+  }
+
   .active-rental-grid {
     grid-template-columns: 1fr;
   }
@@ -129,6 +148,98 @@
 
   .dash-nav-btn {
     white-space: nowrap;
+  }
+
+  .data-table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: var(--radius-lg);
+  }
+
+  .dash-table {
+    min-width: 720px;
+    font-size: 0.88rem;
+  }
+
+  .dash-table th,
+  .dash-table td {
+    padding: 0.85rem 1rem;
+    white-space: nowrap;
+  }
+
+  /* Fleet Engineering Matrix - stacked earlier on tablet for no horizontal scroll */
+  #specs .data-table-wrapper {
+    overflow: visible;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+  }
+
+  #specs .dash-table {
+    min-width: 0;
+  }
+
+  #specs .dash-table thead {
+    display: none;
+  }
+
+  #specs .dash-table,
+  #specs .dash-table tbody,
+  #specs .dash-table tr {
+    display: block;
+    width: 100%;
+  }
+
+  #specs .dash-table tr {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    margin-bottom: 1.25rem;
+    box-shadow: var(--shadow-sm);
+  }
+
+  #specs .dash-table td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.9rem 1.1rem;
+    border-bottom: 1px solid var(--border-color);
+    white-space: normal;
+    font-size: 0.9rem;
+    text-align: right;
+  }
+
+  #specs .dash-table td:last-child {
+    border-bottom: none;
+  }
+
+  #specs .dash-table td::before {
+    content: attr(data-label);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    text-align: left;
+    flex-shrink: 0;
+  }
+
+  #specs .dash-table td[data-label="Model"] {
+    background: var(--bg-tertiary);
+    font-size: 1rem;
+    justify-content: flex-start;
+    gap: 0.6rem;
+  }
+
+  #specs .dash-table td[data-label="Model"]::before {
+    display: none;
+  }
+
+  #specs {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
   }
 
   .dash-content-area {
@@ -299,9 +410,103 @@
     gap: 1rem 1.5rem;
   }
 
+  .split-hero-img-box img {
+    height: auto;
+    min-height: 260px;
+    max-height: 420px;
+  }
+
   .floating-speed-card {
     position: static;
     margin-top: 1rem;
+    width: 100%;
+    max-width: 100%;
+    padding: 0.85rem 1rem;
+    gap: 0.75rem;
+    border-radius: var(--radius-md);
+  }
+
+  .floating-speed-card .floating-icon {
+    width: 36px !important;
+    min-width: 36px !important;
+    height: 36px !important;
+    font-size: 1rem !important;
+  }
+  .floating-speed-card .floating-label {
+    font-size: 0.68rem !important;
+  }
+  .floating-speed-card .floating-value {
+    font-size: 0.98rem !important;
+  }
+
+  /* Fleet Engineering Matrix - stacked cards on mobile */
+  #specs .data-table-wrapper {
+    overflow: visible;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+  }
+
+  #specs .dash-table {
+    min-width: 0;
+  }
+
+  #specs .dash-table thead {
+    display: none;
+  }
+
+  #specs .dash-table,
+  #specs .dash-table tbody,
+  #specs .dash-table tr {
+    display: block;
+    width: 100%;
+  }
+
+  #specs .dash-table tr {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    margin-bottom: 1.25rem;
+    box-shadow: var(--shadow-sm);
+  }
+
+  #specs .dash-table td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.9rem 1.1rem;
+    border-bottom: 1px solid var(--border-color);
+    white-space: normal;
+    font-size: 0.9rem;
+    text-align: right;
+  }
+
+  #specs .dash-table td:last-child {
+    border-bottom: none;
+  }
+
+  #specs .dash-table td::before {
+    content: attr(data-label);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    text-align: left;
+    flex-shrink: 0;
+  }
+
+  #specs .dash-table td[data-label="Model"] {
+    background: var(--bg-tertiary);
+    font-size: 1rem;
+    justify-content: flex-start;
+    gap: 0.6rem;
+  }
+
+  #specs .dash-table td[data-label="Model"]::before {
+    display: none;
   }
 
   .toast-container {
@@ -316,6 +521,22 @@
 
 /* Ultra-small phones (max 380px) */
 @media (max-width: 380px) {
+  .floating-speed-card {
+    padding: 0.7rem 0.85rem;
+    gap: 0.6rem;
+  }
+  .floating-speed-card .floating-icon {
+    width: 32px !important;
+    min-width: 32px !important;
+    height: 32px !important;
+    font-size: 0.9rem !important;
+  }
+  .floating-speed-card .floating-label {
+    font-size: 0.62rem !important;
+  }
+  .floating-speed-card .floating-value {
+    font-size: 0.88rem !important;
+  }
   .container {
     padding-left: 1rem;
     padding-right: 1rem;
@@ -378,6 +599,7 @@
     margin-bottom: 1rem;
     display: -webkit-box;
     -webkit-line-clamp: 2;
+    line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
   }

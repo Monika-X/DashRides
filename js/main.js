@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initNewsletter();
   initUserMenu();
   initGenericForms();
+  initNavIndication();
 });
 
 /* 1. Theme Toggle (Dark / Light Mode) */
@@ -292,6 +293,39 @@ function initGenericForms() {
       form.reset();
       form.querySelectorAll('.has-error').forEach(el => el.classList.remove('has-error'));
     });
+  });
+}
+
+/* 9b. Nav Active Indication */
+function initNavIndication() {
+  const path = window.location.pathname;
+  let current = path.split('/').pop().split('?')[0].split('#')[0] || 'index.html';
+  // handle root "/" -> index
+  if (current === '' || current === '/') current = 'index.html';
+  // normalize: lower case
+  current = current.toLowerCase();
+
+  const links = document.querySelectorAll('.nav-link, .mobile-nav-link');
+  if (!links.length) return;
+
+  // also handle footer active? only header/mobile
+  links.forEach(link => {
+    const href = link.getAttribute('href') || '';
+    // extract filename from href
+    let target = href.split('/').pop().split('?')[0].split('#')[0];
+    target = target.toLowerCase();
+    // empty or "/" -> index.html
+    if (!target || target === '' ) target = 'index.html';
+    // handle cases like "../index.html" pop gives index.html correctly
+    // handle home-2 alias? treat as distinct page
+    const isActive = target === current;
+    if (isActive) {
+      link.classList.add('active');
+      link.setAttribute('aria-current', 'page');
+    } else {
+      link.classList.remove('active');
+      link.removeAttribute('aria-current');
+    }
   });
 }
 

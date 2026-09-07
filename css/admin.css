@@ -425,3 +425,67 @@
   .admin-fleet-grid { grid-template-columns: 1fr; }
   .admin-form-grid { grid-template-columns: 1fr; }
 }
+
+/* Light theme contrast overrides */
+[data-theme="light"] .admin-layout {
+  background: #F8FAFC;
+}
+[data-theme="light"] .admin-sidebar {
+  background: #FFFFFF;
+  border-color: #E2E8F0;
+}
+[data-theme="light"] .admin-brand {
+  border-color: #E2E8F0;
+}
+[data-theme="light"] .admin-brand-title {
+  color: #0F172A;
+}
+[data-theme="light"] .admin-nav-btn {
+  color: #334155;
+}
+[data-theme="light"] .admin-nav-btn:hover {
+  background: #F1F5F9;
+  color: #0F172A;
+}
+[data-theme="light"] .admin-nav-btn.active {
+  background: rgba(124,45,18,0.08);
+  color: #7C2D12;
+  border-color: rgba(124,45,18,0.20);
+  box-shadow: none;
+}
+[data-theme="light"] .admin-kpi-card,
+[data-theme="light"] .admin-fleet-card {
+  background: #FFFFFF;
+  border-color: #E2E8F0;
+}
+[data-theme="light"] .admin-search,
+[data-theme="light"] .admin-filter-select {
+  background-color: #FFFFFF;
+  border-color: #E2E8F0;
+  color: #334155;
+}
+[data-theme="light"] .admin-inline-form {
+  background: #F8FAFC;
+  border-color: #E2E8F0;
+}
+[data-theme="light"] .status-toggle.available {
+  background: rgba(6,95,70,0.10);
+  color: #065F46;
+  border-color: rgba(6,95,70,0.22);
+}
+[data-theme="light"] .status-toggle.rented {
+  background: rgba(146,64,14,0.10);
+  color: #92400E;
+  border-color: rgba(146,64,14,0.22);
+}
+[data-theme="light"] .status-toggle.maintenance {
+  background: rgba(185,28,28,0.10);
+  color: #B91C1C;
+  border-color: rgba(185,28,28,0.22);
+}
+[data-theme="light"] .avail-dot {
+  border-color: #E2E8F0;
+}
+[data-theme="light"] .avail-dot:hover {
+  border-color: #CBD5E1;
+}

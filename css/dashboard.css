@@ -292,3 +292,50 @@
   align-items: center;
   justify-content: center;
 }
+
+/* Light theme contrast overrides */
+[data-theme="light"] .dash-sidebar {
+  background: #FFFFFF;
+  border-color: #E2E8F0;
+}
+[data-theme="light"] .dash-nav-btn:hover,
+[data-theme="light"] .dash-nav-btn.active {
+  background: rgba(54,84,10,0.08);
+  color: #36540A;
+}
+[data-theme="light"] .dash-stat-box {
+  background: #FFFFFF;
+  border-color: #E2E8F0;
+}
+[data-theme="light"] .dash-stat-icon {
+  background: #F1F5F9;
+  color: #36540A;
+}
+[data-theme="light"] .active-rental-card {
+  background: linear-gradient(135deg, #FFFFFF 0%, rgba(54,84,10,0.04) 100%);
+  border-color: #36540A;
+}
+[data-theme="light"] .rental-deadline-box {
+  background: #F8FAFC;
+  border-color: #E2E8F0;
+}
+[data-theme="light"] .deadline-countdown {
+  color: #7C2D12;
+}
+[data-theme="light"] .dash-table th {
+  background: #F8FAFC;
+  color: #475569;
+  border-color: #E2E8F0;
+}
+[data-theme="light"] .dash-table td {
+  border-color: #E2E8F0;
+  color: #334155;
+}
+[data-theme="light"] .dash-table tr:hover td {
+  background: rgba(54,84,10,0.06);
+}
+[data-theme="light"] .data-table-wrapper,
+[data-theme="light"] .doc-card {
+  background: #FFFFFF;
+  border-color: #E2E8F0;
+}
