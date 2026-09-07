@@ -1528,6 +1528,35 @@
   .admin-inline-form {
     padding: 0.85rem !important;
   }
+  /* Recent Bookings Feed @320px */
+  .card > div[style*="justify-content:space-between"] {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.6rem !important;
+  }
+  .card > div[style*="justify-content:space-between"] h3 {
+    font-size: 1rem !important;
+    line-height: 1.2 !important;
+  }
+  .card > div[style*="justify-content:space-between"] > div {
+    display: flex !important;
+    gap: 0.5rem !important;
+  }
+  .card > div[style*="justify-content:space-between"] .btn {
+    flex: 1 !important;
+    justify-content: center !important;
+    font-size: 0.7rem !important;
+    padding: 0.5rem 0.6rem !important;
+  }
+  .card .data-table-wrapper {
+    margin: 0 -0.85rem !important;
+    padding: 0 0.85rem 0.4rem !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+  .card .dash-table {
+    min-width: 560px !important;
+  }
 
   /* --------------------------------------------------------------------------
      HOME 2 - ALL SECTIONS (320px)
