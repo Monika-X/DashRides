@@ -1804,6 +1804,30 @@
     gap: 1rem !important;
     flex-wrap: wrap !important;
   }
+  /* dashboard CTAs @320px - stack all button flex rows */
+  .dash-content-area div[style*="display:flex"][style*="gap"]:has(> .btn),
+  .admin-content div[style*="display:flex"][style*="gap"]:has(> .btn),
+  .dash-tab-pane div[style*="display:flex"][style*="gap"]:has(> .btn),
+  .admin-tab-pane div[style*="display:flex"][style*="gap"]:has(> .btn) {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.5rem !important;
+  }
+  .dash-content-area div[style*="display:flex"][style*="gap"]:has(> .btn) > .btn,
+  .admin-content div[style*="display:flex"][style*="gap"]:has(> .btn) > .btn,
+  .dash-tab-pane div[style*="display:flex"][style*="gap"]:has(> .btn) > .btn,
+  .admin-tab-pane div[style*="display:flex"][style*="gap"]:has(> .btn) > .btn {
+    width: 100% !important;
+    justify-content: center !important;
+    font-size: 0.78rem !important;
+    padding: 0.6rem 0.8rem !important;
+    min-height: 38px !important;
+  }
+  /* keep badge rows horizontal */
+  .admin-kpi-card div[style*="display:flex"][style*="gap:0.5rem"]:has(.badge) {
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+  }
 
   /* --------------------------------------------------------------------------
      HOME 2 - ALL SECTIONS (320px)
