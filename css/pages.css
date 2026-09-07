@@ -360,6 +360,50 @@
   align-items: center;
 }
 
+.hero-split-title {
+  font-size: clamp(2.5rem, 4.5vw, 4.25rem);
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+  word-break: break-word;
+}
+
+.hero-split-desc {
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  margin-bottom: 2.25rem;
+  max-width: 540px;
+}
+
+.hero-split-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+
+.hero-split-stats {
+  display: flex;
+  gap: 2.5rem;
+  border-top: 1px solid var(--border-color);
+  padding-top: 1.75rem;
+}
+
+.hero-split-stat-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-split-stat-val {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 800;
+}
+
+.hero-split-stat-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
 .hero-stats-badge {
   display: inline-flex;
   align-items: center;
