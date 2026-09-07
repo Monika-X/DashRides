@@ -1170,22 +1170,37 @@
      -------------------------------------------------------------------------- */
   /* Section 1: Split Hero */
   .hero-split-section {
-    padding: 4.5rem 0 1.5rem !important;
+    padding-top: calc(var(--header-height) + 1.25rem) !important;
+    padding-bottom: 2.25rem !important;
+    padding-left: 0.85rem !important;
+    padding-right: 0.85rem !important;
     min-height: auto !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
   }
   .split-grid {
     display: flex !important;
     flex-direction: column !important;
-    gap: 1.5rem !important;
+    gap: 1.25rem !important;
+    width: 100% !important;
   }
   .hero-stats-badge {
     display: inline-flex !important;
+    align-items: center !important;
     flex-wrap: wrap !important;
     padding: 0.35rem 0.65rem !important;
-    gap: 0.35rem !important;
+    gap: 0.4rem !important;
     border-radius: var(--radius-full) !important;
-    margin-bottom: 1rem !important;
+    margin-bottom: 1.15rem !important;
     max-width: 100% !important;
+    width: fit-content !important;
+    box-sizing: border-box !important;
+  }
+  .stats-ticker-pill {
+    font-size: 0.68rem !important;
+    font-weight: 800 !important;
+    color: var(--color-electric-lime) !important;
+    flex-shrink: 0 !important;
   }
   .hero-stats-badge-text,
   .hero-stats-badge span:last-child {
@@ -1193,20 +1208,22 @@
     line-height: 1.25 !important;
     white-space: normal !important;
     word-break: break-word !important;
+    color: var(--text-secondary) !important;
   }
   .hero-split-title,
   .hero-split-section h1 {
-    font-size: clamp(1.35rem, 6.8vw, 1.65rem) !important;
-    line-height: 1.15 !important;
+    font-size: clamp(1.4rem, 6.5vw, 1.7rem) !important;
+    line-height: 1.18 !important;
     margin-bottom: 0.85rem !important;
     word-break: break-word !important;
     hyphens: auto;
   }
   .hero-split-desc,
   .hero-split-section p {
-    font-size: 0.82rem !important;
-    line-height: 1.5 !important;
-    margin-bottom: 1.25rem !important;
+    font-size: 0.84rem !important;
+    line-height: 1.55 !important;
+    margin-bottom: 1.35rem !important;
+    color: var(--text-secondary) !important;
   }
   .hero-split-actions,
   .hero-split-section .hero-split-actions,
@@ -1221,69 +1238,120 @@
   .hero-split-section .btn {
     width: 100% !important;
     justify-content: center !important;
-    padding: 0.75rem 0.85rem !important;
-    font-size: 0.82rem !important;
+    padding: 0.8rem 1rem !important;
+    font-size: 0.84rem !important;
   }
   .hero-split-stats,
   .hero-split-section .hero-split-stats,
   .hero-split-section div[style*="border-top: 1px solid"] {
-    display: flex !important;
-    flex-wrap: wrap !important;
-    gap: 0.75rem 1rem !important;
-    padding-top: 1.1rem !important;
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 0.35rem !important;
+    padding: 0.85rem 0.4rem !important;
+    background: var(--bg-card) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: var(--radius-lg) !important;
+    box-shadow: var(--shadow-sm) !important;
+    margin-top: 0.5rem !important;
+    margin-bottom: 1.25rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  [data-theme="light"] .hero-split-stats {
+    background: #FFFFFF !important;
+    border-color: #E2E8F0 !important;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05) !important;
   }
   .hero-split-stat-item,
   .hero-split-stats > div {
-    min-width: 75px;
-    flex: 1 1 30%;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    padding: 0.15rem !important;
+    min-width: 0 !important;
   }
   .hero-split-stat-val,
   .hero-split-stats > div > div:first-child {
-    font-size: 1.25rem !important;
+    font-size: 1.05rem !important;
+    font-weight: 800 !important;
     line-height: 1.1 !important;
     margin-bottom: 0.15rem !important;
+    font-family: var(--font-heading) !important;
+    white-space: nowrap !important;
   }
   .hero-split-stat-label,
   .hero-split-stats > div > div:last-child {
-    font-size: 0.65rem !important;
-    line-height: 1.25 !important;
+    font-size: 0.58rem !important;
+    line-height: 1.2 !important;
     color: var(--text-muted) !important;
+    text-align: center !important;
   }
   .split-hero-img-box {
     width: 100% !important;
     border-radius: var(--radius-lg) !important;
     overflow: visible !important;
+    margin-top: 0.5rem !important;
+    box-sizing: border-box !important;
   }
   .split-hero-img-box img {
     height: 190px !important;
-    min-height: 190px !important;
+    min-height: 180px !important;
     max-height: 220px !important;
     border-radius: var(--radius-lg) !important;
     object-fit: cover !important;
+    width: 100% !important;
+    display: block !important;
   }
   .floating-speed-card {
     position: static !important;
     margin-top: 0.75rem !important;
     width: 100% !important;
     max-width: 100% !important;
-    padding: 0.65rem 0.75rem !important;
-    gap: 0.55rem !important;
+    padding: 0.7rem 0.85rem !important;
+    gap: 0.65rem !important;
     border-radius: var(--radius-md) !important;
+    background: var(--bg-card) !important;
+    border: 1px solid var(--border-color) !important;
     box-sizing: border-box !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+  [data-theme="light"] .floating-speed-card {
+    background: #FFFFFF !important;
+    border-color: #E2E8F0 !important;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05) !important;
   }
   .floating-speed-card .floating-icon {
-    width: 32px !important;
-    height: 32px !important;
-    min-width: 32px !important;
-    font-size: 0.88rem !important;
+    width: 34px !important;
+    height: 34px !important;
+    min-width: 34px !important;
+    font-size: 0.95rem !important;
+    border-radius: 50% !important;
+    background: var(--color-electric-lime-soft) !important;
+    color: var(--color-electric-lime) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+  }
+  .floating-speed-card .floating-text {
+    flex: 1 !important;
+    min-width: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
   }
   .floating-speed-card .floating-label {
     font-size: 0.62rem !important;
     line-height: 1.2 !important;
+    color: var(--text-muted) !important;
   }
   .floating-speed-card .floating-value {
-    font-size: 0.88rem !important;
+    font-size: 0.9rem !important;
+    font-weight: 700 !important;
     line-height: 1.2 !important;
+    color: var(--text-primary) !important;
+    white-space: nowrap !important;
   }
 
   /* Section 2: Coverage Map & City Hubs (320px) */
@@ -1291,7 +1359,7 @@
   .coverage-section,
   section[id="coverage"],
   section[style*="padding: 6rem 1.5rem"] {
-    padding: 2.25rem 0.65rem !important;
+    padding: 1.5rem 0.65rem !important;
   }
   .sitemap-tree-grid {
     display: flex !important;
@@ -1329,7 +1397,7 @@
 
   /* Section 3: How It Works Timeline (320px) */
   .how-it-works-section {
-    padding: 2.25rem 0.65rem !important;
+    padding: 1.5rem 0.65rem !important;
   }
   .steps-grid {
     display: flex !important;
@@ -1362,7 +1430,7 @@
   /* Section 4: Featured Models Bento Grid (320px) */
   .bento-section,
   section:has(.bento-grid) {
-    padding: 2.25rem 0.65rem !important;
+    padding: 1.5rem 0.65rem !important;
   }
   .bento-grid {
     display: flex !important;
@@ -1411,7 +1479,7 @@
   /* Section 5: Safety Pledge & Deposit Protocol (320px) */
   .safety-pledge-section,
   section:has(.safety-pledge-card) {
-    padding: 2.25rem 0.65rem !important;
+    padding: 1.5rem 0.65rem !important;
   }
   .safety-pledge-card {
     padding: 1.15rem 0.85rem !important;
@@ -1510,6 +1578,46 @@
     font-size: 0.72rem !important;
     line-height: 1.35 !important;
     margin-top: 1.25rem !important;
+  }
+  /* Service page 320px */
+  .manifesto-section div[style*="display: flex; justify-content: center; gap: 1rem"] {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.6rem !important;
+  }
+  .manifesto-section div[style*="display: flex; justify-content: center; gap: 1rem"] .btn {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+  #plans .pricing-plans-grid {
+    gap: 0.85rem !important;
+  }
+  #plans .plan-card {
+    padding: 1.25rem 0.85rem !important;
+  }
+  #coverage .card div[style*="grid-template-columns: 1.1fr 0.9fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+  }
+  #coverage .card div[style*="grid-template-columns: 1.1fr 0.9fr"] img {
+    height: 200px !important;
+  }
+  #specs .section-title {
+    font-size: clamp(1.3rem, 6vw, 1.55rem) !important;
+  }
+  #addons .fleet-grid {
+    gap: 0.85rem !important;
+  }
+  #addons .card img {
+    height: 160px !important;
+  }
+  .faq-header {
+    padding: 0.85rem 1rem !important;
+    font-size: 0.9rem !important;
+  }
+  .faq-header span {
+    font-size: 0.88rem !important;
+    padding-right: 0.5rem !important;
   }
 }
 

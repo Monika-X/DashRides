@@ -347,7 +347,8 @@
    5. HOME 2 - SPLIT HERO & BENTO GRID
    -------------------------------------------------------------------------- */
 .hero-split-section {
-  padding: 9rem 0 5rem;
+  padding-top: calc(var(--header-height) + 3rem);
+  padding-bottom: 5rem;
   min-height: 85vh;
   display: flex;
   align-items: center;
