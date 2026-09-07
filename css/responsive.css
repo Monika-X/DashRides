@@ -1379,6 +1379,156 @@
     gap: 0.25rem !important;
   }
 
+  /* Dashboard & Admin @320px - full responsive */
+  .dashboard-layout,
+  .admin-layout {
+    grid-template-columns: 1fr !important;
+    margin-top: var(--header-height) !important;
+  }
+  .dash-sidebar,
+  .admin-sidebar {
+    width: 92vw !important;
+    max-width: 92vw !important;
+    padding: 0.9rem 0.7rem !important;
+    gap: 0.8rem !important;
+  }
+  .dash-sidebar.open,
+  .admin-sidebar.open {
+    box-shadow: 4px 0 20px rgba(0,0,0,0.25) !important;
+  }
+  .user-quick-profile {
+    gap: 0.65rem !important;
+    padding-bottom: 0.9rem !important;
+    margin-bottom: 0.9rem !important;
+  }
+  .user-avatar {
+    width: 38px !important;
+    height: 38px !important;
+  }
+  .user-name {
+    font-size: 0.85rem !important;
+  }
+  .user-badge {
+    font-size: 0.65rem !important;
+  }
+  .dash-nav-menu,
+  .admin-nav {
+    gap: 0.3rem !important;
+  }
+  .dash-nav-btn,
+  .admin-nav-btn {
+    font-size: 0.72rem !important;
+    padding: 0.5rem 0.6rem !important;
+    gap: 0.6rem !important;
+    line-height: 1.2 !important;
+  }
+  .dash-nav-btn svg,
+  .admin-nav-btn i {
+    width: 15px !important;
+    height: 15px !important;
+    font-size: 0.8rem !important;
+  }
+  .admin-nav-label {
+    font-size: 0.6rem !important;
+    margin: 0.7rem 0 0.3rem 0.4rem !important;
+  }
+  .admin-badge-count {
+    font-size: 0.6rem !important;
+    padding: 0.1rem 0.32rem !important;
+    min-width: 16px !important;
+  }
+  .dash-content-area,
+  .admin-content {
+    padding: 0.65rem !important;
+    overflow-x: hidden !important;
+  }
+  .dash-header-bar,
+  .admin-content .dash-header-bar {
+    gap: 0.6rem !important;
+    margin-bottom: 1rem !important;
+  }
+  .dash-header-bar h1,
+  .dash-header-bar h2,
+  .admin-content h1,
+  .admin-content h2 {
+    font-size: 1.15rem !important;
+    line-height: 1.2 !important;
+  }
+  .dash-header-bar p,
+  .admin-content .dash-header-bar p {
+    font-size: 0.75rem !important;
+    line-height: 1.4 !important;
+  }
+  .dash-stats-grid,
+  .admin-kpi-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.6rem !important;
+    margin-bottom: 1rem !important;
+  }
+  .active-rental-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.7rem !important;
+  }
+  .active-rental-card {
+    padding: 0.9rem !important;
+  }
+  .active-scooter-preview img {
+    height: 140px !important;
+  }
+  .rental-deadline-box {
+    padding: 0.9rem !important;
+  }
+  .deadline-countdown {
+    font-size: 1.4rem !important;
+  }
+  .data-table-wrapper {
+    margin: 0 -0.65rem !important;
+    padding: 0 0.65rem !important;
+    border-radius: var(--radius-md) !important;
+  }
+  .dash-table {
+    min-width: 520px !important;
+    font-size: 0.75rem !important;
+  }
+  .dash-table th,
+  .dash-table td {
+    padding: 0.6rem 0.65rem !important;
+    font-size: 0.72rem !important;
+  }
+  .download-docs-grid,
+  .admin-fleet-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.6rem !important;
+  }
+  .doc-card,
+  .admin-fleet-card {
+    padding: 0.85rem !important;
+  }
+  .admin-toolbar {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.5rem !important;
+  }
+  .admin-search {
+    min-width: 0 !important;
+    width: 100% !important;
+    padding: 0.45rem 0.75rem !important;
+  }
+  .admin-search input {
+    font-size: 0.8rem !important;
+  }
+  .admin-filter-select {
+    font-size: 0.75rem !important;
+    padding: 0.4rem 0.6rem !important;
+  }
+  .admin-form-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.6rem !important;
+  }
+  .admin-inline-form {
+    padding: 0.85rem !important;
+  }
+
   /* --------------------------------------------------------------------------
      HOME 2 - ALL SECTIONS (320px)
      -------------------------------------------------------------------------- */
