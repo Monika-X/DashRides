@@ -1557,6 +1557,47 @@
   .card .dash-table {
     min-width: 560px !important;
   }
+  /* Bookings Velocity (7 days) @320px */
+  div[style*="grid-template-columns: 1.6fr 1fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 0.8rem !important;
+    margin-bottom: 1rem !important;
+  }
+  div[style*="grid-template-columns: 1.6fr 1fr"] .card {
+    padding: 0.85rem !important;
+  }
+  div[style*="grid-template-columns: 1.6fr 1fr"] h3 {
+    font-size: 0.95rem !important;
+  }
+  div[style*="grid-template-columns: 1.6fr 1fr"] .badge {
+    font-size: 0.62rem !important;
+    padding: 0.2rem 0.4rem !important;
+  }
+  div[style*="height:140px"] {
+    height: 110px !important;
+    gap: 0.3rem !important;
+    padding: 0.6rem !important;
+  }
+  div[style*="height:140px"] span {
+    font-size: 0.6rem !important;
+  }
+  /* Ready to Rent @320px */
+  .admin-kpi-card .availability-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 0.3rem !important;
+    margin-top: 0.65rem !important;
+  }
+  .admin-kpi-card .availability-grid .avail-dot {
+    font-size: 0.58rem !important;
+    min-height: 26px !important;
+    padding: 0.15rem !important;
+  }
+  .admin-kpi-label {
+    font-size: 0.74rem !important;
+  }
+  .admin-kpi-value {
+    font-size: 1.25rem !important;
+  }
 
   /* --------------------------------------------------------------------------
      HOME 2 - ALL SECTIONS (320px)
