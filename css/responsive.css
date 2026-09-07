@@ -1598,6 +1598,87 @@
   .admin-kpi-value {
     font-size: 1.25rem !important;
   }
+  /* Admin sections @320px - Fleet/Live/Bookings/Active/Returns/Pricing/Coverage/Deposits/Receipts/Customers/Analytics/Settings */
+  .admin-kpi-grid,
+  .admin-fleet-grid,
+  .download-docs-grid,
+  .dash-stats-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.6rem !important;
+  }
+  .admin-toolbar {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.5rem !important;
+  }
+  .admin-search {
+    min-width: 0 !important;
+    width: 100% !important;
+  }
+  .admin-search input {
+    font-size: 0.78rem !important;
+  }
+  .admin-filters {
+    width: 100% !important;
+    flex-wrap: wrap !important;
+    gap: 0.35rem !important;
+  }
+  .admin-filter-select {
+    flex: 1 1 100px !important;
+    min-width: 0 !important;
+    font-size: 0.72rem !important;
+    padding: 0.4rem 0.6rem !important;
+  }
+  .admin-inline-form {
+    padding: 0.75rem !important;
+  }
+  .admin-form-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.55rem !important;
+  }
+  .admin-fleet-card {
+    padding-bottom: 0.2rem !important;
+  }
+  .admin-fleet-img {
+    height: 140px !important;
+  }
+  .admin-fleet-body {
+    padding: 0.85rem !important;
+  }
+  .admin-fleet-body h3 {
+    font-size: 0.92rem !important;
+  }
+  /* tables at 320 */
+  .data-table-wrapper {
+    margin: 0 -0.65rem !important;
+    padding: 0 0.65rem 0.3rem !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+  .dash-table {
+    min-width: 520px !important;
+    font-size: 0.72rem !important;
+  }
+  .dash-table th,
+  .dash-table td {
+    padding: 0.5rem 0.55rem !important;
+    font-size: 0.70rem !important;
+    white-space: nowrap !important;
+  }
+  .admin-tab-pane .card,
+  .admin-content .card {
+    padding: 0.75rem !important;
+  }
+  .admin-tab-pane h1,
+  .admin-tab-pane h2 {
+    font-size: 1.05rem !important;
+    line-height: 1.2 !important;
+  }
+  .admin-tab-pane p {
+    font-size: 0.75rem !important;
+  }
+  .availability-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
 
   /* --------------------------------------------------------------------------
      HOME 2 - ALL SECTIONS (320px)
