@@ -1787,6 +1787,24 @@
     width: 100% !important;
   }
 
+  /* Coverage Area & Hubs @320px */
+  #coverage-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.6rem !important;
+  }
+  #coverage .dash-header-bar {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+  #coverage .admin-inline-form .admin-form-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.55rem !important;
+  }
+  #coverage .card div[style*="display:flex; gap:2rem"] {
+    gap: 1rem !important;
+    flex-wrap: wrap !important;
+  }
+
   /* --------------------------------------------------------------------------
      HOME 2 - ALL SECTIONS (320px)
      -------------------------------------------------------------------------- */
