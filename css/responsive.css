@@ -2371,7 +2371,7 @@
     min-height: 44px !important;
     width: 100% !important;
   }
-  /* user dropdown @320px - fixed centered - width reduced */
+  /* user dropdown @320px - width further reduced */
   .user-dropdown {
     position: fixed !important;
     top: calc(var(--header-height) + 6px) !important;
@@ -2379,10 +2379,10 @@
     right: auto !important;
     transform: translateX(-50%) translateY(8px) !important;
     min-width: 0 !important;
-    width: 82vw !important;
-    max-width: 240px !important;
-    padding: 0.35rem 0 !important;
-    max-height: min(70vh, 380px) !important;
+    width: 72vw !important;
+    max-width: 210px !important;
+    padding: 0.3rem 0 !important;
+    max-height: min(70vh, 360px) !important;
     overflow-y: auto !important;
     -webkit-overflow-scrolling: touch !important;
     z-index: 1005 !important;
