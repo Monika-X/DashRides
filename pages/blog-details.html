@@ -107,25 +107,25 @@
     <header class="article-header container">
       <div style="max-width: 840px; margin: 0 auto;" class="reveal-fade-up">
         <div style="display: flex; justify-content: center; gap: 0.75rem; align-items: center; margin-bottom: 1.25rem;">
-          <span class="badge badge-lime">Powertrain Engineering</span>
-          <span style="font-size: 0.85rem; color: var(--text-muted);">6 Min Read • Published Oct 14, 2026</span>
+          <span class="badge badge-lime" id="article-badge">Powertrain Engineering</span>
+          <span style="font-size: 0.85rem; color: var(--text-muted);" id="article-meta">6 Min Read • Published Oct 14, 2026</span>
         </div>
-        <h1 style="font-size: clamp(2.25rem, 4.5vw, 3.75rem); line-height: 1.15; margin-bottom: 1.5rem;">
+        <h1 style="font-size: clamp(2.25rem, 4.5vw, 3.75rem); line-height: 1.15; margin-bottom: 1.5rem;" id="article-title">
           Why Dual-Motor Torque Is Revolutionizing Urban Rush Hours
         </h1>
-        <p style="font-size: 1.2rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 2rem;">
+        <p style="font-size: 1.2rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 2rem;" id="article-excerpt">
           The physics of split hub torque, intelligent electronic slip differential, and how dual 1000W brushless motors outperform single-motor commuters in real-world gridlock.
         </p>
       </div>
 
       <div class="reveal-scale">
-        <img src="https://images.unsplash.com/photo-1509749837427-ac94a2553d0e?auto=format&fit=crop&w=1200&q=80" alt="Electric Scooter Powertrain Close Up" class="article-hero-img" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1509749837427-ac94a2553d0e?auto=format&fit=crop&w=1200&q=80" alt="Electric Scooter Powertrain Close Up" class="article-hero-img" loading="lazy" id="article-hero-img">
       </div>
     </header>
 
     <!-- SECTION 2: RICH ARTICLE EDITORIAL CONTENT -->
     <article class="container">
-      <div class="article-body reveal-fade-up">
+      <div class="article-body reveal-fade-up" id="article-body">
         <p>
           For over a decade, consumer micro-mobility was defined by single 250W or 350W front-wheel hub motors. While suitable for flat promenades and lightweight riders, anyone who has attempted to climb a 15-degree hill in San Francisco, Zurich, or Lisbon knows the familiar frustration: motor whine, precipitous battery voltage sag, and deceleration to walking pace.
         </p>
@@ -153,11 +153,11 @@
     <!-- SECTION 3: AUTHOR SPOTLIGHT CARD -->
     <section class="container" style="padding: 2rem 1.5rem 4rem;">
       <div class="card reveal-fade-up" style="max-width: 800px; margin: 0 auto; display: flex; align-items: center; gap: 2rem; background: var(--bg-secondary);">
-        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80" alt="Maya Rodriguez" style="width: 84px; height: 84px; border-radius: 50%; object-fit: cover; border: 2px solid var(--color-electric-lime);">
+        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80" alt="Maya Rodriguez" style="width: 84px; height: 84px; border-radius: 50%; object-fit: cover; border: 2px solid var(--color-electric-lime);" id="author-img">
         <div>
-          <h3 style="font-size: 1.25rem; margin-bottom: 0.25rem;">Maya Rodriguez</h3>
-          <span style="font-size: 0.85rem; color: var(--color-electric-lime);">Head of Industrial Design & Telemetry</span>
-          <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.5rem; line-height: 1.5;">
+          <h3 style="font-size: 1.25rem; margin-bottom: 0.25rem;" id="author-name">Maya Rodriguez</h3>
+          <span style="font-size: 0.85rem; color: var(--color-electric-lime);" id="author-role">Head of Industrial Design & Telemetry</span>
+          <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.5rem; line-height: 1.5;" id="author-bio">
             Maya has led mobility design programs across Zurich and San Francisco for over 10 years, focusing on composite chassis dynamics and rider-centric UX.
           </p>
         </div>
@@ -171,45 +171,8 @@
         <h2 class="section-title">Related Journal Entries</h2>
       </div>
 
-      <div class="blog-grid">
-        <!-- Related 1 -->
-        <article class="blog-card reveal-fade-up delay-100">
-          <div class="blog-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=800&q=80" alt="Night route" class="blog-img" loading="lazy">
-          </div>
-          <div class="blog-content">
-            <span class="badge badge-lime" style="align-self: flex-start; margin-bottom: 0.75rem;">City Routes</span>
-            <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem;">The 7 Most Scenic Night Riding Routes</h3>
-            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">Illuminated riverways and car-free downtown bridges.</p>
-            <a href="blog.html" style="color: var(--color-electric-lime); font-size: 0.85rem; font-weight: 600; margin-top: auto;">Read Article <i class="fa-solid fa-arrow-right" style="font-size:0.85em; margin-left:0.25rem;"></i></a>
-          </div>
-        </article>
-
-        <!-- Related 2 -->
-        <article class="blog-card reveal-fade-up delay-200">
-          <div class="blog-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?auto=format&fit=crop&w=800&q=80" alt="PowerSwap Battery" class="blog-img" loading="lazy">
-          </div>
-          <div class="blog-content">
-            <span class="badge badge-orange" style="align-self: flex-start; margin-bottom: 0.75rem;">Battery Tech</span>
-            <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem;">Inside PowerSwap: 15-Second Battery Docks</h3>
-            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">Autonomous robotic cell swapping explained.</p>
-            <a href="blog.html" style="color: var(--color-electric-lime); font-size: 0.85rem; font-weight: 600; margin-top: auto;">Read Article <i class="fa-solid fa-arrow-right" style="font-size:0.85em; margin-left:0.25rem;"></i></a>
-          </div>
-        </article>
-
-        <!-- Related 3 -->
-        <article class="blog-card reveal-fade-up delay-300">
-          <div class="blog-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&w=800&q=80" alt="Safety ABS" class="blog-img" loading="lazy">
-          </div>
-          <div class="blog-content">
-            <span class="badge badge-lime" style="align-self: flex-start; margin-bottom: 0.75rem;">Safety</span>
-            <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem;">Mastering Wet Weather Commutes with ABS</h3>
-            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">Handling slippery tram tracks and sudden rain.</p>
-            <a href="blog.html" style="color: var(--color-electric-lime); font-size: 0.85rem; font-weight: 600; margin-top: auto;">Read Article <i class="fa-solid fa-arrow-right" style="font-size:0.85em; margin-left:0.25rem;"></i></a>
-          </div>
-        </article>
+      <div class="blog-grid" id="related-grid">
+        <!-- Related articles injected dynamically by blog-details.js -->
       </div>
     </section>
 
@@ -261,7 +224,7 @@
       </div>
     </section>
 
-    <!-- SECTION 6: SOCIAL SHARE & TAG INDEX STRIP -->
+     <!-- SECTION 6: SOCIAL SHARE & TAG INDEX STRIP -->
     <section class="container" style="padding-bottom: 7rem;">
       <div style="max-width: 800px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; border-top: 1px solid var(--border-color); padding-top: 2rem;" class="reveal-fade-up">
         <div style="display: flex; align-items: center; gap: 0.5rem;">
@@ -270,7 +233,7 @@
           <button class="social-btn" onclick="showToast('Shared to Twitter/X!', 'info')"><i class="fa-brands fa-x-twitter"></i></button>
           <button class="social-btn" onclick="showToast('Shared to LinkedIn!', 'info')"><i class="fa-brands fa-linkedin-in"></i></button>
         </div>
-        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;" id="article-tags">
           <span class="badge badge-lime">#DualMotor</span>
           <span class="badge badge-orange">#TorqueVectoring</span>
           <span class="badge badge-lime">#ElectricMobility</span>
@@ -352,5 +315,6 @@
 
   <script src="../js/main.js"></script>
   <script src="../js/scroll-reveal.js"></script>
+  <script src="../js/blog-details.js"></script>
 </body>
 </html>

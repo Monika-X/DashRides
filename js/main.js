@@ -103,30 +103,73 @@ function initMobileNavigation() {
 
   if (!menuToggle || !mobileNav || !mobileOverlay) return;
 
-  const toggleMenu = () => {
-    const isOpen = mobileNav.classList.contains('open');
-    if (isOpen) {
-      mobileNav.classList.remove('open');
-      menuToggle.classList.remove('active');
-      mobileOverlay.classList.remove('active');
-      document.body.style.overflow = '';
-    } else {
-      mobileNav.classList.add('open');
-      menuToggle.classList.add('active');
-      mobileOverlay.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    }
+  const openMenu = () => {
+    mobileNav.classList.add('open');
+    menuToggle.classList.add('active');
+    mobileOverlay.classList.add('active');
+    document.documentElement.classList.add('no-scroll');
+    document.body.classList.add('no-scroll');
+    document.body.style.overflow = 'hidden';
+    document.documentElement.style.overflow = 'hidden';
+    menuToggle.setAttribute('aria-expanded', 'true');
+    menuToggle.setAttribute('aria-label', 'Close Mobile Menu');
   };
 
-  menuToggle.addEventListener('click', toggleMenu);
-  mobileOverlay.addEventListener('click', toggleMenu);
+  const closeMenu = () => {
+    mobileNav.classList.remove('open');
+    menuToggle.classList.remove('active');
+    mobileOverlay.classList.remove('active');
+    document.documentElement.classList.remove('no-scroll');
+    document.body.classList.remove('no-scroll');
+    document.body.style.overflow = '';
+    document.documentElement.style.overflow = '';
+    menuToggle.setAttribute('aria-expanded', 'false');
+    menuToggle.setAttribute('aria-label', 'Open Mobile Menu');
+  };
 
-  // Close when nav link is clicked
+  const toggleMenu = () => {
+    if (mobileNav.classList.contains('open')) closeMenu();
+    else openMenu();
+  };
+
+  // Prevent background scroll via touchmove on overlay (allow drawer scroll)
+  const preventScroll = (e) => {
+    if (mobileNav.classList.contains('open')) e.preventDefault();
+  };
+  mobileOverlay.addEventListener('touchmove', preventScroll, { passive: false });
+  // allow scroll inside drawer, don't bubble to document
+  mobileNav.addEventListener('touchmove', (e) => e.stopPropagation(), { passive: true });
+
+  menuToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    toggleMenu();
+  });
+  mobileOverlay.addEventListener('click', closeMenu);
+
+  // Close when nav link is clicked - allow navigation to proceed
   const mobileLinks = mobileNav.querySelectorAll('a');
   mobileLinks.forEach(link => {
     link.addEventListener('click', () => {
-      if (mobileNav.classList.contains('open')) toggleMenu();
+      if (mobileNav.classList.contains('open')) {
+        // close immediately but keep link navigation responsive
+        closeMenu();
+      }
     });
+  });
+
+  // Close on Escape and handle focus
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && mobileNav.classList.contains('open')) {
+      closeMenu();
+      menuToggle.focus();
+    }
+  });
+
+  // Close on resize to desktop
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 992 && mobileNav.classList.contains('open')) {
+      closeMenu();
+    }
   });
 }
 

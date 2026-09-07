@@ -40,27 +40,27 @@
 
   <main id="main-content">
     <!-- SECTION 1: ANIMATED GLITCH 404 HERO - Background Image -->
-    <section class="error-page-wrapper" style="position: relative; background-image: url('https://i.pinimg.com/736x/77/4c/5a/774c5aab3649003c82f23fc5990c9f29.jpg'); background-size: cover; background-position: center 35%; min-height: 80vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 6rem 1.5rem; overflow: hidden; isolation: isolate;">
-      <div style="position: absolute; inset: 0; background: rgba(15,23,42,0.86); z-index: 1;"></div>
-      <div class="container" style="position: relative; z-index: 2;">
-      <div class="reveal-scale revealed" style="max-width: 720px; margin: 0 auto; background: #0F172A; border: 1.5px solid rgba(183,216,75,0.35); border-radius: var(--radius-xl); padding: 2.75rem 2rem; box-shadow: 0 16px 48px rgba(0,0,0,0.42), 0 0 0 1px rgba(255,255,255,0.06) inset; opacity: 1 !important; transform: none !important;">
-        <div class="glitch-code" style="color: #B7D84B; -webkit-text-fill-color: #B7D84B; background: none; filter: none; text-shadow: none; opacity: 1;">404</div>
-        <span class="badge badge-orange" style="margin-bottom: 1rem; background: #FFE6D5; color: #7C2D12; border-color: #F2B48A; font-weight: 800;">Off-Grid Route Error</span>
-        <h1 style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1rem; color: #FFFFFF !important; opacity: 1; visibility: visible;">You've Gone Beyond The Geofenced Perimeter</h1>
-        <p style="font-size: 1.15rem; color: #E2E8F0 !important; line-height: 1.6; margin-bottom: 2.5rem; opacity: 1; visibility: visible;">
-          The route you are navigating doesn't exist on our city grid. Don't worry, your GPS telemetry is safe—let's re-route you back to the main avenue.
-        </p>
+    <section class="error-page-wrapper">
+      <div class="error-page-overlay"></div>
+      <div class="container error-page-container">
+        <div class="reveal-scale revealed error-card">
+          <div class="glitch-code">404</div>
+          <span class="badge badge-orange error-badge">Off-Grid Route Error</span>
+          <h1 class="error-title">You've Gone Beyond The Geofenced Perimeter</h1>
+          <p class="error-desc">
+            The route you are navigating doesn't exist on our city grid. Don't worry, your GPS telemetry is safe—let's re-route you back to the main avenue.
+          </p>
 
-        <!-- SECTION 2: INTERACTIVE ROUTE SEARCH BAR -->
-        <div style="max-width: 500px; margin: 0 auto 3rem;">
-          <form onsubmit="event.preventDefault(); window.location.href='services.html';">
-            <div style="display: flex; gap: 0.5rem;">
-              <input type="text" class="form-control" placeholder="Search models, hubs, or articles..." required style="background: rgba(255,255,255,0.94); border-color: rgba(255,255,255,0.22); color: #0F172A;">
-              <button type="submit" class="btn btn-primary">Search</button>
-            </div>
-          </form>
+          <!-- SECTION 2: INTERACTIVE ROUTE SEARCH BAR -->
+          <div class="error-search-box">
+            <form onsubmit="event.preventDefault(); window.location.href='services.html';">
+              <div class="error-search-group">
+                <input type="text" class="form-control error-search-input" placeholder="Search models, hubs, or articles..." required>
+                <button type="submit" class="btn btn-primary error-search-btn">Search</button>
+              </div>
+            </form>
+          </div>
         </div>
-      </div>
       </div>
     </section>
 

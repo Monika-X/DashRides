@@ -408,6 +408,9 @@
   border: 1px solid var(--border-color);
   border-radius: var(--radius-sm);
   z-index: 1001;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .menu-toggle span {
@@ -438,6 +441,7 @@
   right: -100%;
   width: min(85vw, 360px);
   height: 100vh;
+  height: 100dvh;
   background: var(--bg-secondary);
   border-left: 1px solid var(--border-color);
   padding: 6rem 2rem 2rem;
@@ -448,6 +452,7 @@
   z-index: 999;
   box-shadow: var(--shadow-lg);
   overflow-y: auto;
+  pointer-events: none;
 }
 
 [dir="rtl"] .mobile-nav {
@@ -460,6 +465,7 @@
 
 .mobile-nav.open {
   right: 0;
+  pointer-events: auto;
 }
 
 [dir="rtl"] .mobile-nav.open {
@@ -473,11 +479,19 @@
 }
 
 .mobile-nav-link {
+  display: block;
   font-size: 1.15rem;
   font-weight: 600;
   color: var(--text-primary);
-  padding-bottom: 0.5rem;
+  padding: 0.65rem 0;
+  padding-bottom: 0.65rem;
   border-bottom: 1px solid var(--border-color);
+  cursor: pointer;
+  pointer-events: auto;
+  min-height: 44px;
+  line-height: 1.35;
+  -webkit-tap-highlight-color: rgba(183,216,75,0.18);
+  touch-action: manipulation;
 }
 
 .mobile-nav-link:hover,
@@ -508,11 +522,26 @@
   visibility: hidden;
   transition: all var(--transition-normal);
   z-index: 998;
+  pointer-events: none;
 }
 
 .mobile-overlay.active {
   opacity: 1;
   visibility: visible;
+  pointer-events: auto;
+}
+html.no-scroll,
+body.no-scroll {
+  overflow: hidden !important;
+  overscroll-behavior: contain;
+}
+html.no-scroll {
+  scrollbar-gutter: stable;
+}
+.mobile-nav.open {
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;
 }
 
 

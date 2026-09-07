@@ -23,16 +23,24 @@ function initDashSidebarToggle() {
       sidebar.classList.remove('open');
       toggle.classList.remove('active');
       overlay.classList.remove('active');
+      document.documentElement.classList.remove('no-scroll');
+      document.body.classList.remove('no-scroll');
       document.body.style.overflow = '';
+      document.documentElement.style.overflow = '';
     } else {
       sidebar.classList.add('open');
       toggle.classList.add('active');
       overlay.classList.add('active');
+      document.documentElement.classList.add('no-scroll');
+      document.body.classList.add('no-scroll');
       document.body.style.overflow = 'hidden';
+      document.documentElement.style.overflow = 'hidden';
     }
   };
   toggle.addEventListener('click', toggleSidebar);
   overlay.addEventListener('click', toggleSidebar);
+  overlay.addEventListener('touchmove', (e) => { if (sidebar.classList.contains('open')) e.preventDefault(); }, { passive: false });
+  sidebar.addEventListener('touchmove', (e) => e.stopPropagation(), { passive: true });
   // close when nav button clicked
   sidebar.querySelectorAll('.dash-nav-btn').forEach(btn => {
     btn.addEventListener('click', () => {

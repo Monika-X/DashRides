@@ -1067,13 +1067,97 @@
 }
 
 /* 404 & Maintenance */
-.error-page-wrapper, .maintenance-wrapper {
+.error-page-wrapper {
+  position: relative;
+  background-image: url('https://i.pinimg.com/736x/77/4c/5a/774c5aab3649003c82f23fc5990c9f29.jpg');
+  background-size: cover;
+  background-position: center 35%;
+  min-height: calc(85vh - var(--header-height));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: calc(var(--header-height) + 3rem) 1.5rem 4rem;
+  overflow: hidden;
+  isolation: isolate;
+  box-sizing: border-box;
+}
+
+.maintenance-wrapper {
   min-height: 80vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 6rem 1.5rem;
+  padding: calc(var(--header-height) + 3rem) 1.5rem 4rem;
+  box-sizing: border-box;
+}
+
+.error-page-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.86);
+  z-index: 1;
+}
+
+.error-page-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.error-card {
+  max-width: 720px;
+  width: 100%;
+  margin: 0 auto;
+  background: #0F172A;
+  border: 1.5px solid rgba(183, 216, 75, 0.35);
+  border-radius: var(--radius-xl);
+  padding: 2.75rem 2rem;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.42), 0 0 0 1px rgba(255, 255, 255, 0.06) inset;
+  box-sizing: border-box;
+}
+
+.error-badge {
+  margin-bottom: 1rem;
+  background: #FFE6D5;
+  color: #7C2D12;
+  border-color: #F2B48A;
+  font-weight: 800;
+}
+
+.error-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 1rem;
+  color: #FFFFFF !important;
+  line-height: 1.2;
+}
+
+.error-desc {
+  font-size: 1.15rem;
+  color: #E2E8F0 !important;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+}
+
+.error-search-box {
+  max-width: 500px;
+  margin: 0 auto 1.5rem;
+  width: 100%;
+}
+
+.error-search-group {
+  display: flex;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.error-search-input {
+  background: rgba(255, 255, 255, 0.94);
+  border-color: rgba(255, 255, 255, 0.22);
+  color: #0F172A;
 }
 
 .glitch-code {
@@ -1081,10 +1165,9 @@
   font-size: clamp(6rem, 15vw, 12rem);
   font-weight: 800;
   line-height: 1;
-  background: linear-gradient(135deg, var(--color-electric-lime), var(--color-burnt-orange));
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #B7D84B;
+  background: none;
+  -webkit-text-fill-color: #B7D84B;
   margin-bottom: 1rem;
 }
 
