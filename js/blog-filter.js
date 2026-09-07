@@ -9,12 +9,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function initBlogFilter() {
   const filterBar = document.querySelector('.blog-filter-bar');
+  const channelBar = document.querySelector('.channel-filter-bar');
   const blogGrid = document.querySelector('.blog-grid');
   const blogCards = Array.from(document.querySelectorAll('.blog-card[data-category]'));
   const viewMoreBtn = document.getElementById('blog-view-more');
   if (!filterBar || !blogGrid || !blogCards.length) return;
 
-  const filterBtns = filterBar.querySelectorAll('.filter-btn');
+  const blogFilterBtns = filterBar.querySelectorAll('.filter-btn');
+  const channelFilterBtns = channelBar ? channelBar.querySelectorAll('.filter-btn') : [];
+  const allFilterBtns = [...blogFilterBtns, ...channelFilterBtns];
   const INITIAL_VISIBLE = 6;
   const BATCH_SIZE = 3;
   let currentFilter = 'all';
@@ -35,10 +38,23 @@ function initBlogFilter() {
   }
 
   function getFilteredCards() {
+    const filterValues = currentFilter.toLowerCase().split(' ').filter(Boolean);
     return blogCards.filter(card => {
       const cats = (card.getAttribute('data-category') || '').toLowerCase().split(' ');
-      return currentFilter === 'all' || cats.includes(currentFilter);
+      if (filterValues.includes('all')) return true;
+      return filterValues.some(f => cats.includes(f));
     });
+  }
+
+  function syncActiveButtons(rawFilter) {
+    allFilterBtns.forEach(b => b.classList.remove('active'));
+    // activate matching in both bars
+    allFilterBtns.forEach(b => {
+      if ((b.getAttribute('data-filter') || '').toLowerCase() === rawFilter.toLowerCase()) {
+        b.classList.add('active');
+      }
+    });
+    // if channel multi-filter has no exact match in blog bar, highlight channel only (already)
   }
 
   function render() {
@@ -91,14 +107,24 @@ function initBlogFilter() {
     }
   }
 
-  // Filter button clicks
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      currentFilter = btn.getAttribute('data-filter') || 'all';
+  // Filter button clicks - both bars, sync and scroll to grid
+  allFilterBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const rawFilter = btn.getAttribute('data-filter') || 'all';
+      currentFilter = rawFilter;
       visibleLimit = INITIAL_VISIBLE;
+      syncActiveButtons(rawFilter);
       render();
+      // scroll to Latest Dispatches grid for channel bar clicks
+      const latestSection = document.getElementById('latest-dispatches');
+      if (latestSection) {
+        // only scroll if channel bar was clicked (not blog bar already in view)
+        const isChannel = btn.closest('.channel-filter-bar');
+        if (isChannel) {
+          setTimeout(() => latestSection.scrollIntoView({ behavior: 'smooth', block: 'start' }), 80);
+        }
+      }
     });
   });
 

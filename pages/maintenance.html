@@ -39,14 +39,16 @@
   
 
   <main id="main-content">
-    <!-- SECTION 1: MAINTENANCE LIVE COUNTDOWN HERO -->
-    <section class="maintenance-wrapper container">
+    <!-- SECTION 1: MAINTENANCE LIVE COUNTDOWN HERO - Background Image -->
+    <section class="maintenance-wrapper" style="position: relative; background-image: url('https://i.pinimg.com/1200x/a8/40/b4/a840b4a9bee23f9d70017a676a649585.jpg'); background-size: cover; background-position: center; min-height: 80vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 6rem 1.5rem; overflow: hidden;">
+      <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(15,23,42,0.62) 0%, rgba(15,23,42,0.88) 100%); z-index: 1;"></div>
+      <div class="container" style="position: relative; z-index: 2;">
       <div class="reveal-scale" style="max-width: 780px; margin: 0 auto;">
-        <span class="badge badge-lime" style="margin-bottom: 1rem;">System Optimization v4.8</span>
-        <h1 style="font-size: clamp(2.25rem, 4.5vw, 3.75rem); line-height: 1.15; margin-bottom: 1rem;">
-          Upgrading To Next-Gen <span class="text-gradient-lime">Fleet Telemetry</span>
+        <span class="badge badge-lime" style="margin-bottom: 1rem; background: rgba(183,216,75,0.14); color: #B7D84B; border-color: rgba(183,216,75,0.28);">System Optimization v4.8</span>
+        <h1 style="font-size: clamp(2.25rem, 4.5vw, 3.75rem); line-height: 1.15; margin-bottom: 1rem; color: #FFFFFF;">
+          Upgrading To Next-Gen <span style="background: linear-gradient(135deg, #FFFFFF, #B7D84B); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Fleet Telemetry</span>
         </h1>
-        <p style="font-size: 1.15rem; color: var(--text-secondary); line-height: 1.6;">
+        <p style="font-size: 1.15rem; color: rgba(255,255,255,0.88); line-height: 1.6;">
           We are deploying high-speed 5G mesh updates across all 5,000+ smart scooters and 520 PowerSwap charging kiosks. The network will resume full operations shortly.
         </p>
 
@@ -69,6 +71,7 @@
             <div class="countdown-lbl">Seconds</div>
           </div>
         </div>
+      </div>
       </div>
     </section>
 

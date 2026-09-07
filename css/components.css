@@ -32,7 +32,30 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 1.5rem;
   height: 100%;
+}
+.logo {
+  margin-right: auto;
+  flex-shrink: 0;
+}
+.nav-links {
+  margin: 0 auto;
+}
+.header-actions {
+  margin-left: auto;
+  flex-shrink: 0;
+}
+[dir="rtl"] .logo {
+  margin-right: 0;
+  margin-left: auto;
+}
+[dir="rtl"] .header-actions {
+  margin-left: 0;
+  margin-right: auto;
+}
+[dir="rtl"] .nav-links {
+  margin: 0 auto;
 }
 
 .logo {
@@ -1487,6 +1510,16 @@ textarea.form-control {
   background: #FFFFFF;
   border-color: #CBD5E1;
   color: #0F172A;
+}
+[data-theme="light"] .footer-newsletter-btn {
+  background: #36540A;
+  color: #FFFFFF;
+  border-color: #36540A;
+}
+[data-theme="light"] .footer-newsletter-btn:hover {
+  background: #2E4A06;
+  color: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(54,84,10,0.22);
 }
 [data-theme="light"] .toast {
   background: #FFFFFF;

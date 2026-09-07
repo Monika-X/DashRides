@@ -2,6 +2,16 @@
    DASHRIDES - ADMIN DASHBOARD STYLES
    ========================================================================== */
 
+/* Admin header - logo left, toggles right corners */
+body:has(.admin-layout) .header .container.navbar {
+  max-width: none;
+  width: 100%;
+}
+body:has(.admin-layout) .header .navbar {
+  padding-left: max(1rem, 1.5rem);
+  padding-right: max(1rem, 1.5rem);
+}
+
 .admin-layout {
   display: grid;
   grid-template-columns: 300px 1fr;
@@ -488,4 +498,41 @@
 }
 [data-theme="light"] .avail-dot:hover {
   border-color: #CBD5E1;
+}
+
+/* Admin header & sidebar responsive - logo left, toggles right */
+.admin-menu-toggle { display: none; }
+@media (max-width: 1100px) {
+  .admin-menu-toggle { display: flex; }
+  .admin-sidebar {
+    position: fixed;
+    top: var(--header-height);
+    left: -100%;
+    width: 320px;
+    max-width: 85vw;
+    height: calc(100vh - var(--header-height));
+    z-index: 998;
+    transition: left var(--transition-slow);
+    overflow-y: auto;
+    box-shadow: var(--shadow-lg);
+    border-right: 1px solid var(--border-color);
+  }
+  .admin-sidebar.open { left: 0; }
+  .admin-overlay {
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    width: 100vw;
+    height: calc(100vh - var(--header-height));
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-normal);
+    z-index: 997;
+  }
+  .admin-overlay.active { opacity: 1; visibility: visible; }
+  [dir="rtl"] .admin-sidebar { left: auto; right: -100%; border-right: none; border-left: 1px solid var(--border-color); }
+  [dir="rtl"] .admin-sidebar.open { left: auto; right: 0; }
 }

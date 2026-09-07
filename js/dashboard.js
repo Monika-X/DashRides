@@ -8,7 +8,38 @@ document.addEventListener('DOMContentLoaded', () => {
   initOneClickExtension();
   initDocDownloads();
   initProfileSettings();
+  initDashSidebarToggle();
 });
+
+/* 0. Dashboard sidebar responsive toggle - logo left, toggles right */
+function initDashSidebarToggle() {
+  const toggle = document.querySelector('.dash-menu-toggle');
+  const sidebar = document.querySelector('.dash-sidebar');
+  const overlay = document.querySelector('.dash-overlay');
+  if (!toggle || !sidebar || !overlay) return;
+  const toggleSidebar = () => {
+    const isOpen = sidebar.classList.contains('open');
+    if (isOpen) {
+      sidebar.classList.remove('open');
+      toggle.classList.remove('active');
+      overlay.classList.remove('active');
+      document.body.style.overflow = '';
+    } else {
+      sidebar.classList.add('open');
+      toggle.classList.add('active');
+      overlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+  };
+  toggle.addEventListener('click', toggleSidebar);
+  overlay.addEventListener('click', toggleSidebar);
+  // close when nav button clicked
+  sidebar.querySelectorAll('.dash-nav-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (sidebar.classList.contains('open')) toggleSidebar();
+    });
+  });
+}
 
 /* 1. Tab Switching */
 function initDashboardTabs() {

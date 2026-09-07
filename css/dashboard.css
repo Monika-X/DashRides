@@ -2,6 +2,16 @@
    DASHRIDES - CUSTOMER DASHBOARD STYLES
    ========================================================================== */
 
+/* Dashboard header - logo left, toggles right corners */
+body:has(.dashboard-layout) .header .container.navbar {
+  max-width: none;
+  width: 100%;
+}
+body:has(.dashboard-layout) .header .navbar {
+  padding-left: max(1rem, 1.5rem);
+  padding-right: max(1rem, 1.5rem);
+}
+
 .dashboard-layout {
   display: grid;
   grid-template-columns: 280px 1fr;
@@ -338,4 +348,42 @@
 [data-theme="light"] .doc-card {
   background: #FFFFFF;
   border-color: #E2E8F0;
+}
+
+/* Dashboard header & sidebar responsive - logo left, toggles right */
+.dash-menu-toggle { display: none; }
+@media (max-width: 992px) {
+  .dash-menu-toggle { display: flex; }
+  .dash-sidebar {
+    position: fixed;
+    top: var(--header-height);
+    left: -100%;
+    width: 320px;
+    max-width: 85vw;
+    height: calc(100vh - var(--header-height));
+    z-index: 998;
+    transition: left var(--transition-slow);
+    overflow-y: auto;
+    box-shadow: var(--shadow-lg);
+    border-right: 1px solid var(--border-color);
+    border-bottom: none;
+  }
+  .dash-sidebar.open { left: 0; }
+  .dash-overlay {
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    width: 100vw;
+    height: calc(100vh - var(--header-height));
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-normal);
+    z-index: 997;
+  }
+  .dash-overlay.active { opacity: 1; visibility: visible; }
+  [dir="rtl"] .dash-sidebar { left: auto; right: -100%; border-right: none; border-left: 1px solid var(--border-color); }
+  [dir="rtl"] .dash-sidebar.open { left: auto; right: 0; }
 }

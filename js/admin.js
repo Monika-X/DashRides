@@ -10,7 +10,36 @@ document.addEventListener('DOMContentLoaded', () => {
   renderAll();
   initCountdowns();
   bindForms();
+  initAdminSidebarToggle();
 });
+
+function initAdminSidebarToggle() {
+  const toggle = document.querySelector('.admin-menu-toggle');
+  const sidebar = document.querySelector('.admin-sidebar');
+  const overlay = document.querySelector('.admin-overlay');
+  if (!toggle || !sidebar || !overlay) return;
+  const toggleSidebar = () => {
+    const isOpen = sidebar.classList.contains('open');
+    if (isOpen) {
+      sidebar.classList.remove('open');
+      toggle.classList.remove('active');
+      overlay.classList.remove('active');
+      document.body.style.overflow = '';
+    } else {
+      sidebar.classList.add('open');
+      toggle.classList.add('active');
+      overlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+  };
+  toggle.addEventListener('click', toggleSidebar);
+  overlay.addEventListener('click', toggleSidebar);
+  sidebar.querySelectorAll('.admin-nav-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (sidebar.classList.contains('open')) toggleSidebar();
+    });
+  });
+}
 
 // ---------- Storage Helpers ----------
 const LS_FLEET = 'dashrides_admin_fleet';
@@ -713,6 +742,15 @@ function bindForms(){
       showToast(existing?`Updated ${name}`:`Added ${name} to fleet`,'success');
     });
   }
+
+window.lockAdminSession = function() {
+  showToast('Admin session locked. Redirecting to login...','info');
+  // clear demo session flags if any
+  try { sessionStorage.setItem('dashrides_admin_locked','1'); } catch {}
+  setTimeout(() => {
+    window.location.href = 'login.html';
+  }, 900);
+};
 
   const bookingForm=document.getElementById('admin-booking-form');
   if(bookingForm){

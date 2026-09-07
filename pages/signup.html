@@ -18,98 +18,16 @@
 <body>
   <a href="#main-content" class="skip-to-content">Skip to main content</a>
 
-  <!-- Header -->
-  <header class="header" id="header">
-    <div class="container navbar">
-      <a href="../index.html" class="logo">
-        <div class="logo-icon"><svg viewBox="0 0 32 32" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M17.8 2.8L8.2 14.6H13.1L10.2 26.2L22.6 13.6H17.4L20.1 2.8Z" fill="white" stroke="white" stroke-width="0.45" stroke-linejoin="round"/><g stroke="white" stroke-linecap="round" opacity="0.92"><path d="M4.6 10.2H8.1" stroke-width="1.55"/><path d="M3 16H7.8" stroke-width="1.65"/><path d="M4.9 21.8H8.4" stroke-width="1.5" opacity="0.78"/></g></svg></div>
-        <div class="logo-text">
-          <span class="logo-brand"><span>DASH</span>RIDES</span>
-          <span class="logo-tagline">ELECTRIC MOBILITY</span>
-        </div>
-      </a>
-
-      <nav class="nav-links" aria-label="Main Navigation">
-        <a href="../index.html" class="nav-link">Home</a>
-        <a href="home-2.html" class="nav-link">Home 2</a>
-        <a href="about.html" class="nav-link">About</a>
-        <a href="services.html" class="nav-link">Services</a>
-        <a href="blog.html" class="nav-link">Blog</a>
-        <a href="contact.html" class="nav-link">Contact</a>
-      </nav>
-
-      <div class="header-actions">
-        <div class="user-menu">
-          <button class="user-profile-btn" aria-label="User menu" aria-expanded="false" aria-haspopup="true">
-            <i class="fa-solid fa-user"></i>
-          </button>
-          <div class="user-dropdown" role="menu">
-            <div class="user-dropdown-header">
-              <div class="user-dropdown-name">Welcome Rider</div>
-              <div class="user-dropdown-email">guest@dashrides.com</div>
-            </div>
-            <a href="dashboard.html" class="user-dropdown-item" role="menuitem">
-              <i class="fa-solid fa-gauge-high"></i> User Dashboard
-            </a>
-            <a href="admin.html" class="user-dropdown-item admin-item" role="menuitem">
-              <i class="fa-solid fa-user-gear"></i> Admin Dashboard
-            </a>
-            <div class="user-dropdown-divider"></div>
-            <a href="login.html" class="user-dropdown-item" role="menuitem">
-              <i class="fa-solid fa-right-to-bracket"></i> Login
-            </a>
-            <a href="signup.html" class="user-dropdown-item" role="menuitem">
-              <i class="fa-solid fa-user-plus"></i> Sign Up
-            </a>
-          </div>
-        </div>
-
-        <button class="theme-toggle" aria-label="Toggle dark and light theme">
-          <i class="fa-solid fa-sun theme-icon-sun"></i>
-          <i class="fa-solid fa-moon theme-icon-moon"></i>
-        </button>
-
-        <button class="rtl-toggle" aria-label="Toggle text direction">
-          <span>RTL</span>
-        </button>
-
-        <a href="signup.html" class="btn btn-primary btn-sm nav-cta-btn active">Sign Up</a>
-
-        <button class="menu-toggle" aria-label="Open mobile navigation menu" aria-expanded="false">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
-    </div>
-  </header>
-
-  <!-- Mobile Offcanvas Navigation -->
-  <div class="mobile-overlay"></div>
-  <aside class="mobile-nav" aria-label="Mobile Navigation">
-    <div>
-      <div class="logo" style="margin-bottom: 2rem;">
-        <div class="logo-icon"><svg viewBox="0 0 32 32" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M17.8 2.8L8.2 14.6H13.1L10.2 26.2L22.6 13.6H17.4L20.1 2.8Z" fill="white" stroke="white" stroke-width="0.45" stroke-linejoin="round"/><g stroke="white" stroke-linecap="round" opacity="0.92"><path d="M4.6 10.2H8.1" stroke-width="1.55"/><path d="M3 16H7.8" stroke-width="1.65"/><path d="M4.9 21.8H8.4" stroke-width="1.5" opacity="0.78"/></g></svg></div>
-        <div class="logo-text">
-          <span class="logo-brand"><span>DASH</span>RIDES</span>
-          <span class="logo-tagline">ELECTRIC MOBILITY</span>
-        </div>
-      </div>
-      <div class="mobile-nav-links">
-        <a href="../index.html" class="mobile-nav-link">Home</a>
-        <a href="home-2.html" class="mobile-nav-link">Home 2</a>
-        <a href="about.html" class="mobile-nav-link">About</a>
-        <a href="services.html" class="mobile-nav-link">Services</a>
-        <a href="blog.html" class="mobile-nav-link">Blog</a>
-        <a href="contact.html" class="mobile-nav-link">Contact</a>
-        <a href="dashboard.html" class="mobile-nav-link">Dashboard</a>
-      </div>
-    </div>
-    <div>
-      <a href="login.html" class="btn btn-outline" style="width: 100%; margin-bottom: 0.75rem;">Sign In</a>
-      <span style="font-size: 0.85rem; color: var(--text-muted); display: block; text-align: center;">© DashRides Inc.</span>
-    </div>
-  </aside>
+  <!-- Auth Topbar - Toggles Right Corner Only -->
+  <div class="auth-topbar" style="position: fixed; top: 1.25rem; right: 1.5rem; display: flex; align-items: center; gap: 0.6rem; z-index: 100;">
+    <button class="theme-toggle" aria-label="Toggle dark and light theme">
+      <i class="fa-solid fa-sun theme-icon-sun"></i>
+      <i class="fa-solid fa-moon theme-icon-moon"></i>
+    </button>
+    <button class="rtl-toggle" aria-label="Toggle text direction">
+      <span>RTL</span>
+    </button>
+  </div>
 
   <main id="main-content">
     <section class="auth-page-section">
@@ -231,77 +149,6 @@
       </div>
     </section>
   </main>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="../index.html" class="footer-brand-logo">
-            <div class="logo-icon"><svg viewBox="0 0 32 32" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M17.8 2.8L8.2 14.6H13.1L10.2 26.2L22.6 13.6H17.4L20.1 2.8Z" fill="white" stroke="white" stroke-width="0.45" stroke-linejoin="round"/><g stroke="white" stroke-linecap="round" opacity="0.92"><path d="M4.6 10.2H8.1" stroke-width="1.55"/><path d="M3 16H7.8" stroke-width="1.65"/><path d="M4.9 21.8H8.4" stroke-width="1.5" opacity="0.78"/></g></svg></div>
-            <div class="footer-brand-text">
-              <span class="footer-brand-name"><span>DASH</span>RIDES</span>
-              <span class="footer-brand-tagline">ELECTRIC MOBILITY</span>
-            </div>
-          </a>
-          <p>India's premier electric mobility network, serving 40+ urban centers with smart-connected EV mopeds, rapid battery swaps, and exceptional ride performance.</p>
-          <div class="social-links">
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
-            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-          </div>
-        </div>
-
-        <div>
-          <h4 class="footer-heading">SERVICES</h4>
-          <div class="footer-links">
-            <a href="services.html">Daily Commute Pass</a>
-            <a href="services.html#plans">Weekly Subscriptions</a>
-            <a href="services.html#corporate">Corporate Fleet</a>
-            <a href="services.html#coverage">Battery Swap Network</a>
-            <a href="services.html#delivery">Delivery Partner Rides</a>
-            <a href="dashboard.html">Rider Dashboard</a>
-          </div>
-        </div>
-
-        <div>
-          <h4 class="footer-heading">COMPANY</h4>
-          <div class="footer-links">
-            <a href="../index.html">Home</a>
-            <a href="home-2.html">Home 2</a>
-            <a href="about.html">About Us</a>
-            <a href="services.html">Services</a>
-            <a href="blog.html">Blog</a>
-            <a href="contact.html">Contact</a>
-          </div>
-        </div>
-
-        <div class="footer-newsletter-col">
-          <h4 class="footer-heading">STAY CONNECTED</h4>
-          <p class="footer-newsletter-text">Receive seasonal fleet updates, smart urban mobility guides, and executive subscriber perks before anyone else.</p>
-          <form class="footer-newsletter-form">
-            <div class="footer-newsletter-group">
-              <input type="email" placeholder="Your work email..." class="footer-newsletter-input" required aria-label="Your work email">
-              <button type="submit" class="footer-newsletter-btn">JOIN</button>
-            </div>
-          </form>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <div class="footer-copyright">© <span class="current-year"></span> DashRides Pvt. Ltd. All rights reserved. Established across 40+ urban centers.</div>
-        <div class="footer-legal-links">
-          <a href="privacy-policy.html">Privacy Policy</a>
-          <a href="terms.html">Terms &amp; Conditions</a>
-          <a href="sitemap.html">Sitemap</a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <button class="back-to-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
 
   <script src="../js/main.js"></script>
   <script src="../js/scroll-reveal.js"></script>

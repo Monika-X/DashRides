@@ -32,9 +32,15 @@
       <div class="header-actions">
         <button class="theme-toggle" aria-label="Toggle Theme"><i class="fa-solid fa-sun"></i></button>
         <button class="rtl-toggle" aria-label="Toggle Layout Direction">RTL</button>
+        <button class="menu-toggle admin-menu-toggle" aria-label="Open Admin Menu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </div>
   </header>
+
+  <!-- Admin Mobile Overlay -->
+  <div class="admin-overlay"></div>
 
   
 
@@ -51,18 +57,22 @@
             </div>
           </div>
 
-          <div style="background: var(--bg-tertiary); border:1px solid var(--border-color); border-radius: var(--radius-md); padding:0.9rem 1rem; display:flex; align-items:center; gap:0.85rem; margin-bottom:1.2rem;">
-            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80" alt="Admin" style="width:42px; height:42px; border-radius:50%; object-fit:cover; border:2px solid var(--color-burnt-orange);">
-            <div>
-              <div style="font-weight:800; font-size:0.92rem;">Alex Mercer</div>
-              <div style="font-size:0.72rem; color: var(--color-burnt-orange); font-weight:700;">Super Admin • Fleet Ops</div>
+          <div style="background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--bg-secondary) 100%); border:1px solid var(--border-color); border-radius: var(--radius-lg); padding:1rem 1.1rem; display:flex; align-items:flex-start; gap:1rem; margin-bottom:1.4rem; box-shadow: var(--shadow-sm);">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80" alt="Admin" style="width:48px; height:48px; min-width:48px; min-height:48px; flex-shrink:0; aspect-ratio:1; border-radius:50%; object-fit:cover; object-position:center 12%; display:block; border:2.5px solid var(--color-burnt-orange); box-shadow: 0 0 0 3px rgba(217,119,69,0.12); margin-top:0.1rem;">
+            <div style="flex:1; min-width:0; display:flex; flex-direction:column; gap:0.18rem;">
+              <div style="font-weight:800; font-size:0.98rem; letter-spacing:-0.01em; line-height:1.2; color: var(--text-primary);">Alex Mercer</div>
+              <div style="font-size:0.72rem; font-weight:600; color: var(--text-muted); line-height:1.3;">Super Admin</div>
+              <div style="display:flex; align-items:center; gap:0.4rem; flex-wrap:wrap; margin-top:0.1rem;">
+                <span style="color: var(--text-muted); font-size:0.72rem; line-height:1;">•</span>
+                <span style="color: var(--color-burnt-orange); font-weight:700; font-size:0.72rem;">Fleet Ops</span>
+                <span class="badge badge-available" style="font-size:0.62rem; padding:0.2rem 0.55rem; background: var(--color-success-bg); color: var(--color-success); border-color: rgba(16,185,129,0.22); box-shadow: 0 1px 4px rgba(16,185,129,0.12);"><span class="status-dot"></span> Online</span>
+              </div>
             </div>
-            <span class="badge badge-available" style="margin-left:auto; font-size:0.65rem;"><span class="status-dot"></span> Online</span>
           </div>
 
           <nav class="admin-nav">
             <div class="admin-nav-label">Operations</div>
-            <button class="admin-nav-btn active" data-tab="overview"><i class="fa-solid fa-chart-pie"></i> Overview <span class="admin-badge-count" style="background: var(--color-electric-lime); color:#111;">Live</span></button>
+            <button class="admin-nav-btn active" data-tab="overview"><i class="fa-solid fa-chart-pie"></i> Overview <span class="admin-badge-count" style="background: var(--color-electric-lime); color: var(--text-inverse);">Live</span></button>
             <button class="admin-nav-btn" data-tab="fleet"><i class="fa-solid fa-motorcycle"></i> Fleet Inventory <span class="admin-badge-count" id="sb-fleet-count">6</span></button>
             <button class="admin-nav-btn" data-tab="availability"><i class="fa-solid fa-location-dot"></i> Live Availability <span class="admin-badge-count" id="sb-available">31</span></button>
             <button class="admin-nav-btn" data-tab="bookings"><i class="fa-solid fa-calendar-check"></i> Bookings Manager <span class="admin-badge-count" id="sb-bookings">24</span></button>
@@ -88,7 +98,7 @@
             <div style="font-family:var(--font-heading); font-size:1.55rem; font-weight:800; color:var(--color-burnt-orange); margin-top:0.3rem;" id="sidebar-revenue">$8,420</div>
             <div style="font-size:0.75rem; color:var(--color-success); margin-top:0.25rem;"><i class="fa-solid fa-arrow-trend-up"></i> +12.4% vs yesterday</div>
           </div>
-          <button class="btn btn-secondary btn-sm" style="width:100%; margin-top:0.85rem;" onclick="showToast('Admin session locked. Redirecting to login...','info')"><i class="fa-solid fa-right-from-bracket"></i> Lock Session</button>
+          <button class="btn btn-secondary btn-sm" style="width:100%; margin-top:0.85rem;" onclick="lockAdminSession()"><i class="fa-solid fa-right-from-bracket"></i> Lock Session</button>
         </div>
       </aside>
 

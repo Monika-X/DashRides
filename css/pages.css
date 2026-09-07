@@ -1518,6 +1518,27 @@
   border-color: #E2E8F0;
   box-shadow: 0 4px 16px rgba(15,23,42,0.06), 0 12px 32px rgba(15,23,42,0.08);
 }
+[data-theme="light"] .auth-submit-btn {
+  background: #36540A;
+  color: #FFFFFF;
+  box-shadow: 0 6px 22px rgba(54,84,10,0.22);
+}
+[data-theme="light"] .auth-submit-btn:hover {
+  background: #2E4A06;
+  color: #FFFFFF;
+  box-shadow: 0 8px 28px rgba(54,84,10,0.28);
+}
+[data-theme="light"] .auth-footer-text a,
+[data-theme="light"] .checkbox-label a,
+[data-theme="light"] .forgot-link {
+  color: #36540A;
+}
+[data-theme="light"] .auth-topbar .theme-toggle,
+[data-theme="light"] .auth-topbar .rtl-toggle {
+  background: #FFFFFF;
+  border-color: #E2E8F0;
+  color: #0F172A;
+}
 [data-theme="light"] .glitch-code {
   background: linear-gradient(135deg, #36540A, #7C2D12);
   -webkit-background-clip: text;
