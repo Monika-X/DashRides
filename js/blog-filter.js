@@ -1,6 +1,7 @@
 /**
- * DASHRIDES - BLOG CATEGORY FILTER
- * Filters Latest Dispatches blog cards by data-category
+ * DASHRIDES - BLOG CATEGORY FILTER + VIEW MORE PAGINATION
+ * Default 6 cards, View More shows 3 more per click (6 -> 9 -> 12 -> 15 -> 18)
+ * Works with category filter (3 per category, All 18)
  */
 document.addEventListener('DOMContentLoaded', () => {
   initBlogFilter();
@@ -8,13 +9,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function initBlogFilter() {
   const filterBar = document.querySelector('.blog-filter-bar');
-  const blogCards = document.querySelectorAll('.blog-card[data-category]');
-  if (!filterBar || !blogCards.length) return;
+  const blogGrid = document.querySelector('.blog-grid');
+  const blogCards = Array.from(document.querySelectorAll('.blog-card[data-category]'));
+  const viewMoreBtn = document.getElementById('blog-view-more');
+  if (!filterBar || !blogGrid || !blogCards.length) return;
 
   const filterBtns = filterBar.querySelectorAll('.filter-btn');
-  if (!filterBtns.length) return;
+  const INITIAL_VISIBLE = 6;
+  const BATCH_SIZE = 3;
+  let currentFilter = 'all';
+  let visibleLimit = INITIAL_VISIBLE;
 
-  // Create empty state message
+  // Empty state
   let emptyMsg = document.getElementById('blog-filter-empty');
   if (!emptyMsg) {
     emptyMsg = document.createElement('div');
@@ -25,50 +31,92 @@ function initBlogFilter() {
     emptyMsg.style.color = 'var(--text-muted)';
     emptyMsg.style.gridColumn = '1 / -1';
     emptyMsg.innerHTML = '<p style="font-size:1.05rem;">No articles found for this category.</p><button class="btn btn-outline btn-sm" style="margin-top:1rem;" onclick="document.querySelector(\'.blog-filter-bar .filter-btn[data-filter=all]\')?.click()">Show All Topics</button>';
-    const grid = document.querySelector('.blog-grid');
-    if (grid) grid.appendChild(emptyMsg);
+    blogGrid.appendChild(emptyMsg);
   }
 
+  function getFilteredCards() {
+    return blogCards.filter(card => {
+      const cats = (card.getAttribute('data-category') || '').toLowerCase().split(' ');
+      return currentFilter === 'all' || cats.includes(currentFilter);
+    });
+  }
+
+  function render() {
+    const filtered = getFilteredCards();
+
+    // Hide all first
+    blogCards.forEach(card => {
+      card.style.display = 'none';
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(12px)';
+    });
+
+    // Show filtered up to visibleLimit
+    const toShow = filtered.slice(0, visibleLimit);
+    const toHideFiltered = filtered.slice(visibleLimit);
+
+    toShow.forEach((card, idx) => {
+      card.style.display = 'flex';
+      requestAnimationFrame(() => {
+        card.style.opacity = '1';
+        card.style.transform = 'translateY(0)';
+        card.style.transition = 'opacity 0.35s ease, transform 0.35s ease';
+      });
+    });
+
+    // Hide filtered beyond limit but keep display none
+    toHideFiltered.forEach(card => {
+      card.style.display = 'none';
+    });
+
+    // Non-matching remain hidden (already)
+
+    // Empty state
+    if (filtered.length === 0) {
+      emptyMsg.style.display = 'block';
+    } else {
+      emptyMsg.style.display = 'none';
+    }
+
+    // View More button visibility
+    if (viewMoreBtn) {
+      if (filtered.length <= INITIAL_VISIBLE || visibleLimit >= filtered.length) {
+        viewMoreBtn.style.display = 'none';
+      } else {
+        viewMoreBtn.style.display = 'inline-flex';
+        const remaining = filtered.length - visibleLimit;
+        const nextBatch = Math.min(BATCH_SIZE, remaining);
+        viewMoreBtn.textContent = `View More (${nextBatch} more)`;
+      }
+    }
+  }
+
+  // Filter button clicks
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       filterBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-      const filterValue = btn.getAttribute('data-filter');
-
-      let visibleCount = 0;
-      blogCards.forEach(card => {
-        const categories = (card.getAttribute('data-category') || '').toLowerCase().split(' ');
-        const shouldShow = filterValue === 'all' || categories.includes(filterValue);
-        if (shouldShow) {
-          card.style.display = 'flex';
-          // animate in
-          requestAnimationFrame(() => {
-            card.style.opacity = '1';
-            card.style.transform = 'translateY(0)';
-            card.style.transition = 'opacity 0.35s ease, transform 0.35s ease';
-          });
-          visibleCount++;
-        } else {
-          card.style.opacity = '0';
-          card.style.transform = 'translateY(12px)';
-          card.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
-          setTimeout(() => {
-            if (card.style.opacity === '0') card.style.display = 'none';
-          }, 310);
-        }
-      });
-
-      // toggle empty message
-      setTimeout(() => {
-        if (emptyMsg) emptyMsg.style.display = visibleCount === 0 ? 'block' : 'none';
-      }, 320);
-
-      // optional toast for feedback
-      if (typeof window.showToast === 'function' && filterValue !== 'all') {
-        const label = btn.textContent.trim();
-        // avoid spamming toast on every click, only when filtered
-        // showToast(`Filtered: ${label} (${visibleCount})`, 'info');
-      }
+      currentFilter = btn.getAttribute('data-filter') || 'all';
+      visibleLimit = INITIAL_VISIBLE;
+      render();
     });
   });
+
+  // View More click
+  if (viewMoreBtn) {
+    viewMoreBtn.addEventListener('click', () => {
+      visibleLimit += BATCH_SIZE;
+      render();
+      // optional smooth scroll to first newly revealed card
+      const filtered = getFilteredCards();
+      const newlyVisibleIndex = visibleLimit - BATCH_SIZE;
+      const targetCard = filtered[newlyVisibleIndex];
+      if (targetCard) {
+        setTimeout(() => targetCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 100);
+      }
+    });
+  }
+
+  // Initial render 6
+  render();
 }
