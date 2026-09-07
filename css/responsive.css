@@ -1679,6 +1679,113 @@
   .availability-grid {
     grid-template-columns: repeat(3, 1fr) !important;
   }
+  /* User Dashboard all sections @320px - Overview/Active/Live/Booking/History/Receipts/Agreements/Profile/Settings */
+  .dash-content-area .dash-header-bar {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.6rem !important;
+  }
+  .dash-content-area .dash-header-bar h1,
+  .dash-content-area .dash-header-bar h2 {
+    font-size: 1.05rem !important;
+  }
+  .dash-content-area .dash-header-bar p {
+    font-size: 0.75rem !important;
+  }
+  .dash-content-area .dash-header-bar .btn {
+    width: 100% !important;
+    justify-content: center !important;
+    font-size: 0.78rem !important;
+    padding: 0.55rem 0.8rem !important;
+  }
+  .dash-stats-grid,
+  .download-docs-grid,
+  .active-rental-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.6rem !important;
+  }
+  .dash-stat-box {
+    padding: 0.7rem !important;
+    gap: 0.6rem !important;
+  }
+  .dash-stat-icon {
+    width: 36px !important;
+    height: 36px !important;
+    font-size: 0.95rem !important;
+  }
+  .dash-stat-num {
+    font-size: 1.2rem !important;
+  }
+  .dash-stat-desc {
+    font-size: 0.7rem !important;
+  }
+  .active-rental-card {
+    padding: 0.75rem !important;
+  }
+  .active-rental-grid {
+    gap: 0.6rem !important;
+  }
+  .active-scooter-preview img {
+    height: 130px !important;
+  }
+  .rental-deadline-box {
+    padding: 0.75rem !important;
+  }
+  .deadline-countdown {
+    font-size: 1.25rem !important;
+  }
+  .dash-tab-pane .card {
+    padding: 0.75rem !important;
+  }
+  /* Booking form @320 */
+  #booking .card form div[style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+    gap: 0.6rem !important;
+  }
+  #booking .form-group {
+    margin-bottom: 0.6rem !important;
+  }
+  #booking .form-label {
+    font-size: 0.78rem !important;
+  }
+  #booking .form-control {
+    font-size: 0.82rem !important;
+    padding: 0.6rem 0.75rem !important;
+  }
+  /* Tables */
+  .dash-tab-pane .data-table-wrapper {
+    margin: 0 -0.65rem !important;
+    padding: 0 0.65rem 0.3rem !important;
+  }
+  .dash-tab-pane .dash-table {
+    min-width: 500px !important;
+  }
+  /* Docs grid */
+  .download-docs-grid .doc-card {
+    padding: 0.75rem !important;
+  }
+  .doc-meta {
+    gap: 0.6rem !important;
+    margin-bottom: 0.8rem !important;
+  }
+  .doc-icon {
+    width: 36px !important;
+    height: 36px !important;
+    font-size: 0.9rem !important;
+  }
+  /* Profile & Settings @320 */
+  #profile .card form div[style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+    gap: 0.6rem !important;
+  }
+  #settings .card > div > div {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.6rem !important;
+  }
+  #settings .form-control {
+    width: 100% !important;
+  }
 
   /* --------------------------------------------------------------------------
      HOME 2 - ALL SECTIONS (320px)
