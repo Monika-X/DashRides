@@ -25,6 +25,25 @@ function initBookingForms() {
     }
   }
 
+  // Set default and min date to today, default time to next hour
+  const setupDateTimeDefaults = () => {
+    const dateInput = document.getElementById('booking-pickup-date');
+    const timeInput = document.getElementById('booking-pickup-time');
+    const now = new Date();
+    const pad = n => String(n).padStart(2, '0');
+    const todayStr = `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}`;
+    
+    if (dateInput) {
+      dateInput.min = todayStr;
+      if (!dateInput.value) dateInput.value = todayStr;
+    }
+    if (timeInput && !timeInput.value) {
+      const nextHour = new Date(now.getTime() + 60 * 60 * 1000);
+      timeInput.value = `${pad(nextHour.getHours())}:00`;
+    }
+  };
+  setupDateTimeDefaults();
+
   bookingForm.addEventListener('submit', (e) => {
     e.preventDefault();
     
@@ -52,6 +71,7 @@ function initBookingForms() {
         submitBtn.innerHTML = originalText;
         showToast('<i class="fa-solid fa-champagne-glasses"></i> Reservation Confirmed! Check your email for QR unlock code.', 'success');
         bookingForm.reset();
+        setupDateTimeDefaults();
       }, 1500);
     } else {
       showToast('Please fill in all mandatory booking fields.', 'error');

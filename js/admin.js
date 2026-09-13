@@ -62,9 +62,9 @@ function saveLS(key, val) { localStorage.setItem(key, JSON.stringify(val)); }
 
 // ---------- Seed Data ----------
 const defaultFleet = [
-  { id: 'phantom-pro', name: 'Dash Phantom Pro', category: 'scooter long-range', hourly: 12, daily: 45, weekly: 240, deposit: 100, speed: '45 km/h', range: '60 km', img: 'https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=800&q=80', total: 14, available: 9, badge: 'Top Pick' },
-  { id: 'cyber-x', name: 'CyberScoot X', category: 'scooter', hourly: 15, daily: 55, weekly: 280, deposit: 100, speed: '52 km/h', range: '48 km', img: 'https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?auto=format&fit=crop&w=800&q=80', total: 10, available: 8, badge: 'Futuristic' },
-  { id: 'glide-lite', name: 'Urban Glide Lite', category: 'scooter', hourly: 9, daily: 35, weekly: 190, deposit: 80, speed: '32 km/h', range: '35 km', img: 'https://images.unsplash.com/photo-1549490349-8643362247b5?auto=format&fit=crop&w=800&q=80', total: 8, available: 6, badge: 'Ultra-Light' },
+  { id: 'phantom-pro', name: 'Dash Phantom Pro', category: 'scooter long-range', hourly: 12, daily: 45, weekly: 240, deposit: 100, speed: '45 km/h', range: '60 km', img: 'https://images.unsplash.com/photo-1558981359-219d6364c9c8?auto=format&fit=crop&w=800&q=80', total: 14, available: 9, badge: 'Top Pick' },
+  { id: 'cyber-x', name: 'CyberScoot X', category: 'scooter', hourly: 15, daily: 55, weekly: 280, deposit: 100, speed: '52 km/h', range: '48 km', img: 'https://images.unsplash.com/photo-1623079478319-945f25f0a97b?auto=format&fit=crop&w=800&q=80', total: 10, available: 8, badge: 'Futuristic' },
+  { id: 'glide-lite', name: 'Urban Glide Lite', category: 'scooter', hourly: 9, daily: 35, weekly: 190, deposit: 80, speed: '32 km/h', range: '35 km', img: 'https://images.unsplash.com/photo-1584737131144-5b76ba8c4147?auto=format&fit=crop&w=800&q=80', total: 8, available: 6, badge: 'Ultra-Light' },
   { id: 'classic-50', name: 'Moped Classic 50', category: 'moped long-range', hourly: 18, daily: 65, weekly: 320, deposit: 150, speed: '60 km/h', range: '75 km', img: 'https://images.unsplash.com/photo-1558981420-87aa9dad1c89?auto=format&fit=crop&w=800&q=80', total: 6, available: 4, badge: 'Classic Vibe' },
   { id: 'cruiser-gt', name: 'Cruiser GT EV', category: 'moped long-range', hourly: 22, daily: 85, weekly: 400, deposit: 150, speed: '75 km/h', range: '90 km', img: 'https://images.unsplash.com/photo-1558980664-769d59546b3d?auto=format&fit=crop&w=800&q=80', total: 6, available: 3, badge: 'GT Cruiser' },
   { id: 'stealth-apex', name: 'Stealth Apex 100', category: 'scooter long-range', hourly: 20, daily: 75, weekly: 360, deposit: 120, speed: '65 km/h', range: '80 km', img: 'https://images.unsplash.com/photo-1558981285-6f0c94958bb6?auto=format&fit=crop&w=800&q=80', total: 4, available: 1, badge: 'Flagship' },
@@ -90,6 +90,20 @@ function seedData() {
   if (!localStorage.getItem(LS_FLEET)) saveLS(LS_FLEET, defaultFleet);
   if (!localStorage.getItem(LS_BOOKINGS)) saveLS(LS_BOOKINGS, defaultBookings);
   if (!localStorage.getItem(LS_HUBS)) saveLS(LS_HUBS, defaultHubs);
+  // Migrate old broken bike images to proper bike images for existing users
+  try {
+    const fleet = loadLS(LS_FLEET, null);
+    if (fleet && Array.isArray(fleet)) {
+      const imgMap = {
+        'https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=800&q=80': 'https://images.unsplash.com/photo-1558981359-219d6364c9c8?auto=format&fit=crop&w=800&q=80',
+        'https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?auto=format&fit=crop&w=800&q=80': 'https://images.unsplash.com/photo-1623079478319-945f25f0a97b?auto=format&fit=crop&w=800&q=80',
+        'https://images.unsplash.com/photo-1549490349-8643362247b5?auto=format&fit=crop&w=800&q=80': 'https://images.unsplash.com/photo-1584737131144-5b76ba8c4147?auto=format&fit=crop&w=800&q=80'
+      };
+      let changed = false;
+      fleet.forEach(f => { if (imgMap[f.img]) { f.img = imgMap[f.img]; changed = true; } });
+      if (changed) saveLS(LS_FLEET, fleet);
+    }
+  } catch (e) {}
 }
 
 function getFleet() { return loadLS(LS_FLEET, defaultFleet); }
@@ -352,8 +366,17 @@ window.toggleBookingForm = (open) => {
   if (open===false) { el.classList.remove('open'); return; }
   el.classList.toggle('open');
   if (el.classList.contains('open')) {
-    const now = new Date(); now.setMinutes(now.getMinutes()-now.getTimezoneOffset()); now.setHours(now.getHours()+1);
-    document.getElementById('bk-pickup').value = now.toISOString().slice(0,16);
+    const now = new Date();
+    const pad = n => String(n).padStart(2, '0');
+    const dateStr = `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}`;
+    const nextHour = new Date(now.getTime() + 60 * 60 * 1000);
+    const timeStr = `${pad(nextHour.getHours())}:00`;
+    const dateEl = document.getElementById('bk-pickup-date');
+    const timeEl = document.getElementById('bk-pickup-time');
+    if (dateEl) { dateEl.min = dateStr; dateEl.value = dateStr; }
+    if (timeEl) { timeEl.value = timeStr; }
+    const oldPickup = document.getElementById('bk-pickup');
+    if (oldPickup) { oldPickup.value = now.toISOString().slice(0,16); }
     updateBkEstimate();
   }
 };
@@ -768,7 +791,9 @@ window.lockAdminSession = function() {
       const email=document.getElementById('bk-email').value.trim();
       const vehicle=document.getElementById('bk-model').value;
       const hub=document.getElementById('bk-hub').value;
-      const pickup=document.getElementById('bk-pickup').value;
+      const pickupDate=document.getElementById('bk-pickup-date')?.value;
+      const pickupTime=document.getElementById('bk-pickup-time')?.value;
+      const pickup = (pickupDate && pickupTime) ? `${pickupDate}T${pickupTime}` : (pickupDate || pickupTime || document.getElementById('bk-pickup')?.value || '');
       const duration=parseInt(document.getElementById('bk-duration').value);
       if(!customer||!vehicle||!pickup){ showToast('Fill required fields','error'); return; }
       const fleet=getFleet();

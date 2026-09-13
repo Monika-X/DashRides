@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initDocDownloads();
   initProfileSettings();
   initDashSidebarToggle();
+  initDashLogout();
 });
 
 /* 0. Dashboard sidebar responsive toggle - logo left, toggles right */
@@ -168,3 +169,26 @@ function initProfileSettings() {
     });
   }
 }
+
+/* 6. Sidebar Logout */
+function initDashLogout() {
+  const btn = document.getElementById('dash-logout-btn');
+  if (!btn) return;
+  btn.addEventListener('click', () => {
+    btn.disabled = true;
+    btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Logging out...';
+    showToast('Logging out — see you soon!', 'info');
+    try {
+      sessionStorage.removeItem('dashrides_selected_model');
+      localStorage.removeItem('dashrides_user_session');
+      sessionStorage.setItem('dashrides_logged_out', '1');
+    } catch (e) {}
+    setTimeout(() => {
+      window.location.href = 'login.html';
+    }, 900);
+  });
+}
+
+window.handleDashLogout = function() {
+  document.getElementById('dash-logout-btn')?.click();
+};

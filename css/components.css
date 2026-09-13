@@ -930,6 +930,9 @@ html.no-scroll {
 
 .form-control {
   width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
   padding: 0.9rem 1.25rem;
   background-color: var(--bg-input);
   border: 1.5px solid var(--border-color);
@@ -937,6 +940,58 @@ html.no-scroll {
   color: var(--text-primary);
   font-size: 0.95rem;
   transition: all var(--transition-fast);
+}
+
+input[type="date"].form-control,
+input[type="time"].form-control,
+input[type="datetime-local"].form-control {
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+  color-scheme: dark;
+  cursor: pointer;
+}
+
+input[type="date"].form-control::-webkit-calendar-picker-indicator,
+input[type="time"].form-control::-webkit-calendar-picker-indicator,
+input[type="datetime-local"].form-control::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  filter: none;
+  opacity: 0.92;
+  width: 18px;
+  height: 18px;
+  padding: 2px;
+  margin-left: 0.35rem;
+  flex-shrink: 0;
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+
+input[type="date"].form-control::-webkit-calendar-picker-indicator:hover,
+input[type="time"].form-control::-webkit-calendar-picker-indicator:hover,
+input[type="datetime-local"].form-control::-webkit-calendar-picker-indicator:hover {
+  opacity: 1;
+  transform: scale(1.06);
+}
+
+/* Light theme: dark icon on white input */
+[data-theme="light"] input[type="date"].form-control,
+[data-theme="light"] input[type="time"].form-control,
+[data-theme="light"] input[type="datetime-local"].form-control {
+  color-scheme: light;
+}
+
+[data-theme="light"] input[type="date"].form-control::-webkit-calendar-picker-indicator,
+[data-theme="light"] input[type="time"].form-control::-webkit-calendar-picker-indicator,
+[data-theme="light"] input[type="datetime-local"].form-control::-webkit-calendar-picker-indicator {
+  filter: none;
+  opacity: 0.78;
+}
+
+[data-theme="light"] input[type="date"].form-control::-webkit-calendar-picker-indicator:hover,
+[data-theme="light"] input[type="time"].form-control::-webkit-calendar-picker-indicator:hover,
+[data-theme="light"] input[type="datetime-local"].form-control::-webkit-calendar-picker-indicator:hover {
+  filter: none;
+  opacity: 1;
 }
 
 .form-control:focus {
@@ -953,16 +1008,35 @@ select.form-control {
   -webkit-appearance: none;
   -moz-appearance: none;
   background-color: var(--bg-input);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23C8CDD2' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23FFFFFF' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 1.25rem center;
   background-size: 16px;
   padding-right: 2.75rem;
   cursor: pointer;
+  color-scheme: dark;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 select.form-control option {
   background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+[data-theme="light"] select.form-control {
+  color-scheme: light;
+  background-color: var(--bg-input);
+}
+
+select.form-control:focus {
+  background-color: var(--bg-input);
   color: var(--text-primary);
 }
 

@@ -1515,6 +1515,15 @@
   cursor: pointer;
   transition: all var(--transition-fast);
   text-decoration: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.btn-social svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  display: block;
 }
 
 .btn-social:hover {

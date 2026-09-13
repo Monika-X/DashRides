@@ -103,6 +103,7 @@
         <div style="padding-top: 1.5rem; border-top: 1px solid var(--border-color);">
           <div style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.5rem;">Wallet Credits</div>
           <div style="font-family: var(--font-heading); font-size: 1.35rem; font-weight: 800; color: var(--color-electric-lime);">$42.50</div>
+          <button class="btn btn-outline btn-sm dash-logout-btn" id="dash-logout-btn" style="width:100%; margin-top:1rem; justify-content:center;"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
         </div>
       </aside>
 
@@ -307,10 +308,17 @@
 
               <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
                 <div class="form-group">
-                  <label class="form-label">Pickup Date & Time *</label>
-                  <input type="datetime-local" class="form-control" required>
+                  <label class="form-label">Pickup Date *</label>
+                  <input type="date" class="form-control" id="booking-pickup-date" required>
                 </div>
 
+                <div class="form-group">
+                  <label class="form-label">Pickup Time *</label>
+                  <input type="time" class="form-control" id="booking-pickup-time" required>
+                </div>
+              </div>
+
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
                 <div class="form-group">
                   <label class="form-label">Rental Duration *</label>
                   <select class="form-control" required>
@@ -321,18 +329,16 @@
                     <option>Weekly Pass ($240.00)</option>
                   </select>
                 </div>
-              </div>
 
-              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
                 <div class="form-group">
                   <label class="form-label">Full Name *</label>
                   <input type="text" class="form-control" value="Elena Vance" required>
                 </div>
+              </div>
 
-                <div class="form-group">
-                  <label class="form-label">Mobile Number (For Unlock Code) *</label>
-                  <input type="tel" class="form-control" value="+1 (555) 234-9812" required>
-                </div>
+              <div class="form-group">
+                <label class="form-label">Mobile Number (For Unlock Code) *</label>
+                <input type="tel" class="form-control" value="+1 (555) 234-9812" required>
               </div>
 
               <div style="background: var(--bg-tertiary); padding: 1.5rem; border-radius: var(--radius-md); margin-bottom: 1.5rem;">

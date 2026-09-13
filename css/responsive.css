@@ -628,6 +628,89 @@
     align-items: stretch;
     gap: 0.9rem;
   }
+  /* Booking form - Pickup Date & Time responsive (fix 320px overflow: stack 2-col grids) */
+  #booking .card form div[style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+    gap: 0.85rem !important;
+  }
+  #booking .form-group,
+  #profile .card form div[style*="grid-template-columns"] {
+    min-width: 0 !important;
+  }
+  #booking .form-control,
+  #booking input[type="date"],
+  #booking input[type="time"],
+  #booking input[type="datetime-local"],
+  #profile .form-control,
+  #bk-pickup,
+  #bk-pickup-date,
+  #bk-pickup-time,
+  input[type="date"].form-control,
+  input[type="time"].form-control,
+  input[type="datetime-local"].form-control,
+  .admin-form-grid .form-control,
+  .admin-inline-form .form-control {
+    min-width: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+  /* White select box responsive at 640px - prevent long option overflow */
+  #booking select.form-control,
+  .admin-form-grid select.form-control,
+  select.form-control {
+    font-size: 0.82rem !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+  }
+  #booking div[style*="background: var(--bg-tertiary)"],
+  .admin-inline-form div[style*="background: var(--bg-tertiary)"] {
+    padding: 1rem !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow-wrap: break-word !important;
+  }
+  /* Confirm & Unlock Vehicle button responsive at 640px */
+  #booking .btn,
+  #booking .btn-lg,
+  #rental-booking-form .btn,
+  #rental-booking-form .btn-lg {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    white-space: normal !important;
+    text-align: center !important;
+    justify-content: center !important;
+    overflow-wrap: break-word !important;
+  }
+  /* date selection full responsive - ensure picker icon scales */
+  input[type="date"].form-control::-webkit-calendar-picker-indicator,
+  input[type="time"].form-control::-webkit-calendar-picker-indicator,
+  input[type="datetime-local"].form-control::-webkit-calendar-picker-indicator,
+  #bk-pickup::-webkit-calendar-picker-indicator,
+  #bk-pickup-date::-webkit-calendar-picker-indicator,
+  #bk-pickup-time::-webkit-calendar-picker-indicator {
+    width: 18px !important;
+    height: 18px !important;
+    margin-left: 0.3rem !important;
+    flex-shrink: 0 !important;
+  }
+  input[type="date"].form-control::-webkit-datetime-edit,
+  input[type="time"].form-control::-webkit-datetime-edit,
+  input[type="datetime-local"].form-control::-webkit-datetime-edit,
+  #bk-pickup::-webkit-datetime-edit,
+  #bk-pickup-date::-webkit-datetime-edit,
+  #bk-pickup-time::-webkit-datetime-edit {
+    padding: 0 !important;
+    overflow: hidden !important;
+  }
+  #profile .card form div[style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+    gap: 0.85rem !important;
+  }
   .dash-stats-grid,
   .active-rental-grid,
   .download-docs-grid,
@@ -793,9 +876,73 @@
     grid-template-columns: 1fr !important;
     gap: 1rem !important;
   }
-  div[style*="grid-template-columns: 1fr 1fr; gap: 1.25rem"] {
+  div[style*="grid-template-columns: 1fr 1fr"] {
     grid-template-columns: 1fr !important;
     gap: 0.85rem !important;
+  }
+  /* Ensure booking datetime-local & white select box never overflows at 480px and below */
+  #booking input[type="datetime-local"].form-control,
+  #booking input[type="date"].form-control,
+  #booking input[type="time"].form-control,
+  #booking .form-control,
+  .form-control,
+  #bk-pickup,
+  #bk-pickup-date,
+  #bk-pickup-time,
+  input[type="date"].form-control,
+  input[type="time"].form-control,
+  input[type="datetime-local"].form-control,
+  .admin-form-grid .form-control,
+  .admin-inline-form .form-control {
+    min-width: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    font-size: 0.85rem !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+  #booking select.form-control,
+  .admin-form-grid select.form-control,
+  select.form-control {
+    font-size: 0.78rem !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+  }
+  #booking div[style*="background: var(--bg-tertiary)"],
+  .admin-inline-form div[style*="background: var(--bg-tertiary)"] {
+    padding: 0.9rem !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow-wrap: break-word !important;
+  }
+  /* Confirm & Unlock Vehicle button responsive at 480px */
+  #booking .btn,
+  #booking .btn-lg,
+  #rental-booking-form .btn,
+  #rental-booking-form .btn-lg {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 0.9rem 1.15rem !important;
+    font-size: 0.88rem !important;
+    white-space: normal !important;
+    text-align: center !important;
+    justify-content: center !important;
+    overflow-wrap: break-word !important;
+  }
+  .admin-form-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.85rem !important;
+  }
+  input[type="date"].form-control::-webkit-calendar-picker-indicator,
+  input[type="time"].form-control::-webkit-calendar-picker-indicator,
+  input[type="datetime-local"].form-control::-webkit-calendar-picker-indicator,
+  #bk-pickup::-webkit-calendar-picker-indicator,
+  #bk-pickup-date::-webkit-calendar-picker-indicator,
+  #bk-pickup-time::-webkit-calendar-picker-indicator {
+    width: 16px !important;
+    height: 16px !important;
   }
   .bento-grid {
     gap: 0.75rem !important;
@@ -1428,6 +1575,12 @@
     height: 15px !important;
     font-size: 0.8rem !important;
   }
+  .dash-logout-btn {
+    font-size: 0.72rem !important;
+    padding: 0.55rem 0.7rem !important;
+    margin-top: 0.75rem !important;
+    gap: 0.5rem !important;
+  }
   .admin-nav-label {
     font-size: 0.6rem !important;
     margin: 0.7rem 0 0.3rem 0.4rem !important;
@@ -1439,8 +1592,27 @@
   }
   .dash-content-area,
   .admin-content {
-    padding: 0.65rem !important;
-    overflow-x: hidden !important;
+    padding: 0.65rem 0.65rem 1.25rem !important;
+    overflow-x: visible !important;
+  }
+  /* Cards section ku keezha gap @320px - ensure gap below grids */
+  .admin-fleet-grid,
+  #pricing-cards,
+  #coverage-grid,
+  #active-rentals-grid,
+  #returns-grid,
+  .download-docs-grid,
+  .admin-kpi-grid,
+  .dash-stats-grid,
+  .active-rental-grid {
+    margin-bottom: 1rem !important;
+  }
+  .data-table-wrapper,
+  .dash-tab-pane .data-table-wrapper {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    display: block !important;
+    max-width: 100% !important;
   }
   .dash-header-bar,
   .admin-content .dash-header-bar {
@@ -1495,6 +1667,60 @@
     padding: 0.6rem 0.65rem !important;
     font-size: 0.72rem !important;
   }
+  /* Rental History stacked cards at 320px - fully responsive, no horizontal scroll */
+  #history .data-table-wrapper {
+    overflow: visible !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  #history .dash-table {
+    min-width: 0 !important;
+    font-size: 0.78rem !important;
+  }
+  #history .dash-table thead { display: none !important; }
+  #history .dash-table,
+  #history .dash-table tbody,
+  #history .dash-table tr { display: block !important; width: 100% !important; }
+  #history .dash-table tr {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg) !important;
+    overflow: hidden !important;
+    margin-bottom: 0.85rem !important;
+    box-shadow: var(--shadow-sm);
+  }
+  #history .dash-table td {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: 0.75rem !important;
+    padding: 0.7rem 0.85rem !important;
+    border-bottom: 1px solid var(--border-color) !important;
+    white-space: normal !important;
+    font-size: 0.78rem !important;
+    text-align: right !important;
+  }
+  #history .dash-table td:last-child { border-bottom: none !important; justify-content: flex-end !important; }
+  #history .dash-table td::before {
+    content: attr(data-label);
+    font-size: 0.68rem !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.04em !important;
+    text-transform: uppercase !important;
+    color: var(--text-muted) !important;
+    text-align: left !important;
+    flex-shrink: 0 !important;
+  }
+  #history .dash-table td:nth-child(1)::before { content: "Booking ID"; }
+  #history .dash-table td:nth-child(2)::before { content: "Vehicle"; }
+  #history .dash-table td:nth-child(3)::before { content: "Date & Time"; }
+  #history .dash-table td:nth-child(4)::before { content: "Duration"; }
+  #history .dash-table td:nth-child(5)::before { content: "Fare"; }
+  #history .dash-table td:nth-child(6)::before { content: "Deposit"; }
+  #history .dash-table td:nth-child(7)::before { display: none !important; }
   .download-docs-grid,
   .admin-fleet-grid {
     grid-template-columns: 1fr !important;
@@ -1737,41 +1963,308 @@
   .dash-tab-pane .card {
     padding: 0.75rem !important;
   }
-  /* Booking form @320 */
+  /* Booking form @320 - Pickup Date & Time fix: prevent datetime-local overflow */
+  #booking .card,
+  #booking-form-wrap,
+  .admin-inline-form {
+    overflow: hidden !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
   #booking .card form div[style*="grid-template-columns"] {
     grid-template-columns: 1fr !important;
     gap: 0.6rem !important;
+    min-width: 0 !important;
   }
-  #booking .form-group {
+  #booking .form-group,
+  .admin-form-grid .form-group,
+  #booking-form-wrap .form-group {
     margin-bottom: 0.6rem !important;
+    min-width: 0 !important;
+    overflow: hidden !important;
+    max-width: 100% !important;
   }
-  #booking .form-label {
+  #booking .form-label,
+  .admin-form-grid .form-label,
+  #booking-form-wrap .form-label {
     font-size: 0.78rem !important;
+    word-break: break-word !important;
   }
-  #booking .form-control {
+  #booking .form-control,
+  .admin-form-grid .form-control,
+  #booking-form-wrap .form-control,
+  #bk-pickup {
     font-size: 0.82rem !important;
     padding: 0.6rem 0.75rem !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  #booking input[type="date"].form-control,
+  #booking input[type="time"].form-control,
+  #booking input[type="datetime-local"].form-control,
+  #bk-pickup,
+  #bk-pickup-date,
+  #bk-pickup-time,
+  input[type="date"].form-control,
+  input[type="time"].form-control,
+  input[type="datetime-local"].form-control {
+    min-width: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    font-size: 0.70rem !important;
+    padding: 0.55rem 2.1rem 0.55rem 0.6rem !important;
+    line-height: 1.2 !important;
+    letter-spacing: -0.01em !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+  }
+  #booking input[type="date"].form-control::-webkit-datetime-edit,
+  #booking input[type="time"].form-control::-webkit-datetime-edit,
+  #booking input[type="datetime-local"].form-control::-webkit-datetime-edit,
+  #bk-pickup::-webkit-datetime-edit,
+  #bk-pickup-date::-webkit-datetime-edit,
+  #bk-pickup-time::-webkit-datetime-edit,
+  input[type="date"]::-webkit-datetime-edit,
+  input[type="time"]::-webkit-datetime-edit,
+  input[type="datetime-local"]::-webkit-datetime-edit {
+    padding: 0 !important;
+    overflow: hidden !important;
+    max-width: 100% !important;
+  }
+  #booking input[type="date"].form-control::-webkit-datetime-edit-fields-wrapper,
+  #booking input[type="time"].form-control::-webkit-datetime-edit-fields-wrapper,
+  #booking input[type="datetime-local"].form-control::-webkit-datetime-edit-fields-wrapper,
+  #bk-pickup::-webkit-datetime-edit-fields-wrapper,
+  #bk-pickup-date::-webkit-datetime-edit-fields-wrapper,
+  #bk-pickup-time::-webkit-datetime-edit-fields-wrapper,
+  input[type="date"]::-webkit-datetime-edit-fields-wrapper,
+  input[type="time"]::-webkit-datetime-edit-fields-wrapper,
+  input[type="datetime-local"]::-webkit-datetime-edit-fields-wrapper {
+    gap: 0 !important;
+    padding: 0 !important;
+  }
+  #booking input[type="date"].form-control::-webkit-calendar-picker-indicator,
+  #booking input[type="time"].form-control::-webkit-calendar-picker-indicator,
+  #booking input[type="datetime-local"].form-control::-webkit-calendar-picker-indicator,
+  #bk-pickup::-webkit-calendar-picker-indicator,
+  #bk-pickup-date::-webkit-calendar-picker-indicator,
+  #bk-pickup-time::-webkit-calendar-picker-indicator,
+  input[type="date"]::-webkit-calendar-picker-indicator,
+  input[type="time"]::-webkit-calendar-picker-indicator,
+  input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+    width: 15px !important;
+    height: 15px !important;
+    margin-left: 0.2rem !important;
+    padding: 2px !important;
+    flex-shrink: 0 !important;
+    filter: none !important;
+    opacity: 0.92 !important;
+  }
+  [data-theme="light"] #booking input[type="date"].form-control::-webkit-calendar-picker-indicator,
+  [data-theme="light"] #booking input[type="time"].form-control::-webkit-calendar-picker-indicator,
+  [data-theme="light"] #booking input[type="datetime-local"].form-control::-webkit-calendar-picker-indicator,
+  [data-theme="light"] #bk-pickup::-webkit-calendar-picker-indicator,
+  [data-theme="light"] #bk-pickup-date::-webkit-calendar-picker-indicator,
+  [data-theme="light"] #bk-pickup-time::-webkit-calendar-picker-indicator,
+  [data-theme="light"] input[type="date"]::-webkit-calendar-picker-indicator,
+  [data-theme="light"] input[type="time"]::-webkit-calendar-picker-indicator,
+  [data-theme="light"] input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+    filter: none !important;
+    opacity: 0.78 !important;
+  }
+  /* White select box after clicking - native dropdown not responsive fix */
+  #booking select.form-control,
+  .admin-form-grid select.form-control,
+  select.form-control {
+    padding-right: 1.7rem !important;
+    padding-left: 0.55rem !important;
+    background-position: right 0.5rem center !important;
+    background-size: 12px !important;
+    font-size: 0.70rem !important;
+    line-height: 1.25 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+    box-sizing: border-box !important;
+    color-scheme: dark !important;
+  }
+  [data-theme="light"] #booking select.form-control,
+  [data-theme="light"] .admin-form-grid select.form-control,
+  [data-theme="light"] select.form-control {
+    color-scheme: light !important;
+  }
+  select.form-control option {
+    font-size: 0.70rem !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+    padding: 0.4rem 0.6rem !important;
+  }
+  .admin-form-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.55rem !important;
+  }
+  .admin-inline-form {
+    padding: 0.75rem !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  /* White/colored boxes inside booking card (Safety Deposit, Estimate) - make responsive */
+  #booking div[style*="background: var(--bg-tertiary)"],
+  #booking-form-wrap div[style*="background: var(--bg-tertiary)"],
+  .admin-inline-form div[style*="background: var(--bg-tertiary)"] {
+    padding: 0.85rem 0.7rem !important;
+    font-size: 0.78rem !important;
+    line-height: 1.45 !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+  }
+  #booking div[style*="background: var(--bg-tertiary)"] p,
+  #booking-form-wrap div[style*="background: var(--bg-tertiary)"] p {
+    font-size: 0.75rem !important;
+    line-height: 1.4 !important;
+  }
+  /* Ensure estimate flex row stacks and doesn't overflow white box */
+  #booking-form-wrap div[style*="display:flex; justify-content:space-between"],
+  #booking-form-wrap div[style*="display: flex; justify-content: space-between"] {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.4rem !important;
+  }
+  /* Confirm & Unlock Vehicle button - 320px not responsive fix */
+  #booking .btn,
+  #booking .btn-lg,
+  #booking .btn-primary,
+  #rental-booking-form .btn,
+  #rental-booking-form .btn-lg,
+  #rental-booking-form .btn-primary {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 0.85rem 0.9rem !important;
+    font-size: 0.82rem !important;
+    line-height: 1.35 !important;
+    gap: 0.35rem !important;
+    white-space: normal !important;
+    text-align: center !important;
+    justify-content: center !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+    min-width: 0 !important;
+  }
+  #booking .btn i,
+  #rental-booking-form .btn i {
+    flex-shrink: 0 !important;
+    margin-left: 0 !important;
   }
   /* Tables */
-  .dash-tab-pane .data-table-wrapper {
-    margin: 0 -0.65rem !important;
-    padding: 0 0.65rem 0.3rem !important;
-  }
   .dash-tab-pane .dash-table {
     min-width: 500px !important;
   }
-  /* Docs grid */
-  .download-docs-grid .doc-card {
+  /* Receipts & Signed Agreements @320px - dashboard #receipts & #agreements header */
+  #receipts .dash-header-bar,
+  #agreements .dash-header-bar {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.6rem !important;
+    margin-bottom: 1rem !important;
+  }
+  #receipts .dash-header-bar h2,
+  #agreements .dash-header-bar h2 {
+    font-size: 0.95rem !important;
+    line-height: 1.25 !important;
+    word-break: break-word !important;
+    white-space: normal !important;
+  }
+  #receipts .dash-header-bar p,
+  #agreements .dash-header-bar p {
+    font-size: 0.72rem !important;
+    line-height: 1.4 !important;
+  }
+  /* Docs grid - Download Official Receipts & Signed Agreements @320px deep fix */
+  .download-docs-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.6rem !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+  }
+  .download-docs-grid .doc-card,
+  #receipts .doc-card,
+  #agreements .doc-card {
     padding: 0.75rem !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.6rem !important;
   }
   .doc-meta {
     gap: 0.6rem !important;
-    margin-bottom: 0.8rem !important;
+    margin-bottom: 0.6rem !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
   }
   .doc-icon {
-    width: 36px !important;
-    height: 36px !important;
-    font-size: 0.9rem !important;
+    width: 32px !important;
+    height: 32px !important;
+    min-width: 32px !important;
+    font-size: 0.85rem !important;
+    flex-shrink: 0 !important;
+  }
+  .doc-meta > div:last-child {
+    min-width: 0 !important;
+    flex: 1 !important;
+    overflow: hidden !important;
+  }
+  #receipts .doc-card h3,
+  #agreements .doc-card h3,
+  .download-docs-grid .doc-card h3 {
+    font-size: 0.92rem !important;
+    line-height: 1.3 !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+    white-space: normal !important;
+  }
+  #receipts .doc-card p,
+  #agreements .doc-card p,
+  .download-docs-grid .doc-card p {
+    font-size: 0.75rem !important;
+    line-height: 1.4 !important;
+    overflow-wrap: break-word !important;
+    white-space: normal !important;
+  }
+  #receipts .doc-card span,
+  #agreements .doc-card span,
+  .download-docs-grid .doc-card span {
+    font-size: 0.70rem !important;
+    white-space: normal !important;
+    overflow-wrap: break-word !important;
+  }
+  #receipts .doc-card .btn,
+  #agreements .doc-card .btn,
+  .download-docs-grid .doc-card .btn {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    justify-content: center !important;
+    padding: 0.65rem 0.85rem !important;
+    font-size: 0.76rem !important;
+    white-space: normal !important;
+    text-align: center !important;
+    margin-top: 0.6rem !important;
+    gap: 0.3rem !important;
   }
   /* Profile & Settings @320 */
   #profile .card form div[style*="grid-template-columns"] {
@@ -1823,11 +2316,36 @@
     width: 100% !important;
   }
 
-  /* User Dashboard Tab 8: Profile */
+  /* User Dashboard Tab 8: Profile - Rider Profile & License Verification @320px deep fix */
+  #profile .card {
+    max-width: 100% !important;
+    overflow: hidden !important;
+    padding: 0.75rem !important;
+    box-sizing: border-box !important;
+  }
   #profile .card form div[style*="grid-template-columns: 1fr 1fr"],
   #profile .card form div[style*="grid-template-columns"] {
     grid-template-columns: 1fr !important;
     gap: 0.55rem !important;
+    min-width: 0 !important;
+  }
+  #profile .form-group {
+    min-width: 0 !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+    margin-bottom: 0.55rem !important;
+  }
+  #profile .form-label {
+    font-size: 0.72rem !important;
+    word-break: break-word !important;
+  }
+  #profile .form-control {
+    font-size: 0.75rem !important;
+    padding: 0.55rem 0.65rem !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
   }
   #profile .form-group div[style*="justify-content: space-between"],
   #profile .form-group div[style*="justify-content:space-between"] {
@@ -1835,20 +2353,94 @@
     align-items: flex-start !important;
     gap: 0.35rem !important;
     padding: 0.65rem 0.75rem !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow-wrap: break-word !important;
+  }
+  #profile .form-group div[style*="justify-content: space-between"] span:first-child,
+  #profile .form-group div[style*="justify-content:space-between"] span:first-child {
+    font-size: 0.82rem !important;
+    word-break: break-all !important;
+  }
+  #profile .badge {
+    font-size: 0.68rem !important;
+    padding: 0.25rem 0.5rem !important;
+    white-space: normal !important;
+    text-align: center !important;
+  }
+  #profile .btn {
+    width: 100% !important;
+    max-width: 100% !important;
+    justify-content: center !important;
+    padding: 0.7rem 0.85rem !important;
+    font-size: 0.78rem !important;
+    box-sizing: border-box !important;
+    white-space: normal !important;
+  }
+  #profile .dash-header-bar h2 {
+    font-size: 0.95rem !important;
+    line-height: 1.25 !important;
+    word-break: break-word !important;
+  }
+  #profile .dash-header-bar p {
+    font-size: 0.75rem !important;
   }
 
-  /* User Dashboard Tab 9: Settings */
+  /* User Dashboard Tab 9: Settings - Account & Experience Settings @320px deep fix */
+  #settings .card {
+    max-width: 100% !important;
+    overflow: hidden !important;
+    padding: 0.75rem !important;
+    box-sizing: border-box !important;
+  }
+  #settings .card > div {
+    gap: 1rem !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
   #settings .card > div > div[style*="justify-content: space-between"],
   #settings .card > div > div[style*="justify-content:space-between"] {
     flex-direction: column !important;
     align-items: flex-start !important;
     gap: 0.5rem !important;
     padding-bottom: 0.75rem !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow-wrap: break-word !important;
+  }
+  #settings .card h4 {
+    font-size: 0.88rem !important;
+    line-height: 1.3 !important;
+    word-break: break-word !important;
+  }
+  #settings .card p {
+    font-size: 0.72rem !important;
+    line-height: 1.4 !important;
+    word-break: break-word !important;
   }
   #settings .card select,
   #settings .form-control {
     width: 100% !important;
-    font-size: 0.8rem !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    font-size: 0.75rem !important;
+    padding: 0.55rem 0.65rem !important;
+    box-sizing: border-box !important;
+  }
+  #settings .card input[type="checkbox"] {
+    width: 18px !important;
+    height: 18px !important;
+    min-width: 18px !important;
+    flex-shrink: 0 !important;
+  }
+  #settings .dash-header-bar h2 {
+    font-size: 0.95rem !important;
+    line-height: 1.25 !important;
+    word-break: break-word !important;
+  }
+  #settings .dash-header-bar p {
+    font-size: 0.75rem !important;
   }
 
   /* Admin Tab 1: Overview - Urgent Attention Cards */
@@ -1876,6 +2468,264 @@
     gap: 0.5rem !important;
     padding: 0.7rem 0.6rem !important;
   }
+  /* Operations Overview deep 320px - KPI, chart, recent bookings fully responsive */
+  #overview .admin-kpi-card {
+    padding: 0.85rem !important;
+    min-width: 0 !important;
+    overflow: hidden !important;
+  }
+  #overview .admin-kpi-icon {
+    width: 38px !important;
+    height: 38px !important;
+    font-size: 1rem !important;
+  }
+  #overview .admin-kpi-value {
+    font-size: 1.35rem !important;
+  }
+  #overview .admin-kpi-label {
+    font-size: 0.72rem !important;
+  }
+  #overview .admin-kpi-sub {
+    font-size: 0.68rem !important;
+  }
+  #overview .dash-header-bar {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.6rem !important;
+  }
+  #overview .dash-header-bar h1 {
+    font-size: 1.05rem !important;
+    line-height: 1.25 !important;
+    word-break: break-word !important;
+  }
+  #overview .dash-header-bar p {
+    font-size: 0.72rem !important;
+  }
+  #overview .dash-header-bar .btn {
+    width: 100% !important;
+    justify-content: center !important;
+    font-size: 0.72rem !important;
+    padding: 0.55rem 0.7rem !important;
+  }
+  #overview div[style*="height:140px"] {
+    height: 110px !important;
+    gap: 0.3rem !important;
+    padding: 0.6rem !important;
+    overflow: hidden !important;
+  }
+  #overview div[style*="height:140px"] span {
+    font-size: 0.60rem !important;
+  }
+  /* Recent Bookings Feed stacked at 320px - no horizontal scroll */
+  #overview .data-table-wrapper {
+    overflow: visible !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  #overview .dash-table {
+    min-width: 0 !important;
+    font-size: 0.75rem !important;
+  }
+  #overview .dash-table thead { display: none !important; }
+  #overview .dash-table,
+  #overview .dash-table tbody,
+  #overview .dash-table tr { display: block !important; width: 100% !important; }
+  #overview .dash-table tr {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg) !important;
+    overflow: hidden !important;
+    margin-bottom: 0.75rem !important;
+    box-shadow: var(--shadow-sm);
+  }
+  #overview .dash-table td {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: 0.6rem !important;
+    padding: 0.65rem 0.75rem !important;
+    border-bottom: 1px solid var(--border-color) !important;
+    white-space: normal !important;
+    font-size: 0.75rem !important;
+    text-align: right !important;
+  }
+  #overview .dash-table td:last-child { border-bottom: none !important; }
+  #overview .dash-table td::before {
+    content: attr(data-label);
+    font-size: 0.65rem !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.04em !important;
+    text-transform: uppercase !important;
+    color: var(--text-muted) !important;
+    flex-shrink: 0 !important;
+  }
+  #overview .dash-table td:nth-child(1)::before { content: "Booking"; }
+  #overview .dash-table td:nth-child(2)::before { content: "Customer"; }
+  #overview .dash-table td:nth-child(3)::before { content: "Vehicle"; }
+  #overview .dash-table td:nth-child(4)::before { content: "Pickup"; }
+  #overview .dash-table td:nth-child(5)::before { content: "Duration"; }
+  #overview .dash-table td:nth-child(6)::before { content: "Total"; }
+  #overview .dash-table td:nth-child(7)::before { content: "Status"; }
+
+  /* User Dashboard - Rider Overview @320px deep fix (pages/dashboard.html:111-190) */
+  .dashboard-layout #overview .dash-header-bar {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.6rem !important;
+    margin-bottom: 1rem !important;
+  }
+  .dashboard-layout #overview .dash-header-bar h1 {
+    font-size: 1.05rem !important;
+    line-height: 1.25 !important;
+    word-break: break-word !important;
+  }
+  .dashboard-layout #overview .dash-header-bar p {
+    font-size: 0.72rem !important;
+    line-height: 1.4 !important;
+  }
+  .dashboard-layout #overview .dash-header-bar .btn {
+    width: 100% !important;
+    justify-content: center !important;
+    font-size: 0.72rem !important;
+    padding: 0.55rem 0.7rem !important;
+  }
+  .dashboard-layout #overview .dash-stats-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.6rem !important;
+    margin-bottom: 1rem !important;
+  }
+  .dashboard-layout #overview .dash-stat-box {
+    padding: 0.7rem !important;
+    gap: 0.6rem !important;
+    min-width: 0 !important;
+    overflow: hidden !important;
+  }
+  .dashboard-layout #overview .dash-stat-icon {
+    width: 36px !important;
+    height: 36px !important;
+    font-size: 0.95rem !important;
+    flex-shrink: 0 !important;
+  }
+  .dashboard-layout #overview .dash-stat-num {
+    font-size: 1.2rem !important;
+  }
+  .dashboard-layout #overview .dash-stat-desc {
+    font-size: 0.70rem !important;
+    word-break: break-word !important;
+  }
+  .dashboard-layout #overview .active-rental-card {
+    padding: 0.75rem !important;
+    min-width: 0 !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+  }
+  .dashboard-layout #overview .active-rental-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.6rem !important;
+  }
+  .dashboard-layout #overview .active-scooter-preview img {
+    height: 130px !important;
+    width: 100% !important;
+    object-fit: cover !important;
+  }
+  .dashboard-layout #overview .active-rental-card div[style*="grid-template-columns: 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 0.5rem !important;
+  }
+  .dashboard-layout #overview .rental-deadline-box {
+    padding: 0.75rem !important;
+    text-align: center !important;
+  }
+  .dashboard-layout #overview .deadline-countdown {
+    font-size: 1.25rem !important;
+    word-break: break-all !important;
+  }
+
+  /* Admin Tab 2: Fleet Inventory - tags @320px (Top Pick/Futuristic/Long Range etc) */
+  #fleet .admin-fleet-card {
+    max-width: 100% !important;
+    min-width: 0 !important;
+    overflow: hidden !important;
+  }
+  #fleet .admin-fleet-img {
+    height: 140px !important;
+  }
+  #fleet .admin-fleet-body {
+    padding: 0.75rem !important;
+    min-width: 0 !important;
+    overflow: hidden !important;
+  }
+  #fleet .admin-fleet-body div[style*="display:flex; justify-content:space-between"] {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.4rem !important;
+    min-width: 0 !important;
+  }
+  #fleet .admin-fleet-body h3 {
+    font-size: 0.92rem !important;
+    line-height: 1.25 !important;
+    word-break: break-word !important;
+    white-space: normal !important;
+  }
+  #fleet .admin-fleet-body span[style*="font-size:0.75rem"] {
+    font-size: 0.68rem !important;
+    line-height: 1.35 !important;
+    white-space: normal !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+    display: block !important;
+    max-width: 100% !important;
+  }
+  #fleet .admin-fleet-body .badge {
+    font-size: 0.60rem !important;
+    padding: 0.18rem 0.4rem !important;
+    white-space: normal !important;
+    text-align: center !important;
+    max-width: 100% !important;
+    align-self: flex-start !important;
+  }
+  #fleet .admin-fleet-body div[style*="display:grid; grid-template-columns:1fr 1fr"] {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 0.45rem !important;
+    padding: 0.7rem !important;
+    margin: 0.7rem 0 !important;
+  }
+  #fleet .admin-fleet-body div[style*="display:grid; grid-template-columns:1fr 1fr"] div {
+    min-width: 0 !important;
+    overflow: hidden !important;
+  }
+  #fleet .admin-fleet-body div[style*="display:grid; grid-template-columns:1fr 1fr"] div div:first-child {
+    font-size: 0.65rem !important;
+  }
+  #fleet .admin-fleet-body div[style*="display:grid; grid-template-columns:1fr 1fr"] div div:last-child {
+    font-size: 0.85rem !important;
+    word-break: break-word !important;
+  }
+  #fleet .admin-fleet-body div[style*="display:flex; gap:0.5rem; flex-wrap:wrap"] {
+    flex-direction: column !important;
+    gap: 0.4rem !important;
+  }
+  #fleet .admin-fleet-body div[style*="display:flex; gap:0.5rem; flex-wrap:wrap"] .btn {
+    width: 100% !important;
+    justify-content: center !important;
+    font-size: 0.72rem !important;
+    padding: 0.5rem 0.6rem !important;
+    box-sizing: border-box !important;
+  }
+  #fleet .admin-toolbar {
+    flex-direction: column !important;
+    gap: 0.6rem !important;
+  }
+  #fleet .admin-search {
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+  #fleet .admin-search input {
+    font-size: 0.75rem !important;
+  }
 
   /* Admin Tab 3: Live Availability */
   #availability div[style*="grid-template-columns: repeat(4,1fr)"],
@@ -1893,46 +2743,593 @@
     grid-template-columns: repeat(4, 1fr) !important;
     gap: 0.25rem !important;
   }
+  /* Live Availability Monitor deep 320px - 4 stats + matrix header + hub distribution */
+  #availability div[style*="grid-template-columns: repeat(4,1fr)"] .card,
+  #availability div[style*="grid-template-columns: repeat(4, 1fr)"] .card {
+    padding: 0.75rem 0.6rem !important;
+    min-width: 0 !important;
+    overflow: hidden !important;
+    text-align: center !important;
+  }
+  #availability div[style*="grid-template-columns: repeat(4,1fr)"] .card div[style*="font-size:1.6rem"],
+  #availability div[style*="grid-template-columns: repeat(4, 1fr)"] .card div[style*="font-size:1.6rem"] {
+    font-size: 1.25rem !important;
+  }
+  #availability .card {
+    padding: 0.75rem !important;
+    min-width: 0 !important;
+    overflow: hidden !important;
+  }
+  #availability .card h3 {
+    font-size: 0.88rem !important;
+    line-height: 1.25 !important;
+    word-break: break-word !important;
+  }
+  #availability .card div[style*="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem"] {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.4rem !important;
+    min-width: 0 !important;
+  }
+  #availability .card div[style*="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem"] span {
+    font-size: 0.65rem !important;
+    white-space: normal !important;
+    line-height: 1.35 !important;
+    word-break: break-word !important;
+  }
+  #availability #hub-list div[style*="display:flex; justify-content:space-between; align-items:center; padding:0.8rem"] {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.45rem !important;
+    padding: 0.65rem !important;
+  }
+  #availability #hub-list div[style*="display:flex; justify-content:space-between; align-items:center; padding:0.8rem"] div:last-child {
+    text-align: left !important;
+    width: 100% !important;
+  }
+  #availability .avail-dot {
+    font-size: 0.60rem !important;
+    min-height: 28px !important;
+  }
 
-  /* Admin Tab 4: Bookings Manager */
+  /* Admin Tab 4: Bookings Manager @320px deep - header, form 6 fields, estimate, toolbar, 9-col table */
+  #bookings .dash-header-bar {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.6rem !important;
+    margin-bottom: 1rem !important;
+  }
+  #bookings .dash-header-bar h1 {
+    font-size: 1.05rem !important;
+    line-height: 1.25 !important;
+    word-break: break-word !important;
+  }
+  #bookings .dash-header-bar p {
+    font-size: 0.72rem !important;
+  }
+  #bookings .dash-header-bar .btn {
+    width: 100% !important;
+    justify-content: center !important;
+    font-size: 0.72rem !important;
+    padding: 0.55rem 0.7rem !important;
+  }
+  #bookings .admin-inline-form {
+    padding: 0.75rem !important;
+    min-width: 0 !important;
+    overflow: hidden !important;
+  }
+  #bookings .admin-form-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.55rem !important;
+    min-width: 0 !important;
+  }
+  #bookings .form-group {
+    min-width: 0 !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+  }
+  #bookings .form-control {
+    font-size: 0.75rem !important;
+    padding: 0.55rem 0.65rem !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  #bookings .form-label {
+    font-size: 0.72rem !important;
+    word-break: break-word !important;
+  }
   #booking-form-wrap form div[style*="justify-content:space-between"],
   #booking-form-wrap form div[style*="justify-content: space-between"] {
     flex-direction: column !important;
     align-items: flex-start !important;
     gap: 0.4rem !important;
     padding: 0.7rem !important;
+    font-size: 0.72rem !important;
+    overflow-wrap: break-word !important;
+  }
+  #bookings .admin-toolbar {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.6rem !important;
+  }
+  #bookings .admin-search {
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+  #bookings .admin-search input {
+    font-size: 0.75rem !important;
+  }
+  #bookings .admin-filters {
+    width: 100% !important;
+    flex-wrap: wrap !important;
+    gap: 0.4rem !important;
+  }
+  #bookings .admin-filter-select {
+    flex: 1 1 100px !important;
+    min-width: 0 !important;
+    font-size: 0.70rem !important;
+    padding: 0.45rem 0.6rem !important;
+  }
+  #bookings .admin-filters .btn {
+    flex: 1 1 100% !important;
+    justify-content: center !important;
+    font-size: 0.70rem !important;
+    padding: 0.5rem 0.6rem !important;
+  }
+  /* Booking ID … Actions 9-col table stacked at 320px - fully responsive, no scroll */
+  #bookings .data-table-wrapper {
+    overflow: visible !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    max-width: 100% !important;
+  }
+  #bookings .dash-table {
+    min-width: 0 !important;
+    font-size: 0.72rem !important;
+  }
+  #bookings .dash-table thead { display: none !important; }
+  #bookings .dash-table,
+  #bookings .dash-table tbody,
+  #bookings .dash-table tr { display: block !important; width: 100% !important; }
+  #bookings .dash-table tr {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg) !important;
+    overflow: hidden !important;
+    margin-bottom: 0.75rem !important;
+    box-shadow: var(--shadow-sm);
+  }
+  #bookings .dash-table td {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: 0.6rem !important;
+    padding: 0.6rem 0.75rem !important;
+    border-bottom: 1px solid var(--border-color) !important;
+    white-space: normal !important;
+    font-size: 0.72rem !important;
+    text-align: right !important;
+    overflow-wrap: break-word !important;
+  }
+  #bookings .dash-table td:last-child {
+    border-bottom: none !important;
+    justify-content: flex-start !important;
+    flex-wrap: wrap !important;
+    gap: 0.35rem !important;
+  }
+  #bookings .dash-table td:last-child::before { display: none !important; }
+  #bookings .dash-table td::before {
+    content: attr(data-label);
+    font-size: 0.65rem !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.04em !important;
+    text-transform: uppercase !important;
+    color: var(--text-muted) !important;
+    text-align: left !important;
+    flex-shrink: 0 !important;
+  }
+  #bookings .dash-table td:nth-child(1)::before { content: "Booking ID"; }
+  #bookings .dash-table td:nth-child(2)::before { content: "Customer"; }
+  #bookings .dash-table td:nth-child(3)::before { content: "Vehicle"; }
+  #bookings .dash-table td:nth-child(4)::before { content: "Pickup Date"; }
+  #bookings .dash-table td:nth-child(5)::before { content: "Duration"; }
+  #bookings .dash-table td:nth-child(6)::before { content: "Fare"; }
+  #bookings .dash-table td:nth-child(7)::before { content: "Return Deadline"; }
+  #bookings .dash-table td:nth-child(8)::before { content: "Status"; }
+  #bookings .dash-table td:nth-child(9)::before { content: "Actions"; display: none !important; }
+  #bookings .dash-table td .btn {
+    padding: 0.35rem 0.5rem !important;
+    font-size: 0.68rem !important;
   }
 
-  /* Admin Tab 5: Active Rentals */
+  /* Admin Tab 5: Active Rentals — Live Telemetry @320px deep */
+  #active .dash-header-bar {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.6rem !important;
+  }
+  #active .dash-header-bar h1 {
+    font-size: 1.05rem !important;
+    line-height: 1.25 !important;
+    word-break: break-word !important;
+  }
+  #active .dash-header-bar p {
+    font-size: 0.72rem !important;
+  }
+  #active .dash-header-bar .badge {
+    align-self: flex-start !important;
+    font-size: 0.68rem !important;
+  }
   #active-rentals-grid {
     grid-template-columns: 1fr !important;
     gap: 0.65rem !important;
   }
+  #active-rentals-grid .card {
+    padding: 0.75rem !important;
+    min-width: 0 !important;
+    overflow: hidden !important;
+  }
+  #active-rentals-grid .card div[style*="display:flex; gap:1rem"] {
+    flex-direction: column !important;
+    gap: 0.6rem !important;
+  }
+  #active-rentals-grid .card img[style*="width:110px"] {
+    width: 100% !important;
+    height: 140px !important;
+    min-width: 0 !important;
+  }
+  #active-rentals-grid .card div[style*="display:flex; justify-content:space-between"] {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.35rem !important;
+  }
+  #active-rentals-grid .card div[style*="display:grid; grid-template-columns:1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 0.5rem !important;
+    margin-top: 0.6rem !important;
+  }
+  #active-rentals-grid .card div[style*="display:flex; gap:0.5rem; margin-top:1rem"] {
+    flex-direction: column !important;
+    gap: 0.4rem !important;
+  }
+  #active-rentals-grid .card div[style*="display:flex; gap:0.5rem; margin-top:1rem"] .btn {
+    width: 100% !important;
+    justify-content: center !important;
+    font-size: 0.70rem !important;
+    padding: 0.5rem 0.6rem !important;
+  }
+  /* Active Rentals Live Telemetry table 8-col stacked at 320px */
+  #active .data-table-wrapper {
+    overflow: visible !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  #active .dash-table {
+    min-width: 0 !important;
+    font-size: 0.72rem !important;
+  }
+  #active .dash-table thead { display: none !important; }
+  #active .dash-table,
+  #active .dash-table tbody,
+  #active .dash-table tr { display: block !important; width: 100% !important; }
+  #active .dash-table tr {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg) !important;
+    overflow: hidden !important;
+    margin-bottom: 0.75rem !important;
+    box-shadow: var(--shadow-sm);
+  }
+  #active .dash-table td {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: 0.6rem !important;
+    padding: 0.6rem 0.75rem !important;
+    border-bottom: 1px solid var(--border-color) !important;
+    white-space: normal !important;
+    font-size: 0.72rem !important;
+    text-align: right !important;
+    overflow-wrap: break-word !important;
+  }
+  #active .dash-table td:last-child { border-bottom: none !important; justify-content: flex-end !important; flex-wrap: wrap !important; gap: 0.35rem !important; }
+  #active .dash-table td:last-child::before { display: none !important; }
+  #active .dash-table td::before {
+    content: attr(data-label);
+    font-size: 0.65rem !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.04em !important;
+    text-transform: uppercase !important;
+    color: var(--text-muted) !important;
+    flex-shrink: 0 !important;
+  }
+  #active .dash-table td:nth-child(1)::before { content: "Booking"; }
+  #active .dash-table td:nth-child(2)::before { content: "Customer"; }
+  #active .dash-table td:nth-child(3)::before { content: "Vehicle Unit"; }
+  #active .dash-table td:nth-child(4)::before { content: "Battery"; }
+  #active .dash-table td:nth-child(5)::before { content: "GPS Location"; }
+  #active .dash-table td:nth-child(6)::before { content: "Time Left"; }
+  #active .dash-table td:nth-child(7)::before { content: "Extend"; }
+  #active .dash-table td:nth-child(8)::before { content: "Control"; display: none !important; }
+  #active .dash-table td .btn { padding: 0.35rem 0.5rem !important; font-size: 0.68rem !important; }
 
-  /* Admin Tab 6: Returns & Deadlines */
+  /* Admin Tab 6: Returns & Deadlines - Return Deadlines & Extensions @320px deep */
+  #returns .dash-header-bar {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.6rem !important;
+  }
+  #returns .dash-header-bar h1 {
+    font-size: 1.05rem !important;
+    line-height: 1.25 !important;
+    word-break: break-word !important;
+  }
+  #returns .dash-header-bar p {
+    font-size: 0.72rem !important;
+  }
+  #returns .dash-header-bar div[style*="display:flex; gap:0.6rem"] {
+    flex-direction: column !important;
+    gap: 0.4rem !important;
+    width: 100% !important;
+  }
+  #returns .dash-header-bar .btn {
+    width: 100% !important;
+    justify-content: center !important;
+    font-size: 0.70rem !important;
+    padding: 0.5rem 0.6rem !important;
+    white-space: normal !important;
+  }
   #returns-grid {
     grid-template-columns: 1fr !important;
     gap: 0.65rem !important;
   }
+  #returns-grid .card {
+    padding: 0.75rem !important;
+    min-width: 0 !important;
+    overflow: hidden !important;
+    text-align: center !important;
+  }
+  #returns-grid .card div[style*="font-size:1.85rem"] {
+    font-size: 1.35rem !important;
+    word-break: break-all !important;
+    margin: 0.6rem 0 !important;
+  }
+  #returns-grid .card div[style*="display:flex; gap:0.4rem"] {
+    flex-direction: column !important;
+    gap: 0.35rem !important;
+  }
+  #returns-grid .card div[style*="display:flex; gap:0.4rem"] .btn {
+    width: 100% !important;
+    justify-content: center !important;
+    font-size: 0.70rem !important;
+    padding: 0.5rem 0.6rem !important;
+  }
+  #returns-grid .card .btn[style*="width:100%"] {
+    font-size: 0.70rem !important;
+    padding: 0.5rem 0.6rem !important;
+    white-space: normal !important;
+  }
+  #returns .card[style*="margin-top:1.5rem"] {
+    padding: 0.75rem !important;
+    min-width: 0 !important;
+    overflow: hidden !important;
+  }
+  #returns .card[style*="margin-top:1.5rem"] h3 {
+    font-size: 0.88rem !important;
+  }
+  #returns #extension-log div {
+    font-size: 0.72rem !important;
+    word-break: break-word !important;
+    white-space: normal !important;
+  }
 
-  /* Admin Tab 7: Pricing Tiers */
+  /* Admin Tab 7: Pricing Tiers - Pricing Tiers & Duration Plans @320px deep */
+  #pricing .dash-header-bar {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.6rem !important;
+  }
+  #pricing .dash-header-bar h1 {
+    font-size: 1.05rem !important;
+    line-height: 1.25 !important;
+    word-break: break-word !important;
+  }
+  #pricing .dash-header-bar p {
+    font-size: 0.72rem !important;
+  }
+  #pricing .dash-header-bar .btn {
+    width: 100% !important;
+    justify-content: center !important;
+    font-size: 0.70rem !important;
+    padding: 0.5rem 0.6rem !important;
+  }
   #pricing-cards {
     grid-template-columns: 1fr !important;
     gap: 0.65rem !important;
   }
-  #pricing-table input,
-  #pricing-tbody input {
-    min-width: 44px !important;
-    width: 100% !important;
-    padding: 0.3rem 0.35rem !important;
-    font-size: 0.7rem !important;
+  #pricing-cards .card {
+    padding: 0.85rem !important;
+    min-width: 0 !important;
+    overflow: hidden !important;
     text-align: center !important;
   }
+  #pricing-cards .card div[style*="font-size:2.2rem"] {
+    font-size: 1.6rem !important;
+    word-break: break-word !important;
+  }
+  #pricing-cards .card div[style*="font-size:1.5rem"] {
+    font-size: 1.15rem !important;
+  }
+  /* Pricing table 7-col stacked at 320px */
+  #pricing .data-table-wrapper {
+    overflow: visible !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  #pricing .dash-table,
+  #pricing-table {
+    min-width: 0 !important;
+    font-size: 0.72rem !important;
+  }
+  #pricing .dash-table thead,
+  #pricing-table thead { display: none !important; }
+  #pricing .dash-table,
+  #pricing .dash-table tbody,
+  #pricing .dash-table tr,
+  #pricing-table,
+  #pricing-table tbody,
+  #pricing-table tr { display: block !important; width: 100% !important; }
+  #pricing .dash-table tr,
+  #pricing-table tr {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg) !important;
+    overflow: hidden !important;
+    margin-bottom: 0.75rem !important;
+    box-shadow: var(--shadow-sm);
+  }
+  #pricing .dash-table td,
+  #pricing-table td {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: 0.6rem !important;
+    padding: 0.6rem 0.75rem !important;
+    border-bottom: 1px solid var(--border-color) !important;
+    white-space: normal !important;
+    font-size: 0.72rem !important;
+    text-align: right !important;
+    overflow-wrap: break-word !important;
+  }
+  #pricing .dash-table td:last-child,
+  #pricing-table td:last-child { border-bottom: none !important; justify-content: flex-end !important; }
+  #pricing .dash-table td::before,
+  #pricing-table td::before {
+    content: attr(data-label);
+    font-size: 0.65rem !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.04em !important;
+    text-transform: uppercase !important;
+    color: var(--text-muted) !important;
+    flex-shrink: 0 !important;
+  }
+  #pricing-table td:nth-child(1)::before { content: "Model"; }
+  #pricing-table td:nth-child(2)::before { content: "Hourly"; }
+  #pricing-table td:nth-child(3)::before { content: "Daily"; }
+  #pricing-table td:nth-child(4)::before { content: "Weekly"; }
+  #pricing-table td:nth-child(5)::before { content: "Deposit"; }
+  #pricing-table td:nth-child(6)::before { content: "Protection"; }
+  #pricing-table td:nth-child(7)::before { content: "Actions"; display: none !important; }
+  /* Inputs stacked full-width at 320px for true responsiveness */
+  #pricing-table td:nth-child(2),
+  #pricing-table td:nth-child(3),
+  #pricing-table td:nth-child(4),
+  #pricing-table td:nth-child(5) {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.35rem !important;
+  }
+  #pricing-table td:nth-child(2)::before,
+  #pricing-table td:nth-child(3)::before,
+  #pricing-table td:nth-child(4)::before,
+  #pricing-table td:nth-child(5)::before {
+    align-self: flex-start !important;
+  }
+  #pricing-table input,
+  #pricing-tbody input {
+    min-width: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0.45rem 0.6rem !important;
+    font-size: 0.75rem !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+  }
+  #pricing-table td .btn {
+    padding: 0.35rem 0.5rem !important;
+    font-size: 0.68rem !important;
+  }
 
-  /* Admin Tab 8: Coverage & Hubs */
+  /* Admin Tab 8: Coverage & Hubs - Coverage Area & Hubs @320px deep */
+  #coverage .dash-header-bar {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.6rem !important;
+  }
+  #coverage .dash-header-bar h1 {
+    font-size: 1.05rem !important;
+    line-height: 1.25 !important;
+    word-break: break-word !important;
+  }
+  #coverage .dash-header-bar p {
+    font-size: 0.72rem !important;
+  }
+  #coverage .dash-header-bar .btn {
+    width: 100% !important;
+    justify-content: center !important;
+    font-size: 0.70rem !important;
+    padding: 0.5rem 0.6rem !important;
+  }
+  #coverage .admin-inline-form {
+    padding: 0.75rem !important;
+    min-width: 0 !important;
+    overflow: hidden !important;
+  }
+  #coverage .admin-form-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.55rem !important;
+    min-width: 0 !important;
+  }
+  #coverage .form-group {
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+  #coverage .form-control {
+    font-size: 0.75rem !important;
+    padding: 0.55rem 0.65rem !important;
+  }
+  #coverage .form-label {
+    font-size: 0.72rem !important;
+  }
   #coverage-grid {
     grid-template-columns: 1fr !important;
     gap: 0.65rem !important;
+  }
+  #coverage-grid .card {
+    padding: 0.75rem !important;
+    min-width: 0 !important;
+    overflow: hidden !important;
+  }
+  #coverage-grid .card h3 {
+    font-size: 0.92rem !important;
+    line-height: 1.25 !important;
+    word-break: break-word !important;
+  }
+  #coverage-grid .card div[style*="font-size:0.78rem"] {
+    font-size: 0.70rem !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+  }
+  #coverage-grid .card div[style*="display:flex; gap:0.6rem"] {
+    gap: 0.35rem !important;
+  }
+  #coverage-grid .card div[style*="display:flex; gap:0.6rem"] div {
+    padding: 0.45rem !important;
+    min-width: 0 !important;
+  }
+  #coverage-grid .card div[style*="display:flex; gap:0.6rem"] div div:first-child {
+    font-size: 0.85rem !important;
   }
   #coverage .card div[style*="display:flex; gap:2rem"],
   #coverage .card div[style*="display: flex; gap: 2rem"] {
@@ -1940,72 +3337,503 @@
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 0.65rem !important;
   }
+  #coverage .card div[style*="display:flex; gap:2rem"] div div:first-child,
+  #coverage .card div[style*="display: flex; gap: 2rem"] div div:first-child {
+    font-size: 1.25rem !important;
+  }
+  #coverage .card div[style*="display:flex; gap:2rem"] div div:last-child,
+  #coverage .card div[style*="display: flex; gap: 2rem"] div div:last-child {
+    font-size: 0.65rem !important;
+  }
 
-  /* Admin Tab 9: Safety Deposits & Rules */
+  /* Admin Tab 9: Safety Deposits & Rules - Safety Deposits & Rules @320px deep */
+  #deposits .dash-header-bar {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.6rem !important;
+  }
+  #deposits .dash-header-bar h1 {
+    font-size: 1.05rem !important;
+    line-height: 1.25 !important;
+    word-break: break-word !important;
+  }
+  #deposits .dash-header-bar p {
+    font-size: 0.72rem !important;
+  }
+  #deposits .dash-header-bar .btn {
+    width: 100% !important;
+    justify-content: center !important;
+    font-size: 0.70rem !important;
+    padding: 0.5rem 0.6rem !important;
+  }
   #deposits div[style*="grid-template-columns: repeat(4,1fr)"],
   #deposits div[style*="grid-template-columns: repeat(4, 1fr)"] {
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 0.45rem !important;
     margin-bottom: 0.85rem !important;
   }
+  #deposits div[style*="grid-template-columns: repeat(4,1fr)"] .card,
+  #deposits div[style*="grid-template-columns: repeat(4, 1fr)"] .card {
+    padding: 0.65rem 0.5rem !important;
+    min-width: 0 !important;
+    overflow: hidden !important;
+    text-align: center !important;
+  }
+  #deposits div[style*="grid-template-columns: repeat(4,1fr)"] .card div[style*="font-size:1.4rem"],
+  #deposits div[style*="grid-template-columns: repeat(4, 1fr)"] .card div[style*="font-size:1.4rem"] {
+    font-size: 1.05rem !important;
+    word-break: break-word !important;
+  }
+  #deposits div[style*="grid-template-columns: repeat(4,1fr)"] .card div[style*="font-size:0.72rem"],
+  #deposits div[style*="grid-template-columns: repeat(4, 1fr)"] .card div[style*="font-size:0.72rem"] {
+    font-size: 0.62rem !important;
+    line-height: 1.25 !important;
+    overflow-wrap: break-word !important;
+  }
   #deposits .card div[style*="display:flex; justify-content:space-between; align-items:center; padding:0.8rem"] {
     flex-direction: column !important;
     align-items: flex-start !important;
     gap: 0.45rem !important;
     padding: 0.65rem 0.6rem !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    overflow-wrap: break-word !important;
+  }
+  #deposits .card div[style*="display:flex; justify-content:space-between; align-items:center; padding:0.8rem"] span {
+    font-size: 0.75rem !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+    max-width: 100% !important;
   }
   #deposits .card div[style*="display:flex; justify-content:space-between; align-items:center; padding:0.8rem"] .btn {
     width: 100% !important;
     justify-content: center !important;
+    font-size: 0.70rem !important;
+    padding: 0.5rem 0.6rem !important;
   }
+  #deposits .card h3 {
+    font-size: 0.88rem !important;
+    word-break: break-word !important;
+  }
+  /* Deposits table 8-col stacked at 320px */
+  #deposits .data-table-wrapper {
+    overflow: visible !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  #deposits .dash-table {
+    min-width: 0 !important;
+    font-size: 0.72rem !important;
+  }
+  #deposits .dash-table thead { display: none !important; }
+  #deposits .dash-table,
+  #deposits .dash-table tbody,
+  #deposits .dash-table tr { display: block !important; width: 100% !important; }
+  #deposits .dash-table tr {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg) !important;
+    overflow: hidden !important;
+    margin-bottom: 0.75rem !important;
+    box-shadow: var(--shadow-sm);
+  }
+  #deposits .dash-table td {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: 0.6rem !important;
+    padding: 0.6rem 0.75rem !important;
+    border-bottom: 1px solid var(--border-color) !important;
+    white-space: normal !important;
+    font-size: 0.72rem !important;
+    text-align: right !important;
+    overflow-wrap: break-word !important;
+  }
+  #deposits .dash-table td:last-child { border-bottom: none !important; justify-content: flex-end !important; flex-wrap: wrap !important; gap: 0.35rem !important; }
+  #deposits .dash-table td:last-child::before { display: none !important; }
+  #deposits .dash-table td::before {
+    content: attr(data-label);
+    font-size: 0.65rem !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.04em !important;
+    text-transform: uppercase !important;
+    color: var(--text-muted) !important;
+    flex-shrink: 0 !important;
+  }
+  #deposits .dash-table td:nth-child(1)::before { content: "Booking"; }
+  #deposits .dash-table td:nth-child(2)::before { content: "Customer"; }
+  #deposits .dash-table td:nth-child(3)::before { content: "Vehicle"; }
+  #deposits .dash-table td:nth-child(4)::before { content: "Hold"; }
+  #deposits .dash-table td:nth-child(5)::before { content: "Method"; }
+  #deposits .dash-table td:nth-child(6)::before { content: "Status"; }
+  #deposits .dash-table td:nth-child(7)::before { content: "Countdown"; }
+  #deposits .dash-table td:nth-child(8)::before { content: "Action"; display: none !important; }
+  #deposits .dash-table td .btn { padding: 0.35rem 0.5rem !important; font-size: 0.68rem !important; }
 
-  /* Admin Tab 10: Receipts & Agreements */
+  /* Admin Tab 10: Receipts & Agreements - Receipts & Signed Agreements @320px deep */
+  #receipts .dash-header-bar {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.6rem !important;
+  }
+  #receipts .dash-header-bar h1 {
+    font-size: 1.05rem !important;
+    line-height: 1.25 !important;
+    word-break: break-word !important;
+  }
+  #receipts .dash-header-bar p {
+    font-size: 0.72rem !important;
+  }
+  #receipts .dash-header-bar div[style*="display:flex; gap:0.6rem"] {
+    flex-direction: column !important;
+    gap: 0.4rem !important;
+    width: 100% !important;
+  }
+  #receipts .dash-header-bar .btn {
+    width: 100% !important;
+    justify-content: center !important;
+    font-size: 0.70rem !important;
+    padding: 0.5rem 0.6rem !important;
+  }
   #receipts div[style*="grid-template-columns: 1fr 1fr"] {
     grid-template-columns: 1fr !important;
     gap: 0.75rem !important;
+  }
+  #receipts .card {
+    padding: 0.75rem !important;
+    min-width: 0 !important;
+    overflow: hidden !important;
+  }
+  #receipts .card h3 {
+    font-size: 0.88rem !important;
+    word-break: break-word !important;
   }
   #receipts .card div[style*="display:flex; gap:0.6rem"] {
     flex-direction: column !important;
     width: 100% !important;
     gap: 0.45rem !important;
   }
+  #receipts .card div[style*="display:flex; justify-content:space-between; align-items:center"] {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.5rem !important;
+    padding: 0.75rem !important;
+  }
+  #receipts .card div[style*="display:flex; justify-content:space-between; align-items:center"] div[style*="display:flex; gap:0.9rem"] {
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+  #receipts .card div[style*="display:flex; justify-content:space-between; align-items:center"] div[style*="font-weight:800"] {
+    font-size: 0.82rem !important;
+    word-break: break-word !important;
+  }
+  #receipts .card div[style*="display:flex; justify-content:space-between; align-items:center"] div[style*="font-size:0.75rem"] {
+    font-size: 0.68rem !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+  }
   #receipts .card input {
     min-width: 0 !important;
     width: 100% !important;
+    font-size: 0.75rem !important;
+    padding: 0.55rem 0.65rem !important;
+    box-sizing: border-box !important;
   }
   #receipts .card .btn {
     width: 100% !important;
     justify-content: center !important;
+    font-size: 0.70rem !important;
+    padding: 0.5rem 0.6rem !important;
+  }
+  #receipts .card[style*="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap"] {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.6rem !important;
+  }
+  #receipts .card[style*="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap"] div[style*="display:flex; gap:0.6rem"] {
+    width: 100% !important;
   }
 
-  /* Admin Tab 12: Analytics */
+  /* Admin Tab 11: Customers & Riders - Customers & Riders @320px deep */
+  #users .dash-header-bar {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.6rem !important;
+  }
+  #users .dash-header-bar h1 {
+    font-size: 1.05rem !important;
+    line-height: 1.25 !important;
+    word-break: break-word !important;
+  }
+  #users .dash-header-bar p {
+    font-size: 0.72rem !important;
+  }
+  #users .dash-header-bar .btn {
+    width: 100% !important;
+    justify-content: center !important;
+    font-size: 0.70rem !important;
+    padding: 0.5rem 0.6rem !important;
+  }
+  #users .admin-toolbar {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.6rem !important;
+  }
+  #users .admin-search {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 0.45rem 0.75rem !important;
+  }
+  #users .admin-search input {
+    font-size: 0.72rem !important;
+    min-width: 0 !important;
+  }
+  #users .admin-search i {
+    font-size: 0.75rem !important;
+    flex-shrink: 0 !important;
+  }
+  #users .admin-filter-select,
+  #users-tier,
+  .admin-filter-select {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    flex: none !important;
+    align-self: stretch !important;
+    box-sizing: border-box !important;
+    font-size: 0.68rem !important;
+    padding: 0.5rem 1.9rem 0.5rem 0.6rem !important;
+    background-position: right 0.6rem center !important;
+    background-size: 12px !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+    line-height: 1.25 !important;
+    border-radius: var(--radius-full) !important;
+  }
+  #users .admin-filter-select option,
+  #users-tier option,
+  .admin-filter-select option {
+    font-size: 0.70rem !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+  }
+  #users .data-table-wrapper {
+    overflow: visible !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  #users .dash-table {
+    min-width: 0 !important;
+    font-size: 0.72rem !important;
+  }
+  #users .dash-table thead { display: none !important; }
+  #users .dash-table,
+  #users .dash-table tbody,
+  #users .dash-table tr { display: block !important; width: 100% !important; }
+  #users .dash-table tr {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg) !important;
+    overflow: hidden !important;
+    margin-bottom: 0.75rem !important;
+    box-shadow: var(--shadow-sm);
+  }
+  #users .dash-table td {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    padding: 0.5rem 0.6rem !important;
+    border-bottom: 1px solid var(--border-color) !important;
+    white-space: normal !important;
+    font-size: 0.70rem !important;
+    text-align: right !important;
+    overflow-wrap: anywhere !important;
+    min-width: 0 !important;
+  }
+  #users .dash-table td img {
+    width: 28px !important;
+    height: 28px !important;
+    min-width: 28px !important;
+  }
+  #users .dash-table td:nth-child(2) {
+    word-break: break-all !important;
+    overflow-wrap: anywhere !important;
+  }
+  #users .dash-table td:nth-child(3) .badge {
+    word-break: break-all !important;
+    white-space: normal !important;
+    max-width: 55% !important;
+    text-align: right !important;
+  }
+  #users .dash-table td:first-child {
+    justify-content: flex-start !important;
+    gap: 0.6rem !important;
+    text-align: left !important;
+  }
+  #users .dash-table td:first-child div[style*="display:flex"] {
+    flex-wrap: wrap !important;
+    min-width: 0 !important;
+    gap: 0.5rem !important;
+  }
+  #users .dash-table td:first-child strong {
+    word-break: break-word !important;
+    min-width: 0 !important;
+  }
+  #users .dash-table td:first-child::before { display: none !important; }
+  #users .dash-table td:last-child { border-bottom: none !important; justify-content: flex-end !important; flex-wrap: wrap !important; gap: 0.35rem !important; }
+  #users .dash-table td:last-child::before { display: none !important; }
+  #users .dash-table td::before {
+    content: attr(data-label);
+    font-size: 0.65rem !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.04em !important;
+    text-transform: uppercase !important;
+    color: var(--text-muted) !important;
+    flex-shrink: 0 !important;
+  }
+  #users .dash-table td:nth-child(2)::before { content: "Email"; }
+  #users .dash-table td:nth-child(3)::before { content: "License"; }
+  #users .dash-table td:nth-child(4)::before { content: "Tier"; }
+  #users .dash-table td:nth-child(5)::before { content: "Rides"; }
+  #users .dash-table td:nth-child(6)::before { content: "Safety"; }
+  #users .dash-table td:nth-child(7)::before { content: "Deposit"; }
+  #users .dash-table td:nth-child(8)::before { content: "Actions"; display: none !important; }
+  #users .dash-table td .btn { padding: 0.35rem 0.5rem !important; font-size: 0.68rem !important; }
+  #users .dash-table td .badge { font-size: 0.65rem !important; padding: 0.2rem 0.4rem !important; }
+
+  /* Admin Tab 12: Analytics - Fleet Analytics & Revenue @320px deep */
+  #analytics .dash-header-bar {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.6rem !important;
+  }
+  #analytics .dash-header-bar h1 {
+    font-size: 1.05rem !important;
+    line-height: 1.25 !important;
+    word-break: break-word !important;
+  }
+  #analytics .dash-header-bar p {
+    font-size: 0.72rem !important;
+  }
+  #analytics .dash-header-bar .admin-filter-select,
+  #analytics .dash-header-bar select {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    font-size: 0.70rem !important;
+    padding: 0.45rem 0.6rem !important;
+    box-sizing: border-box !important;
+  }
   #analytics div[style*="grid-template-columns: repeat(3,1fr)"] {
     grid-template-columns: 1fr !important;
     gap: 0.55rem !important;
     margin-bottom: 0.85rem !important;
   }
+  #analytics div[style*="grid-template-columns: repeat(3,1fr)"] .card {
+    padding: 0.75rem !important;
+    min-width: 0 !important;
+    overflow: hidden !important;
+    text-align: center !important;
+  }
+  #analytics div[style*="grid-template-columns: repeat(3,1fr)"] .card div[style*="font-size:2rem"] {
+    font-size: 1.45rem !important;
+    word-break: break-word !important;
+  }
   #analytics div[style*="grid-template-columns: 1.6fr 1fr"] {
     grid-template-columns: 1fr !important;
     gap: 0.75rem !important;
   }
+  #analytics .card {
+    padding: 0.75rem !important;
+    min-width: 0 !important;
+    overflow: hidden !important;
+  }
+  #analytics .card h3 {
+    font-size: 0.88rem !important;
+    word-break: break-word !important;
+  }
+  #analytics .card div[style*="display:flex; justify-content:space-between"] {
+    flex-wrap: wrap !important;
+    gap: 0.4rem !important;
+  }
+  #analytics .card div[style*="height:8px"] {
+    height: 6px !important;
+  }
 
-  /* Admin Tab 13: Settings */
+  /* Admin Tab 13: Settings - Admin & Platform Settings @320px deep */
+  .admin-layout #settings .dash-header-bar {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.6rem !important;
+  }
+  .admin-layout #settings .dash-header-bar h1 {
+    font-size: 1.05rem !important;
+    line-height: 1.25 !important;
+    word-break: break-word !important;
+  }
+  .admin-layout #settings .dash-header-bar p {
+    font-size: 0.72rem !important;
+  }
+  .admin-layout #settings .dash-header-bar .btn {
+    width: 100% !important;
+    justify-content: center !important;
+    font-size: 0.70rem !important;
+    padding: 0.5rem 0.6rem !important;
+  }
   #settings div[style*="grid-template-columns: 1fr 1fr"] {
     grid-template-columns: 1fr !important;
     gap: 0.75rem !important;
+  }
+  .admin-layout #settings .card {
+    padding: 0.75rem !important;
+    min-width: 0 !important;
+    overflow: hidden !important;
+  }
+  .admin-layout #settings .card h3 {
+    font-size: 0.88rem !important;
+    word-break: break-word !important;
+  }
+  .admin-layout #settings .card p {
+    font-size: 0.72rem !important;
+    word-break: break-word !important;
   }
   #settings .card div[style*="display:flex; justify-content:space-between; align-items:center"] {
     flex-direction: column !important;
     align-items: flex-start !important;
     gap: 0.45rem !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
   }
   #settings .card div[style*="display:flex; justify-content:space-between; align-items:center"] select {
     width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    font-size: 0.75rem !important;
+    padding: 0.45rem 0.6rem !important;
+    box-sizing: border-box !important;
   }
   #settings .card div[style*="display:flex; align-items:center; gap:1rem"] {
     flex-direction: column !important;
     align-items: flex-start !important;
     gap: 0.6rem !important;
+    min-width: 0 !important;
+  }
+  .admin-layout #settings .card div[style*="display:flex; align-items:center; gap:1rem"] img {
+    width: 48px !important;
+    height: 48px !important;
   }
 
   /* Dashboard Action Buttons Global Stacking at 320px */
@@ -2544,7 +4372,26 @@
     font-size: 0.88rem !important;
     padding-right: 0.5rem !important;
   }
-}
+  /* Facebook icon not res @320px - 5 icons 28px fit 299px (aggressive) */
+  .social-links {
+    gap: 0.30rem !important;
+    justify-content: flex-start !important;
+    flex-wrap: wrap !important;
+    max-width: 100% !important;
+  }
+  .social-circle-btn {
+    width: 28px !important;
+    height: 28px !important;
+    min-width: 28px !important;
+    font-size: 0.72rem !important;
+    flex-shrink: 0 !important;
+    padding: 0 !important;
+    line-height: 1 !important;
+  }
+  .social-circle-btn i {
+    font-size: 0.72rem !important;
+    line-height: 1 !important;
+  }
 
 /* Blog details 320px - profile oval fix + responsive */
 @media (max-width: 320px) {
@@ -2629,9 +4476,53 @@
     grid-template-columns: 1fr !important;
     gap: 0.75rem !important;
   }
-}
-
-/* Terms & Conditions 320px - deep */
+  /* Tags not res @320px - generic badges/filter tags wrap - aggressive */
+  .badge, .badge-lime, .badge-orange, .badge-available, .badge-busy {
+    font-size: 0.52rem !important;
+    padding: 0.14rem 0.32rem !important;
+    white-space: normal !important;
+    max-width: 100% !important;
+    overflow-wrap: anywhere !important;
+    word-break: break-word !important;
+    line-height: 1.25 !important;
+    flex: 0 1 auto !important;
+    min-width: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  .filter-btn {
+    font-size: 0.55rem !important;
+    padding: 0.28rem 0.45rem !important;
+    white-space: normal !important;
+    text-align: center !important;
+    line-height: 1.25 !important;
+    max-width: 100% !important;
+    flex: 0 1 auto !important;
+    min-width: 0 !important;
+    overflow-wrap: anywhere !important;
+  }
+  .admin-badge-count {
+    font-size: 0.50rem !important;
+    padding: 0.07rem 0.22rem !important;
+    min-width: 12px !important;
+  }
+  .fleet-filter-bar, .admin-filters, .fleet-card-tags, .blog-filter-bar {
+    flex-wrap: wrap !important;
+    gap: 0.28rem !important;
+    max-width: 100% !important;
+    align-content: flex-start !important;
+  }
+  .fleet-card-tags {
+    max-width: calc(100% - 0.5rem) !important;
+    align-items: flex-start !important;
+  }
+  .fleet-card-tags .badge {
+    flex: 0 1 auto !important;
+    min-width: 0 !important;
+    max-width: calc(50% - 0.14rem) !important;
+  }
+}/* Terms & Conditions 320px - deep */
 @media (max-width: 320px) {
   .manifesto-section {
     padding-top: 6rem !important;
@@ -3113,6 +5004,180 @@
   }
 }
 
+/* Facebook icon final 320px override - ensure last rule wins - deeply review */
+@media (max-width: 320px) {
+  .social-links {
+    gap: 0.25rem !important;
+    justify-content: flex-start !important;
+    flex-wrap: wrap !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    overflow: visible !important;
+  }
+  .social-circle-btn {
+    width: 26px !important;
+    height: 26px !important;
+    min-width: 26px !important;
+    max-width: 26px !important;
+    font-size: 0.70rem !important;
+    flex-shrink: 0 !important;
+    padding: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+    border-width: 1px !important;
+  }
+  .social-circle-btn i,
+  .social-circle-btn svg {
+    font-size: 0.70rem !important;
+    width: 12px !important;
+    height: 12px !important;
+    line-height: 1 !important;
+    display: block !important;
+  }
+  /* Ensure facebook and all icons white visible in dark at 320px */
+  .social-circle-btn[aria-label="Facebook"],
+  .social-circle-btn[aria-label="Facebook"] i {
+    color: #FFFFFF !important;
+    opacity: 1 !important;
+  }
+  [data-theme="light"] .social-circle-btn {
+    color: #0F172A !important;
+  }
+  /* Auth social buttons responsive at 320px */
+  .auth-social-grid {
+    gap: 0.45rem !important;
+  }
+  .btn-social {
+    padding: 0.6rem 0.45rem !important;
+    font-size: 0.80rem !important;
+    gap: 0.4rem !important;
+    min-width: 0 !important;
+  }
+  .btn-social svg {
+    width: 18px !important;
+    height: 18px !important;
+    min-width: 18px !important;
+    min-height: 18px !important;
+    flex-shrink: 0 !important;
+    display: block !important;
+  }
+}
+}
+
+/* Login page responsive @320px - pages/login.html deep + toggles */
+@media (max-width: 320px) {
+  .auth-topbar {
+    top: 0.65rem !important;
+    right: 0.65rem !important;
+    gap: 0.35rem !important;
+  }
+  .auth-topbar .theme-toggle,
+  .auth-topbar .rtl-toggle {
+    width: 30px !important;
+    height: 30px !important;
+    min-width: 30px !important;
+    font-size: 0.70rem !important;
+    padding: 0 !important;
+  }
+  .auth-page-section {
+    padding: 2.8rem 0.65rem 2rem !important;
+    min-height: auto !important;
+  }
+  .auth-card-wrapper {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding: 0 !important;
+  }
+  .auth-card {
+    padding: 1.25rem 0.75rem !important;
+    border-radius: 16px !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .auth-brand {
+    gap: 0.6rem !important;
+    margin-bottom: 1rem !important;
+  }
+  .auth-brand .logo-icon {
+    width: 36px !important;
+    height: 36px !important;
+  }
+  .auth-brand .logo-brand {
+    font-size: 1.15rem !important;
+  }
+  .auth-brand .logo-tagline {
+    font-size: 0.55rem !important;
+  }
+  .auth-title {
+    font-size: 1.25rem !important;
+    line-height: 1.25 !important;
+    word-break: break-word !important;
+  }
+  .auth-subtitle {
+    font-size: 0.80rem !important;
+    line-height: 1.4 !important;
+    word-break: break-word !important;
+  }
+  .auth-form {
+    gap: 0.85rem !important;
+  }
+  .auth-form .form-control {
+    font-size: 0.80rem !important;
+    padding: 0.65rem 0.75rem !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .auth-form .form-label {
+    font-size: 0.80rem !important;
+  }
+  .password-wrapper .form-control {
+    padding-right: 2.5rem !important;
+  }
+  .auth-social-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.5rem !important;
+  }
+  .auth-divider {
+    margin: 1rem 0 0.85rem !important;
+    font-size: 0.75rem !important;
+  }
+  .auth-footer-text {
+    font-size: 0.78rem !important;
+    margin-top: 1.25rem !important;
+    word-break: break-word !important;
+  }
+  .checkbox-label {
+    font-size: 0.75rem !important;
+    gap: 0.4rem !important;
+    flex-wrap: wrap !important;
+    align-items: flex-start !important;
+    line-height: 1.4 !important;
+  }
+  .checkbox-label span {
+    white-space: normal !important;
+    word-break: break-word !important;
+    flex: 1 !important;
+    min-width: 0 !important;
+    line-height: 1.4 !important;
+  }
+  .checkbox-label input[type="checkbox"] {
+    flex-shrink: 0 !important;
+    margin-top: 0.15rem !important;
+    width: 16px !important;
+    height: 16px !important;
+  }
+  .auth-submit-btn {
+    padding: 0.85rem 1rem !important;
+    font-size: 0.90rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    white-space: normal !important;
+  }
+}
 /* Landscape small height fallback */
 @media (max-height: 520px) and (max-width: 992px) {
   .hero-slider-section {
